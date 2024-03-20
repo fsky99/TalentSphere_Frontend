@@ -8,10 +8,10 @@
 
 [Talent Sphere] consists of two main repositories:
 
-- [Frontend](fronend link after changing the name of the project)
-- [Backend](backend link after changing the name of the project)
+- [Frontend](https://github.com/fsky99/project4_Frontend)
+- [Backend](https://github.com/fsky99/project4_Backend)
 
-## Live Version
+## Live Version (UNDER DEVELOPMENT)
 
 Click the following link to be redirected to the live version of the code. [name of project](link of project)
 
@@ -35,23 +35,28 @@ TalentSphere is a comprehensive HR Management System web application designed to
 - Request updates and days off
 - Access company directory and events
 
-## CRUD Operations
+### CRUD Operations
 
 - **Create:** Add new employees, events, and requests
 - **Read:** View employee profiles, remuneration details, and event schedules
 - **Update:** Modify employee information, approve requests, and update event details
 - **Delete:** Remove employee accounts and events from the system
 
-### Screenshots:
+## Screenshots:
 
-ERD:
+### ERD:
+
 ![alt text](image.png)
 
-wireframe:
+### Hierarchy Diagram:
 
-Real website:
+- [Link to Diagram] (https://lucid.app/lucidchart/3557353f-8d1e-4038-8495-074e3cc97969/edit?viewport_loc=-4688%2C-298%2C2528%2C1282%2C0_0&invitationId=inv_2abaf856-b787-402b-a848-e779cfb82900)
 
-### Technologies used
+### wireframe:
+
+### Real website:
+
+## Technologies used
 
 - [x] VSCode (Editor for Writing the Code)
 - [x] Node Js (Backend)
@@ -63,19 +68,19 @@ Real website:
 
 ---
 
-### What we are most proud of is :
+## What we are most proud of is :
 
-## function
+### function
 
 ```
- code
+ Under Deveopment
 ```
 
 ---
 
 ### Future plans:
 
-- [ ]
+- [ Under Deveopment ]
 
 ---
 
