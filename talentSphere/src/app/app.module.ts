@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { HrhomeComponent } from './hrhome/hrhome.component';
 import { LoginComponent } from './login/login.component';
 import { EmployeehomeComponent } from './employeehome/employeehome.component';
+import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,9 @@ import { EmployeehomeComponent } from './employeehome/employeehome.component';
     BrowserModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [
+    provideAnimationsAsync()
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
