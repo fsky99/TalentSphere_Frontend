@@ -9,6 +9,11 @@ import { EmployeehomeComponent } from './employeehome/employeehome.component';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { AdmindashboardComponent } from './admin/pages/admindashboard/admindashboard.component';
+import { AdmindirectoryComponent } from './admin/pages/admindirectory/admindirectory.component';
+import { AdminremunerationsComponent } from './admin/pages/adminremunerations/adminremunerations.component';
+import { AdmindeventsComponent } from './admin/pages/admindevents/admindevents.component';
+import { AdminaddemployeeComponent } from './admin/pages/adminaddemployee/adminaddemployee.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +22,12 @@ import { FooterComponent } from './components/footer/footer.component';
     LoginComponent,
     EmployeehomeComponent,
     NavbarComponent,
-    FooterComponent
+    FooterComponent,
+    AdmindashboardComponent,
+    AdmindirectoryComponent,
+    AdminremunerationsComponent,
+    AdmindeventsComponent,
+    AdminaddemployeeComponent
   ],
   imports: [
     BrowserModule,
