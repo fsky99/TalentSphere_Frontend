@@ -1,7 +1,11 @@
 .main-content {
-  padding-left: 250px; /* Adjust the padding to match the sidebar width */
+  transition: margin-left 0.3s ease;
 }
 
-.container {
-  padding: 1rem;
+.sidebar.open ~ .main-content {
+  margin-left: 250px; /* Adjust based on the open sidebar width */
+}
+
+.sidebar:not(.open) ~ .main-content {
+  margin-left: 60px; /* Adjust based on the closed sidebar width */
 }

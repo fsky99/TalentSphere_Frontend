@@ -2,11 +2,16 @@
   position: fixed;
   top: 0;
   left: 0;
-  width: 250px;
+  width: 60px; /* Width when collapsed */
   height: 100%;
   background: #007bff;
   color: white;
-  transition: transform 0.3s ease;
+  transition: width 0.3s ease;
+  overflow: hidden; /* Hide overflow when collapsed */
+}
+
+.sidebar.open {
+  width: 250px;
 }
 
 .sidebar-header {
@@ -22,13 +27,57 @@
   margin: 0;
 }
 
-.sidebar-nav li a {
-  display: block;
-  padding: 1rem;
+.nav-item {
+  display: flex;
+  align-items: center;
+  padding: 0.5rem 1.2rem 0.5rem 0.5rem; /* Adjust padding for spacing */
   color: white;
   text-decoration: none;
+  position: relative; /* Required for pseudo-element positioning */
+  font-weight: bolder;
+  transition: background-color 0.3s ease; /* Animation for background color */
 }
 
-.sidebar-nav li a:hover {
-  background: #0056b3;
+.nav-item:hover {
+  background-color: rgb(8, 219, 68) !important;
+  color: #f0f0f0; /* Hover text color */
+  transition: color 0.3s ease; /* Hover background color with some transparency */
+}
+.nav-item::after {
+  /* Retains pseudo-element for potential future use */
+  content: '';
+  position: absolute;
+  right: 0.5rem; /* Adjust spacing as needed */
+  top: 50%;
+  transform: translateY(-50%); /* Center vertically */
+  width: 0; /* No visible width */
+  height: 0; /* No visible height */
+}
+
+.nav-text {
+  flex: 1; /* Allow text to grow and fill remaining space */
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow:ellipsis;
+}
+
+.toggle-icon {
+  width: 10%; /* Adjust as needed */
+  height: auto; /* Maintain aspect ratio */
+}
+
+.sidebar.open .nav-text {
+  opacity: 1; /* Visible when sidebar is open */
+  visibility: visible; /* Visible when sidebar is open */
+}
+
+.sidebar-nav li a:hover .nav-text {
+  opacity: 1; /* Visible on hover */
+  visibility: visible; /* Visible on hover */
+}
+
+.nav-item svg {
+  width: 25px;
+  height: 25px;
+  margin-right: 10%;
 }
