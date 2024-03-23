@@ -12,8 +12,8 @@ import { FooterComponent } from './components/footer/footer.component';
 import { AdmindashboardComponent } from './admin/pages/admindashboard/admindashboard.component';
 import { AdmindirectoryComponent } from './admin/pages/admindirectory/admindirectory.component';
 import { AdminremunerationsComponent } from './admin/pages/adminremunerations/adminremunerations.component';
-import { AdmindeventsComponent } from './admin/pages/admindevents/admindevents.component';
 import { AdminaddemployeeComponent } from './admin/pages/adminaddemployee/adminaddemployee.component';
+import { AdmineventsComponent } from './admin/pages/adminevents/adminevents.component';
 
 @NgModule({
   declarations: [
@@ -26,8 +26,8 @@ import { AdminaddemployeeComponent } from './admin/pages/adminaddemployee/admina
     AdmindashboardComponent,
     AdmindirectoryComponent,
     AdminremunerationsComponent,
-    AdmindeventsComponent,
-    AdminaddemployeeComponent
+    AdminaddemployeeComponent,
+    AdmineventsComponent
   ],
   imports: [
     BrowserModule,
