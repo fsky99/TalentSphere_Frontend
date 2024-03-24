@@ -21,6 +21,7 @@ import { AdminrequestsComponent } from './admin/pages/adminrequests/adminrequest
 import { AdminmessagesComponent } from './admin/pages/adminmessages/adminmessages.component';
 import { AdminactivitiesComponent } from './admin/pages/adminactivities/adminactivities.component';
 import { AdminAddEmployeeComponent } from './admin/pages/adminaddemployee/adminaddemployee.component';
+import { MasterProfileComponent } from './admin/pages/masterprofile/masterprofile.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +40,8 @@ import { AdminAddEmployeeComponent } from './admin/pages/adminaddemployee/admina
     AdminrequestsComponent,
     AdminmessagesComponent,
     AdminactivitiesComponent,
-    AdminAddEmployeeComponent
+    AdminAddEmployeeComponent,
+    MasterProfileComponent
   ],
   imports: [
     BrowserModule,

@@ -11,6 +11,7 @@ import { AdminactivitiesComponent } from './admin/pages/adminactivities/adminact
 import { AdminmessagesComponent } from './admin/pages/adminmessages/adminmessages.component';
 import { AdminrequestsComponent } from './admin/pages/adminrequests/adminrequests.component';
 import { AdminAddEmployeeComponent } from './admin/pages/adminaddemployee/adminaddemployee.component';
+import { MasterProfileComponent } from './admin/pages/masterprofile/masterprofile.component';
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: 'login' },
@@ -24,7 +25,8 @@ const routes: Routes = [
   { path: 'employee-dashboard', component: EmployeeDashComponent},
   {path: 'admin-activities', component: AdminactivitiesComponent},
   {path: 'admin-messages', component: AdminmessagesComponent},
-  {path:'admin-requests', component:AdminrequestsComponent}
+  {path:'admin-requests', component:AdminrequestsComponent},
+  { path: 'master-profile', component: MasterProfileComponent }
 ];
 
 @NgModule({
