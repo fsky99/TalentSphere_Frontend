@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -12,12 +13,12 @@ import { FooterComponent } from './admin/components/footer/footer.component';
 import { AdmindashboardComponent } from './admin/pages/admindashboard/admindashboard.component';
 import { AdmindirectoryComponent } from './admin/pages/admindirectory/admindirectory.component';
 import { AdminremunerationsComponent } from './admin/pages/adminremunerations/adminremunerations.component';
-import { AdminaddemployeeComponent } from './admin/pages/adminaddemployee/adminaddemployee.component';
 import { AdmineventsComponent } from './admin/pages/adminevents/adminevents.component';
 import { EmployeeDashComponent } from './employee/employee-dash/employee-dash.component';
 import { AdminrequestsComponent } from './admin/pages/adminrequests/adminrequests.component';
 import { AdminmessagesComponent } from './admin/pages/adminmessages/adminmessages.component';
 import { AdminactivitiesComponent } from './admin/pages/adminactivities/adminactivities.component';
+import { AdminAddEmployeeComponent } from './admin/pages/adminaddemployee/adminaddemployee.component';
 
 @NgModule({
   declarations: [
@@ -30,16 +31,17 @@ import { AdminactivitiesComponent } from './admin/pages/adminactivities/adminact
     AdmindashboardComponent,
     AdmindirectoryComponent,
     AdminremunerationsComponent,
-    AdminaddemployeeComponent,
     AdmineventsComponent,
     EmployeeDashComponent,
     AdminrequestsComponent,
     AdminmessagesComponent,
-    AdminactivitiesComponent
+    AdminactivitiesComponent,
+    AdminAddEmployeeComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [
     provideAnimationsAsync()

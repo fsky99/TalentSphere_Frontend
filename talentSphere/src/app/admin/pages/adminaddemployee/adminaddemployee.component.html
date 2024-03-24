@@ -1,1 +1,154 @@
-<p>adminaddemployee works!</p>
+<div class="container mx-auto">
+  <div class="flex justify-between items-center mb-8">
+      <h1 class="text-2xl font-bold">Add Employee</h1>
+      <button class="bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded" (click)="approve()">Approve</button>
+  </div>
+
+  <form (ngSubmit)="submitForm()">
+      <!-- Personal Details Section -->
+      <div class="mb-6">
+          <h2 class="text-xl font-semibold mb-2">Section 1: Personal Details</h2>
+          <hr>
+          <div class="grid gap-6 mb-6 md:grid-cols-2">
+              <!-- First Name -->
+              <div>
+                  <label for="first_name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">First Name</label>
+                  <input type="text" id="first_name" name="first_name" [(ngModel)]="employee.first_name" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="John" required />
+              </div>
+              <!-- Last Name -->
+              <div>
+                  <label for="last_name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Last Name</label>
+                  <input type="text" id="last_name" name="last_name" [(ngModel)]="employee.last_name" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Doe" required />
+              </div>
+              <!-- Email -->
+              <div>
+                  <label for="email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Email</label>
+                  <input type="email" id="email" name="email" [(ngModel)]="employee.email" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="john.doe@example.com" required />
+              </div>
+              <!-- Date of Birth -->
+              <div>
+                  <label for="dob" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Date of Birth</label>
+                  <input type="date" id="dob" name="dob" [(ngModel)]="employee.dob" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required />
+              </div>
+              <!-- Nationality -->
+              <div>
+                  <label for="nationality" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Nationality</label>
+                  <input type="text" id="nationality" name="nationality" [(ngModel)]="employee.nationality" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="American" required />
+              </div>
+                <!-- Country -->
+                <div>
+                  <label for="country" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Country</label>
+                  <input type="text" id="country" name="country" [(ngModel)]="employee.country" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="USA" required />
+              </div>
+              <!-- Phone Number -->
+              <div>
+                  <label for="phone_number" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Phone Number</label>
+                  <input type="tel" id="phone_number" name="phone_number" [(ngModel)]="employee.phone_number" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="+1-555-555-5555" required />
+              </div>
+              <!-- Address -->
+              <div>
+                  <label for="address" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Address</label>
+                  <input type="text" id="address" name="address" [(ngModel)]="employee.address" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="123 Main St" required />
+              </div>
+              <!-- Picture -->
+              <div>
+                  <label for="picture" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Picture</label>
+                  <input type="file" id="picture" name="picture" [(ngModel)]="employee.picture" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required />
+              </div>
+          </div>
+          <hr>
+      </div>
+
+      <!-- Documents Section -->
+      <div class="mb-6">
+          <h2 class="text-xl font-semibold mb-2">Section 2: Documents</h2>
+          <hr>
+          <div class="grid gap-6 mb-6 md:grid-cols-2">
+              <!-- CV -->
+              <div>
+                  <label for="cv" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">CV</label>
+                  <input type="file" id="cv" name="cv" [(ngModel)]="employee.cv" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required />
+              </div>
+              <!-- Passport -->
+              <div>
+                  <label for="passport" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Passport</label>
+                  <input type="file" id="passport" name="passport" [(ngModel)]="employee.passport" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required />
+              </div>
+              <!-- Contract -->
+              <div>
+                <label for="contract" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Contract</label>
+                <input type="file" id="contract" name="contract" [(ngModel)]="employee.contract" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required />
+            </div>
+            <!-- Visa -->
+            <div>
+                <label for="visa" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Visa</label>
+                <input type="file" id="visa" name="visa" [(ngModel)]="employee.visa" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required />
+            </div>
+          </div>
+          <hr>
+      </div>
+
+      <!-- Professional Information Section -->
+      <div class="mb-6">
+          <h2 class="text-xl font-semibold mb-2">Section 3: Professional Information</h2>
+          <hr>
+          <div class="grid gap-6 mb-6 md:grid-cols-2">
+              <!-- Job Title -->
+              <div>
+                  <label for="job_title" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Job Title</label>
+                  <input type="text" id="job_title" name="job_title" [(ngModel)]="employee.job_title" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Software Engineer" required />
+              </div>
+              <!-- Reports To -->
+              <div>
+                  <label for="reports_to" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Reports To</label>
+                  <input type="text" id="reports_to" name="reports_to" [(ngModel)]="employee.reports_to" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="John Smith" required />
+              </div>
+          </div>
+          <hr>
+      </div>
+
+      <!-- Confidential Information Section -->
+      <div class="mb-6">
+          <h2 class="text-xl font-semibold mb-2">Section 4: Confidential Information</h2>
+          <hr>
+          <div class="grid gap-6 mb-6 md:grid-cols-2">
+              <!-- Salary -->
+              <div>
+                  <label for="salary" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Salary</label>
+                  <input type="number" id="salary" name="salary" [(ngModel)]="employee.salary" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="50000" required />
+              </div>
+              <!-- Vacation Overall -->
+              <div>
+                <label for="vacation_overall" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Vacation Overall</label>
+                <input type="number" id="vacation_overall" name="vacation_overall" [(ngModel)]="employee.vacation_overall" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="20" required />
+            </div>
+            <!-- Vacation Left -->
+            <div>
+                <label for="vacation_left" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Vacation Left</label>
+                <input type="number" id="vacation_left" name="vacation_left" [(ngModel)]="employee.vacation_left" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="15" required />
+            </div>
+            <!-- Bonuses -->
+            <div>
+                <label for="bonuses" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Bonuses</label>
+                <input type="number" id="bonuses" name="bonuses" [(ngModel)]="employee.bonuses" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="5000" required />
+            </div>
+            <!-- Login ID -->
+            <div>
+                <label for="login_id" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Login ID</label>
+                <input type="text" id="login_id" name="login_id" [(ngModel)]="employee.login_id" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="john.doe" required />
+            </div>
+            <!-- Password -->
+            <div>
+                <label for="password" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Password</label>
+                <input type="password" id="password" name="password" [(ngModel)]="employee.password" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="••••••••" required />
+            </div>
+          </div>
+          <hr>
+      </div>
+
+      <!-- Submit Button -->
+      <button type="submit" class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded">Submit</button>
+  </form>
+</div>
+
+
