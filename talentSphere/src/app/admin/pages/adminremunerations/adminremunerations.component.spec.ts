@@ -8,10 +8,12 @@ describe('AdminremunerationsComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [AdminremunerationsComponent]
+      declarations: [ AdminremunerationsComponent ]
     })
     .compileComponents();
-    
+  });
+
+  beforeEach(() => {
     fixture = TestBed.createComponent(AdminremunerationsComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

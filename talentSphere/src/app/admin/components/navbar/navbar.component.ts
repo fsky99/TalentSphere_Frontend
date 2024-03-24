@@ -8,9 +8,14 @@ import { Component, EventEmitter, Output } from '@angular/core';
 export class NavbarComponent {
   isSidebarOpen = false;
   @Output() sidebarState = new EventEmitter<boolean>();
+  isButtonActive = false;
 
   toggleSidebar() {
     this.isSidebarOpen = !this.isSidebarOpen;
     this.sidebarState.emit(this.isSidebarOpen);
+  }
+
+  toggleColor() {
+    this.isButtonActive = !this.isButtonActive;
   }
 }
