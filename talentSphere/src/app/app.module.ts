@@ -14,7 +14,8 @@ import { AdmindirectoryComponent } from './admin/pages/admindirectory/admindirec
 import { AdminremunerationsComponent } from './admin/pages/adminremunerations/adminremunerations.component';
 import { AdminaddemployeeComponent } from './admin/pages/adminaddemployee/adminaddemployee.component';
 import { AdmineventsComponent } from './admin/pages/adminevents/adminevents.component';
-
+import { FormsModule } from '@angular/forms'; 
+import { HttpClientModule } from '@angular/common/http';
 @NgModule({
   declarations: [
     AppComponent,
@@ -27,11 +28,14 @@ import { AdmineventsComponent } from './admin/pages/adminevents/adminevents.comp
     AdmindirectoryComponent,
     AdminremunerationsComponent,
     AdminaddemployeeComponent,
-    AdmineventsComponent
+    AdmineventsComponent, 
+     
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule, 
+    HttpClientModule,
   ],
   providers: [
     provideAnimationsAsync()
