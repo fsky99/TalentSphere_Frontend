@@ -21,6 +21,10 @@ async login() {
   if (response.success=='login successful' ){
 this.talent.setLoggedIn(true)
 localStorage.setItem('email',response.email)
+localStorage.setItem('id',response.id)
+localStorage.setItem('token',response.token)
+localStorage.setItem('type',response.type)
+
 console.log("function entered")
 console.log(response);
 
