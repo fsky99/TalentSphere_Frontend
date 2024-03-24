@@ -1,0 +1,91 @@
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 60px;
+  height: 100%;
+  background: #007bff;
+  color: white;
+  transition: width 0.3s ease;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebar.open {
+  width: 250px;
+}
+
+.header-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 50px;
+  margin-bottom: 15%;
+}
+
+.header-text {
+  margin-left: 17%;
+  font-weight: bolder;
+  text-overflow: ellipsis;
+}
+.sidebar-nav {
+  flex: 1;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.nav-item {
+  display: flex;
+  align-items: center;
+  padding: 0.5rem 1.2rem 0.5rem 0.5rem;
+  color: white;
+  text-decoration: none;
+  position: relative;
+  font-weight: bolder;
+  transition: background-color 0.3s ease;
+}
+
+.nav-item:hover {
+  background-color: rgb(8, 219, 68) !important;
+  color: #f0f0f0;
+  transition: color 0.3s ease;
+}
+.nav-item::after {
+  content: '';
+  position: absolute;
+  right: 0.5rem;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 0;
+  height: 0;
+}
+
+.nav-text {
+  flex: 1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.toggle-icon {
+  width: 10%;
+  height: auto;
+}
+
+.sidebar.open .nav-text {
+  opacity: 1;
+  visibility: visible;
+}
+
+.sidebar-nav li a:hover .nav-text {
+  opacity: 1;
+  visibility: visible;
+}
+
+.nav-item svg {
+  width: 25px;
+  height: 25px;
+  margin-right: 10%;
+}

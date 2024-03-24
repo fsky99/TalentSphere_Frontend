@@ -1,1 +1,4 @@
-<router-outlet></router-outlet>
+<app-navbar (sidebarState)="isSidebarOpen = $event"></app-navbar>
+<div class="main-content" [ngStyle]="{'margin-left': isSidebarOpen ? '250px' : '60px'}">
+  <router-outlet></router-outlet>
+</div>
