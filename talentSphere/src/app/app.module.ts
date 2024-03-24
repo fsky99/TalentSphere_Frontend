@@ -14,7 +14,6 @@ import { AdmindashboardComponent } from './admin/pages/admindashboard/admindashb
 import { AdmindirectoryComponent } from './admin/pages/admindirectory/admindirectory.component';
 import { AdminremunerationsComponent } from './admin/pages/adminremunerations/adminremunerations.component';
 import { AdmineventsComponent } from './admin/pages/adminevents/adminevents.component';
-import { FormsModule } from '@angular/forms'; 
 import { HttpClientModule } from '@angular/common/http';
 
 import { EmployeeDashComponent } from './employee/employee-dash/employee-dash.component';

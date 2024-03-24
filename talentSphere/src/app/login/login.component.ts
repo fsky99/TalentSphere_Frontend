@@ -25,7 +25,6 @@ localStorage.setItem('id',response.id)
 localStorage.setItem('token',response.token)
 localStorage.setItem('type',response.type)
 
-console.log("function entered")
 console.log(response);
 
   }
