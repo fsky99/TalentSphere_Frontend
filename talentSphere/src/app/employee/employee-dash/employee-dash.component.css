@@ -33,6 +33,68 @@ h2 {
   /* box-shadow: 0 20px 30px -20px rgba(5, 5, 5, 0.14); */
   box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;
 }
+
+.eventCard {
+  width: 100%;
+  max-width: 290px;
+  height: 70px;
+  background: #353535;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  backdrop-filter: blur(10px);
+  transition: 0.5s ease-in-out;
+}
+
+.eventCard:hover {
+  cursor: pointer;
+  transform: scale(1.05);
+}
+
+.eventCardimg {
+  width: 50px;
+  height: 50px;
+  margin-left: 10px;
+  border-radius: 10px;
+  background: linear-gradient(#d7cfcf, #9198e5);
+}
+
+.eventCard:hover > .eventCardimg {
+  transition: 0.5s ease-in-out;
+  background: linear-gradient(#9198e5, #712020);
+}
+
+.eventTextBox {
+  width: calc(100% - 90px);
+  margin-left: 10px;
+  color: white;
+  font-family: 'Poppins' sans-serif;
+}
+
+.eventTextContent {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.eventSpan {
+  font-size: 10px;
+}
+
+.eventH1 {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.eventP {
+  font-size: 12px;
+  font-weight: lighter;
+}
+
+
+
+
 .dashboard-card-activities {
   background-color: rgba(243, 244, 246, 1);
   padding: 2rem;
