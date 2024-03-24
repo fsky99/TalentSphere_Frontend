@@ -16,7 +16,7 @@ h2 {
 }
 
 .dashboard-card-leave {
-  background-color: rgba(243, 244, 246, 1);
+  background-color: #f8f8f8;
   padding: 2rem;
   height: 100px;
   width: 320px;
@@ -25,7 +25,7 @@ h2 {
   box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;
 }
 .dashboard-card-events {
-  background-color: rgba(243, 244, 246, 1);
+  background-color: #f8f8f8;
   padding: 2rem;
   height: 320px;
   width: 520px;
@@ -35,11 +35,11 @@ h2 {
 }
 
 .eventCard {
-  width: 100%;
-  max-width: 290px;
+  width: 500px;
+  max-width: 495px;
   height: 70px;
-  background: #353535;
-  border-radius: 20px;
+  background: #e36329;
+  border-radius: 8px;
   display: flex;
   align-items: center;
   justify-content: left;
@@ -47,29 +47,29 @@ h2 {
   transition: 0.5s ease-in-out;
 }
 
-.eventCard:hover {
+/* .eventCard:hover {
   cursor: pointer;
   transform: scale(1.05);
-}
+} */
 
 .eventCardimg {
   width: 50px;
   height: 50px;
   margin-left: 10px;
-  border-radius: 10px;
-  background: linear-gradient(#d7cfcf, #9198e5);
+  border-radius: 8px;
+  background: #fff;
 }
 
-.eventCard:hover > .eventCardimg {
+/* .eventCard:hover > .eventCardimg {
   transition: 0.5s ease-in-out;
   background: linear-gradient(#9198e5, #712020);
-}
+} */
 
 .eventTextBox {
   width: calc(100% - 90px);
   margin-left: 10px;
   color: white;
-  font-family: 'Poppins' sans-serif;
+  font-family: "Poppins" sans-serif;
 }
 
 .eventTextContent {
@@ -92,11 +92,8 @@ h2 {
   font-weight: lighter;
 }
 
-
-
-
 .dashboard-card-activities {
-  background-color: rgba(243, 244, 246, 1);
+  background-color: #f8f8f8;
   padding: 2rem;
   height: 320px;
   width: 520px;
@@ -105,7 +102,7 @@ h2 {
   box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;
 }
 .dashboard-card-daysOff {
-  background-color: rgba(243, 244, 246, 1);
+  background-color: #f8f8f8;
   padding: 2rem;
   height: 320px;
   width: 520px;
@@ -114,7 +111,7 @@ h2 {
   box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;
 }
 .dashboard-card-myActivity {
-  background-color: rgba(243, 244, 246, 1);
+  background-color: #f8f8f8;
   padding: 2rem;
   height: 320px;
   width: 520px;
