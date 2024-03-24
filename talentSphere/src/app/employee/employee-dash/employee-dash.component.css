@@ -1,0 +1,94 @@
+h2 {
+  color: blue;
+}
+
+.dashboard-layout {
+  height: 1000px;
+  padding-bottom: 100px;
+  margin-left: 60px;
+  gap: 30px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  align-items: flex-start;
+  align-content: stretch;
+}
+
+.dashboard-card-leave {
+  background-color: rgba(243, 244, 246, 1);
+  padding: 2rem;
+  height: 100px;
+  width: 320px;
+  border-radius: 10px;
+  /* box-shadow: 0 20px 30px -20px rgba(5, 5, 5, 0.14); */
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;
+}
+.dashboard-card-events {
+  background-color: rgba(243, 244, 246, 1);
+  padding: 2rem;
+  height: 320px;
+  width: 520px;
+  border-radius: 10px;
+  /* box-shadow: 0 20px 30px -20px rgba(5, 5, 5, 0.14); */
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;
+}
+.dashboard-card-activities {
+  background-color: rgba(243, 244, 246, 1);
+  padding: 2rem;
+  height: 320px;
+  width: 520px;
+  border-radius: 10px;
+  /* box-shadow: 0 20px 30px -20px rgba(5, 5, 5, 0.14); */
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;
+}
+.dashboard-card-daysOff {
+  background-color: rgba(243, 244, 246, 1);
+  padding: 2rem;
+  height: 320px;
+  width: 520px;
+  border-radius: 10px;
+  /* box-shadow: 0 20px 30px -20px rgba(5, 5, 5, 0.14); */
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;
+}
+.dashboard-card-myActivity {
+  background-color: rgba(243, 244, 246, 1);
+  padding: 2rem;
+  height: 320px;
+  width: 520px;
+  border-radius: 10px;
+  /* box-shadow: 0 20px 30px -20px rgba(5, 5, 5, 0.14); */
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;
+}
+
+.dashboard-header {
+  display: flex;
+  align-items: center;
+  grid-gap: 1rem;
+  gap: 1rem;
+}
+
+.dashboard-header .image {
+  height: 4rem;
+  width: 4rem;
+  border-radius: 9999px;
+  object-fit: cover;
+  background-color: royalblue;
+}
+
+.name {
+  margin-top: 0.25rem;
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+  font-weight: 600;
+  --tw-text-opacity: 1;
+  color: rgba(55, 65, 81, 1);
+}
+
+.dashboard-text {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  margin-top: 1rem;
+  color: rgba(107, 114, 128, 1);
+}

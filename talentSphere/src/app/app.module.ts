@@ -14,6 +14,7 @@ import { AdmindirectoryComponent } from './admin/pages/admindirectory/admindirec
 import { AdminremunerationsComponent } from './admin/pages/adminremunerations/adminremunerations.component';
 import { AdminaddemployeeComponent } from './admin/pages/adminaddemployee/adminaddemployee.component';
 import { AdmineventsComponent } from './admin/pages/adminevents/adminevents.component';
+import { EmployeeDashComponent } from './employee/employee-dash/employee-dash.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { AdmineventsComponent } from './admin/pages/adminevents/adminevents.comp
     AdmindirectoryComponent,
     AdminremunerationsComponent,
     AdminaddemployeeComponent,
-    AdmineventsComponent
+    AdmineventsComponent,
+    EmployeeDashComponent,
   ],
   imports: [
     BrowserModule,
