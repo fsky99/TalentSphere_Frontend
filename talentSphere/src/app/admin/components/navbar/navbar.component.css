@@ -4,7 +4,7 @@
   left: 0;
   width: 60px;
   height: 100%;
-  background: #007bff;
+  background: #0f3d61;
   color: white;
   transition: width 0.3s ease;
   overflow: hidden;
@@ -19,16 +19,18 @@
 .header-content {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-start;
   width: 50px;
-  margin-bottom: 15%;
+  margin: 10%;
 }
 
 .header-text {
-  margin-left: 17%;
+  margin-left: 10%;
   font-weight: bolder;
   text-overflow: ellipsis;
+  overflow: hidden;
 }
+
 .sidebar-nav {
   flex: 1;
   list-style: none;
@@ -39,19 +41,19 @@
 .nav-item {
   display: flex;
   align-items: center;
-  padding: 0.5rem 1.2rem 0.5rem 0.5rem;
+  padding: 0.5rem 1rem;
   color: white;
   text-decoration: none;
-  position: relative;
   font-weight: bolder;
   transition: background-color 0.3s ease;
 }
 
 .nav-item:hover {
-  background-color: rgb(8, 219, 68) !important;
+  background-color: #179fab !important;
   color: #f0f0f0;
   transition: color 0.3s ease;
 }
+
 .nav-item::after {
   content: '';
   position: absolute;
@@ -85,7 +87,74 @@
 }
 
 .nav-item svg {
-  width: 25px;
-  height: 25px;
-  margin-right: 10%;
+  margin-right: 15%;
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+}
+
+.toggle-button {
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+}
+
+.toggle-button.active {
+  background-color: black;
+}
+
+.icon {
+  margin-left: 10px;
+}
+
+.text {
+  margin-left: 10px;
+}
+
+.profile-info {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin: 1rem 0;
+}
+
+.profile-info img {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  margin-left: 10px;
+}
+
+.profile-info .name,
+.profile-info .join-date {
+  display: none;
+  color: white;
+}
+
+.sidebar.open .profile-info .name,
+.sidebar.open .profile-info .join-date {
+  display: block;
+}
+
+.status-button {
+  display: none;
+  margin: 1rem auto;
+  padding: 0.5rem 1rem;
+  font-weight: bold;
+  color: white;
+  background-color: #ea5c39;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-left: 30%;
+}
+
+.status-button:hover {
+  background-color: #179fab;
+}
+
+.sidebar.open .status-button {
+  display: block;
 }
