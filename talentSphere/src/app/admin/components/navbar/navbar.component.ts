@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 
 @Component({
   selector: 'app-navbar',
@@ -7,9 +7,10 @@ import { Component } from '@angular/core';
 })
 export class NavbarComponent {
   isSidebarOpen = false;
+  @Output() sidebarState = new EventEmitter<boolean>();
 
   toggleSidebar() {
     this.isSidebarOpen = !this.isSidebarOpen;
-    document.body.classList.toggle('sidebar-open', this.isSidebarOpen);
+    this.sidebarState.emit(this.isSidebarOpen);
   }
 }

@@ -1,11 +1,9 @@
-.main-content {
-  transition: margin-left 0.3s ease;
-}
-
-.sidebar.open ~ .main-content {
+.content-wrapper.sidebar-open .main-content {
   margin-left: 250px; /* Adjust based on the open sidebar width */
 }
 
-.sidebar:not(.open) ~ .main-content {
+.main-content {
+  transition: margin-left 0.3s ease;
   margin-left: 60px; /* Adjust based on the closed sidebar width */
+  transition: margin-left 0.3s ease;
 }
