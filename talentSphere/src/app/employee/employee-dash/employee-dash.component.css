@@ -1,0 +1,153 @@
+h2 {
+  color: blue;
+}
+
+.dashboard-layout {
+  height: 1000px;
+  padding-bottom: 100px;
+  margin-left: 60px;
+  gap: 30px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  align-items: flex-start;
+  align-content: stretch;
+}
+
+.dashboard-card-leave {
+  background-color: #f8f8f8;
+  padding: 2rem;
+  height: 100px;
+  width: 320px;
+  border-radius: 10px;
+  /* box-shadow: 0 20px 30px -20px rgba(5, 5, 5, 0.14); */
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;
+}
+.dashboard-card-events {
+  background-color: #f8f8f8;
+  padding: 2rem;
+  height: 320px;
+  width: 520px;
+  border-radius: 10px;
+  /* box-shadow: 0 20px 30px -20px rgba(5, 5, 5, 0.14); */
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;
+}
+
+.eventCard {
+  width: 500px;
+  max-width: 495px;
+  height: 70px;
+  background: #e36329;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  backdrop-filter: blur(10px);
+  transition: 0.5s ease-in-out;
+}
+
+/* .eventCard:hover {
+  cursor: pointer;
+  transform: scale(1.05);
+} */
+
+.eventCardimg {
+  width: 50px;
+  height: 50px;
+  margin-left: 10px;
+  border-radius: 8px;
+  background: #fff;
+}
+
+/* .eventCard:hover > .eventCardimg {
+  transition: 0.5s ease-in-out;
+  background: linear-gradient(#9198e5, #712020);
+} */
+
+.eventTextBox {
+  width: calc(100% - 90px);
+  margin-left: 10px;
+  color: white;
+  font-family: "Poppins" sans-serif;
+}
+
+.eventTextContent {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.eventSpan {
+  font-size: 10px;
+}
+
+.eventH1 {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.eventP {
+  font-size: 12px;
+  font-weight: lighter;
+}
+
+.dashboard-card-activities {
+  background-color: #f8f8f8;
+  padding: 2rem;
+  height: 320px;
+  width: 520px;
+  border-radius: 10px;
+  /* box-shadow: 0 20px 30px -20px rgba(5, 5, 5, 0.14); */
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;
+}
+.dashboard-card-daysOff {
+  background-color: #f8f8f8;
+  padding: 2rem;
+  height: 320px;
+  width: 520px;
+  border-radius: 10px;
+  /* box-shadow: 0 20px 30px -20px rgba(5, 5, 5, 0.14); */
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;
+}
+.dashboard-card-myActivity {
+  background-color: #f8f8f8;
+  padding: 2rem;
+  height: 320px;
+  width: 520px;
+  border-radius: 10px;
+  /* box-shadow: 0 20px 30px -20px rgba(5, 5, 5, 0.14); */
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;
+}
+
+.dashboard-header {
+  display: flex;
+  align-items: center;
+  grid-gap: 1rem;
+  gap: 1rem;
+}
+
+.dashboard-header .image {
+  height: 4rem;
+  width: 4rem;
+  border-radius: 9999px;
+  object-fit: cover;
+  background-color: royalblue;
+}
+
+.name {
+  margin-top: 0.25rem;
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+  font-weight: 600;
+  --tw-text-opacity: 1;
+  color: rgba(55, 65, 81, 1);
+}
+
+.dashboard-text {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  margin-top: 1rem;
+  color: rgba(107, 114, 128, 1);
+}
