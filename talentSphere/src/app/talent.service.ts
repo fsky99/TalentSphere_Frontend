@@ -44,8 +44,15 @@ getAllSalaries(){
 getUser(id:any){
   return this.http.get(`${this.baseUrl}/users/${id}`, this.getRequestOptions())
 }
-
-
+getEmployeesHobInfo(){
+  return this.http.get(this.baseUrl +'/employeejobinfo', this.getRequestOptions())
+}
+getEmployeeLeaves(){
+  return this.http.get(this.baseUrl +'/empleave' , this.getRequestOptions())
+}
+getAllBonuses(){
+  return this.http.get(this.baseUrl+ '/bonus', this.getRequestOptions())
+}
 
 
 
