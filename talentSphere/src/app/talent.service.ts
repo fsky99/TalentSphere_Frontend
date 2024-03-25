@@ -54,6 +54,28 @@ getAllBonuses(){
   return this.http.get(this.baseUrl+ '/bonus', this.getRequestOptions())
 }
 
+//create 
+createUser(userData:any){
+  return this.http.post(this.baseUrl + '/addUser', userData ,this.getRequestOptions())
+}
+
+createJobInfo(jobInfo:any){
+  return this.http.post(this.baseUrl + '/addEmployeeJobInfo' , jobInfo . this.getRequestOptions())
+}
+
+createSalary(empSalary:any){
+  return this.http.post(this.baseUrl + '/addSalary' , empSalary , this.getRequestOptions())
+}
+
+createEmployee(emp:any){
+  return this.http.post(this.baseUrl +'/addEmployee' , emp , this.getRequestOptions())
+}
+
+
+
+
+
+
 
 
 }

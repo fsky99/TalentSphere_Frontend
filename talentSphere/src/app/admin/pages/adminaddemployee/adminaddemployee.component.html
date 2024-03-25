@@ -30,10 +30,13 @@
                   <label for="dob" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Date of Birth</label>
                   <input type="date" id="dob" name="dob" [(ngModel)]="employee.dob" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required />
               </div>
-              <!-- Nationality -->
+              <!-- Gender -->
               <div>
-                  <label for="nationality" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Nationality</label>
-                  <input type="text" id="nationality" name="nationality" [(ngModel)]="employee.nationality" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="American" required />
+                  <label for="nationality" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Gender</label>
+                  <select   name="gender" [(ngModel)]="employee.picture" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required >
+                    <option>Female</option>
+                    <option>Male</option>
+                    </select>
               </div>
                 <!-- Country -->
                 <div>
@@ -55,6 +58,22 @@
                   <label for="picture" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Picture</label>
                   <input type="file" id="picture" name="picture" [(ngModel)]="employee.picture" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required />
               </div>
+              <div>
+                <label  class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Type</label>
+                <select   name="type" [(ngModel)]="employee.picture" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required >
+                    <option>HR</option>
+                    <option>Employee</option>
+                    </select>
+            </div>
+            <div>
+                <label for="address" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Joining Date</label>
+                <input type="date" id="address" name="address" [(ngModel)]="employee.address" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="123 Main St" required />
+            </div>
+            <div>
+                <label for="address" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Rank</label>
+                <input type="text" id="address" name="address" [(ngModel)]="employee.address" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="C-10" required />
+            </div>
+      
           </div>
           <hr>
       </div>
@@ -84,6 +103,11 @@
                 <label for="visa" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Visa</label>
                 <input type="file" id="visa" name="visa" [(ngModel)]="employee.visa" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required />
             </div>
+              <!-- Health Check -->
+              <div>
+                <label  class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Health Check</label>
+                <input type="file" id="visa" name="visa" [(ngModel)]="employee.visa" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required />
+            </div>
           </div>
           <hr>
       </div>
@@ -100,9 +124,11 @@
               </div>
               <!-- Reports To -->
               <div>
-                  <label for="reports_to" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Reports To</label>
-                  <input type="text" id="reports_to" name="reports_to" [(ngModel)]="employee.reports_to" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="John Smith" required />
-              </div>
+                <label for="address" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Report To</label>
+                <select id="address" name="address" [(ngModel)]="employee.address" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="C-10" required >
+<option>make the option names of people in the db</option>
+                    </select>
+            </div>
           </div>
           <hr>
       </div>
@@ -119,22 +145,13 @@
               </div>
               <!-- Vacation Overall -->
               <div>
-                <label for="vacation_overall" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Vacation Overall</label>
-                <input type="number" id="vacation_overall" name="vacation_overall" [(ngModel)]="employee.vacation_overall" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="20" required />
+                <label for="vacation_overall" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Department</label>
+                <input type="text" id="vacation_overall" name="vacation_overall" [(ngModel)]="employee.vacation_overall" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="IT" required />
             </div>
-            <!-- Vacation Left -->
+          
+            <!-- UserName ID -->
             <div>
-                <label for="vacation_left" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Vacation Left</label>
-                <input type="number" id="vacation_left" name="vacation_left" [(ngModel)]="employee.vacation_left" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="15" required />
-            </div>
-            <!-- Bonuses -->
-            <div>
-                <label for="bonuses" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Bonuses</label>
-                <input type="number" id="bonuses" name="bonuses" [(ngModel)]="employee.bonuses" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="5000" required />
-            </div>
-            <!-- Login ID -->
-            <div>
-                <label for="login_id" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Login ID</label>
+                <label for="login_id" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"> User Name</label>
                 <input type="text" id="login_id" name="login_id" [(ngModel)]="employee.login_id" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="john.doe" required />
             </div>
             <!-- Password -->
