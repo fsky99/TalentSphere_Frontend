@@ -1,4 +1,4 @@
-h2 {
+/* h2 {
   color: blue;
 }
 
@@ -21,7 +21,7 @@ h2 {
   height: 100px;
   width: 320px;
   border-radius: 10px;
-  /* box-shadow: 0 20px 30px -20px rgba(5, 5, 5, 0.14); */
+  box-shadow: 0 20px 30px -20px rgba(5, 5, 5, 0.14);
   box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;
 }
 .dashboard-card-events {
@@ -30,7 +30,7 @@ h2 {
   height: 320px;
   width: 520px;
   border-radius: 10px;
-  /* box-shadow: 0 20px 30px -20px rgba(5, 5, 5, 0.14); */
+  box-shadow: 0 20px 30px -20px rgba(5, 5, 5, 0.14);
   box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;
 }
 
@@ -48,10 +48,10 @@ h2 {
   transition: 0.5s ease-in-out;
 }
 
-/* .eventCard:hover {
+.eventCard:hover {
   cursor: pointer;
   transform: scale(1.05);
-} */
+}
 
 .eventCardimg {
   width: 50px;
@@ -61,10 +61,10 @@ h2 {
   background: #fff;
 }
 
-/* .eventCard:hover > .eventCardimg {
+.eventCard:hover > .eventCardimg {
   transition: 0.5s ease-in-out;
   background: linear-gradient(#9198e5, #712020);
-} */
+}
 
 .eventTextBox {
   width: calc(100% - 90px);
@@ -99,7 +99,7 @@ h2 {
   height: 320px;
   width: 520px;
   border-radius: 10px;
-  /* box-shadow: 0 20px 30px -20px rgba(5, 5, 5, 0.14); */
+  box-shadow: 0 20px 30px -20px rgba(5, 5, 5, 0.14);
   box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;
 }
 
@@ -160,7 +160,7 @@ h2 {
   height: 320px;
   width: 520px;
   border-radius: 10px;
-  /* box-shadow: 0 20px 30px -20px rgba(5, 5, 5, 0.14); */
+  box-shadow: 0 20px 30px -20px rgba(5, 5, 5, 0.14);
   box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;
 }
 .dashboard-card-myActivity {
@@ -169,7 +169,7 @@ h2 {
   height: 320px;
   width: 520px;
   border-radius: 10px;
-  /* box-shadow: 0 20px 30px -20px rgba(5, 5, 5, 0.14); */
+  box-shadow: 0 20px 30px -20px rgba(5, 5, 5, 0.14);
   box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;
 }
 
@@ -194,7 +194,7 @@ h2 {
   line-height: 1.75rem;
   font-weight: 600;
   --tw-text-opacity: 1;
-  /* color: rgba(55, 65, 81, 1); */
+  color: rgba(55, 65, 81, 1);
   color: #179fab;
 }
 
@@ -203,5 +203,6 @@ h2 {
   display: -webkit-box;
   -webkit-box-orient: vertical;
   margin-top: 1rem;
-  /* color: rgba(107, 114, 128, 1); */
-}
+  color: rgba(107, 114, 128, 1);
+} */
+
