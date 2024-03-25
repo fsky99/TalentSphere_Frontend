@@ -1,5 +1,6 @@
-// app.component.ts
 import { Component } from '@angular/core';
+import { Router, NavigationEnd, Event as RouterEvent } from '@angular/router';
+import { filter } from 'rxjs/operators';
 
 @Component({
   selector: 'app-root',
@@ -8,4 +9,17 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   isSidebarOpen = false;
+  private currentRoute: string = '';  // Initialize with an empty string
+
+  constructor(private router: Router) {
+    this.router.events.pipe(
+      filter((event: RouterEvent): event is NavigationEnd => event instanceof NavigationEnd)
+    ).subscribe((event: NavigationEnd) => {
+      this.currentRoute = event.url;
+    });
+  }
+
+  isLoginPage(): boolean {
+    return this.currentRoute === '/login';
+  }
 }
