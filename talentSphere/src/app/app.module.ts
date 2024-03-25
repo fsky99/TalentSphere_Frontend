@@ -14,6 +14,8 @@ import { AdmindashboardComponent } from './admin/pages/admindashboard/admindashb
 import { AdmindirectoryComponent } from './admin/pages/admindirectory/admindirectory.component';
 import { AdminremunerationsComponent } from './admin/pages/adminremunerations/adminremunerations.component';
 import { AdmineventsComponent } from './admin/pages/adminevents/adminevents.component';
+import { HttpClientModule } from '@angular/common/http';
+
 import { EmployeeDashComponent } from './employee/employee-dash/employee-dash.component';
 import { AdminrequestsComponent } from './admin/pages/adminrequests/adminrequests.component';
 import { AdminmessagesComponent } from './admin/pages/adminmessages/adminmessages.component';
@@ -32,6 +34,7 @@ import { MasterProfileComponent } from './admin/pages/masterprofile/masterprofil
     AdmindashboardComponent,
     AdmindirectoryComponent,
     AdminremunerationsComponent,
+
     AdmineventsComponent,
     EmployeeDashComponent,
     AdminrequestsComponent,
@@ -43,7 +46,10 @@ import { MasterProfileComponent } from './admin/pages/masterprofile/masterprofil
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+
+    FormsModule, 
+    HttpClientModule,
+
   ],
   providers: [
     provideAnimationsAsync()

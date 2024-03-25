@@ -1,12 +1,11 @@
-<p>login works!</p>
 <div class="loginForm">
   <h1 >Login</h1>
-  <form>
-   <b>Email</b> <input type="email" placeholder="hello@reallygreatsite.com"/>
+  <form   (ngSubmit)="login()">
+   <b>Email</b> <input type="email" placeholder="hello@reallygreatsite.com" name="email"   [(ngModel)]="user.email" />
    <br/>
-   <b>Password</b> <input type="password" placeholder="****"/>
+
+   <b>Password</b> <input    type="password" placeholder="****" name="password"  [(ngModel)]="user.password"/>
    <br/>
-<button>Login</button>
+<button type="submit" >Login</button>
   </form>
-</div>
-<button (click)="testButton()">somehting</button>
+</div>  
