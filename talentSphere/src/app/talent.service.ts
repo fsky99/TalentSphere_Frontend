@@ -13,9 +13,16 @@ export class TalentService {
   }
   private LoggedIn = false;
   private baseUrl = 'http://localhost:3000' 
-
+  private getRequestOptions() {
+    const token = localStorage.getItem('token');
+    let headers = new HttpHeaders();
+    if (token) {
+      headers = headers.set('Authorization', token);
+    }
+    return { headers: headers };
+  }
   isLoggedIn() {
-        this.LoggedIn = localStorage.getItem('isLoggedIn') === ('true');
+        this.LoggedIn = localStorage.getItem('isLoggedIn') === ('true')
         return (this.LoggedIn);
   }
   
@@ -28,11 +35,15 @@ login(user: any) {
 }
 
 getAllUsers() {
-  return this.http.get(this.baseUrl + '/users');
+  return this.http.get(this.baseUrl + '/users' , this.getRequestOptions())
 }
 
-
-
+getAllSalaries(){
+  return this.http.get(this.baseUrl +'/salary' ,  this.getRequestOptions())
+}
+getUser(id:any){
+  return this.http.get(`${this.baseUrl}/users/${id}`, this.getRequestOptions())
+}
 
 
 

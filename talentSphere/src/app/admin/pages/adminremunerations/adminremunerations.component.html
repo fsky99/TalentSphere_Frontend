@@ -36,7 +36,7 @@
       <input type="text" id="table-search-users" class="block p-2 pl-10 text-sm text-gray-900 border border-gray-300 rounded-lg w-80 bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Search for users">
     </div>
   </div>
-  <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
+  <table *ngFor="let res of combinedData" class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
     <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
       <tr>
         <th scope="col" class="p-4">
@@ -64,14 +64,14 @@
         </div>
       </td>
       <th scope="row" class="flex items-center px-6 py-4 text-gray-900 whitespace-nowrap dark:text-white">
-        <img class="w-10 h-10 rounded-full" src="/docs/images/people/profile-picture-1.jpg" alt="Jese image">
+        <img class="w-10 h-10 rounded-full" src={{res.picture}} alt="image">
         <div class="ps-3">
-          <div class="text-base font-semibold">{{ employee.name }}</div>
-          <div class="font-normal text-gray-500">{{ employee.email }}</div>
+          <div class="text-base font-semibold">{{ res.fname }} {{res.lname}}</div>
+          <div class="font-normal text-gray-500">{{ res.email }}</div>
         </div>  
       </th>
       <td class="px-6 py-4">{{ employee.position }}</td>
-      <td class="px-6 py-4">{{ employee.salary }}</td>
+      <td class="px-6 py-4">{{ res.salaryInfo.salary }}</td>
       <td class="px-6 py-4">{{ employee.overtime }}</td>
       <td class="px-6 py-4">{{ employee.daysTaken }}</td>
       <td class="px-6 py-4">{{ employee.daysAvailable }}</td>
