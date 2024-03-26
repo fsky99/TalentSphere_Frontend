@@ -12,7 +12,8 @@ import { AdminmessagesComponent } from './admin/pages/adminmessages/adminmessage
 import { AdminrequestsComponent } from './admin/pages/adminrequests/adminrequests.component';
 import { AdminAddEmployeeComponent } from './admin/pages/adminaddemployee/adminaddemployee.component';
 import { MasterProfileComponent } from './admin/pages/masterprofile/masterprofile.component';
-
+import { EmployeedirectoryComponent } from './employeedirectory/employeedirectory.component';
+import { AdminaddeventComponent } from './adminaddevent/adminaddevent.component';
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: 'login' },
   { path: 'login', component: LoginComponent },
@@ -26,7 +27,9 @@ const routes: Routes = [
   {path: 'admin-activities', component: AdminactivitiesComponent},
   {path: 'admin-messages', component: AdminmessagesComponent},
   {path:'admin-requests', component:AdminrequestsComponent},
-  { path: 'master-profile', component: MasterProfileComponent }
+  { path: 'master-profile', component: MasterProfileComponent },
+  { path: 'employee-directory', component: EmployeedirectoryComponent },
+  { path: 'admin-add-event', component: AdminaddeventComponent }
 ];
 
 @NgModule({

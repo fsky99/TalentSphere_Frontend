@@ -23,6 +23,8 @@ import { AdminactivitiesComponent } from './admin/pages/adminactivities/adminact
 import { AdminAddEmployeeComponent } from './admin/pages/adminaddemployee/adminaddemployee.component';
 import { MasterProfileComponent } from './admin/pages/masterprofile/masterprofile.component';
 import { StatuspopupComponent } from './admin/components/statuspopup/statuspopup.component';
+import { EmployeedirectoryComponent } from './employeedirectory/employeedirectory.component';
+import { AdminaddeventComponent } from './adminaddevent/adminaddevent.component';
 
 @NgModule({
   declarations: [
@@ -43,7 +45,9 @@ import { StatuspopupComponent } from './admin/components/statuspopup/statuspopup
     AdminactivitiesComponent,
     AdminAddEmployeeComponent,
     MasterProfileComponent,
-    StatuspopupComponent
+    StatuspopupComponent,
+    EmployeedirectoryComponent,
+    AdminaddeventComponent
   ],
   imports: [
     BrowserModule,
