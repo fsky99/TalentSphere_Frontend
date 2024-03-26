@@ -56,6 +56,7 @@
           </svg>
         </button>
       </div>
+      <div *ngFor="let res of jobInfo"></div>
       <div
         *ngFor="let res of combinedData"
         class="flex flex-col items-center pb-10"
@@ -69,6 +70,9 @@
           {{ res.fname }} {{ res.lname }} 
         </h5>
         <span class="text-sm text-gray-500">{{ res.jobInformation?.jobName }}</span>
+        <span class="text-sm text-gray-500" >{{ res.emp?.emprank}}</span>
+        <span class="text-sm text-gray-500" >{{ res.emp?.
+          department}}</span>
         <div class="flex mt-4 space-x-3">
           <button
             class="px-4 py-2 text-sm font-medium text-white bg-blue-600 rounded-lg"
