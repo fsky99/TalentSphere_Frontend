@@ -1,17 +1,15 @@
-
-<div class="flex justify-between py-10" >
+<div class="flex justify-between py-10">
   <h1 class="mb-2 text-4xl font-medium tracking-tight text-gray-600 dark:text-white">Events</h1>
-<div class="flex justify-end">
-  <button
-    type="button"
-    class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
-    routerLink="/admin-add-event"
-  >
-    Add Event
-  </button>
-   </div>
-  </div>
+  <button (click)="toggleStatusPopup()" class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded">Add Event</button>
+
+
 </div>
+
+<app-adminaddevent [isVisible]="isAddEventPopupVisible" (closePopup)="isAddEventPopupVisible = false"></app-adminaddevent>
+
+
+
+<!-- Event cards and other content -->
 
 
 <!-- pspspspspsps  -->
