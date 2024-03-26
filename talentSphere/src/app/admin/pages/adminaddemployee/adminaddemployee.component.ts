@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { TalentService } from '../../../talent.service';
 
 @Component({
   selector: 'app-adminaddemployee',
@@ -7,30 +8,63 @@ import { Component } from '@angular/core';
 })
 export class AdminAddEmployeeComponent {
   employee = {
-    first_name: '',
-    last_name: '',
+    id:null,
+    fname: '',
+    lname: '',
     email: '',
     dob: '',
-    nationality: '',
+    gender: '',
     country: '',
-    phone_number: '',
+    phoneno: '',
+    joiningDate : '',
+    emprank:"",
+    type: '',
     address: '',
     picture: '',
     cv: '',
     passport: '',
-    contract: '',
+    jobContract: '',
+    healthCheck:'',
     visa: '',
-    job_title: '',
-    reports_to: '',
+    jobName: '',
+    reportsTo: '',
     salary: 0,
-    vacation_overall: 0,
-    vacation_left: 0,
-    bonuses: 0,
-    login_id: '',
+    department: '',
+    account_no: '',
+    username: '',
     password: ''
   };
 
-  constructor() { }
+  constructor(private talent : TalentService) { }
+
+
+  userData : any ={
+    id: null,
+    fname :this.employee.fname ,lname : this.employee.lname ,
+    username : this.employee.username 
+,
+    email : this.employee.email,
+    password : this.employee.password
+,    type : this.employee.type ,
+
+    dob : this.employee.dob,  
+      phoneno : this.employee.phoneno ,
+    country : this.employee.country ,
+    address : this.employee.address ,
+
+    gender : this.employee.gender,
+    picture : this.employee.picture 
+  
+  }
+
+
+UserTableData : any =[]
+employeeTableData : any =[]
+salaryTableData : any =[]
+jobInfoTableData : any =[]
+
+
+
 
   approve() {
     // Implement your approve logic here
@@ -38,7 +72,23 @@ export class AdminAddEmployeeComponent {
     // Add your approve logic here
   }
 
-  submitForm() {
+ async submitForm() {
+
+//all the create will happen here
+
+
+console.log( " employee " + this.employee)
+
+this.talent.createUser(this.userData).subscribe(async(resp:any=[])=>{
+  this.UserTableData = resp
+})
+
+console.log("user table data" + this.UserTableData)
+
+
+
+
+
     // Implement your form submission logic here
     console.log('Form submitted', this.employee);
     // Add your form submission logic here
