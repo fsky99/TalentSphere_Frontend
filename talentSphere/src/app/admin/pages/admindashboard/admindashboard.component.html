@@ -2,27 +2,27 @@
     <!-- Events Table -->
     <div class="w-full text-center bg-white border border-gray-200 rounded-lg shadow sm:p-8 dark:bg-gray-800 dark:border-gray-700">
         
-        <div class="flex items-center justify-between mb-4 py-3">
+        <div  class="flex items-center justify-between mb-4 py-3">
           <h5 class="text-xl font-bold leading-none text-gray-900 dark:text-white">Events</h5>
-          <a href="#" class="text-sm font-medium text-blue-600 hover:underline dark:text-blue-500">View all</a>
+          <!-- <a href="#" class="text-sm font-medium text-blue-600 hover:underline dark:text-blue-500">View all</a> -->
         </div>
   
         <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
   
           <tbody>
-            <tr class="odd:bg-white odd:dark:bg-gray-900 even:bg-gray-50 even:dark:bg-gray-800 border-b dark:border-gray-700">
+            <tr *ngFor="let data of events" class="odd:bg-white odd:dark:bg-gray-900 even:bg-gray-50 even:dark:bg-gray-800 border-b dark:border-gray-700">
               <td class="px-6 py-6">
-                <img class="rounded w-14 h-14" src="https://via.placeholder.com/150" alt="Event image">
+                <img class="rounded w-14 h-14" src={{data.picture}} alt="Event image">
               </td>
               <th scope="row" class="px-6 py-6 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                GA Exhibition April 24
+                {{data.eventName}}
               </th>
               <td class="px-6 py-4">
-                Conference
+                {{formatDate(data.eventDate)}}
               </td>
               <td class="px-6 py-4">
-                22/03/2024
-              </td>
+                {{formatTime(data.eventDate)}}       
+       </td>
             </tr>
             <!-- Additional rows -->
           </tbody>
