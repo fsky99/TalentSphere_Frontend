@@ -44,6 +44,9 @@ getAllSalaries(){
 getUser(id:any){
   return this.http.get(`${this.baseUrl}/users/${id}`, this.getRequestOptions())
 }
+getUserActivity(id:any){
+  return this.http.get(`${this.baseUrl}/timeSheet/${id}`, this.getRequestOptions())
+}
 getEmployeesHobInfo(){
   return this.http.get(this.baseUrl +'/employeejobinfo', this.getRequestOptions())
 }
@@ -53,6 +56,13 @@ getEmployeeLeaves(){
 getAllBonuses(){
   return this.http.get(this.baseUrl+ '/bonus', this.getRequestOptions())
 }
+getAllActivities(){
+  return this.http.get(this.baseUrl + '/timeSheet', this.getRequestOptions())
+}
+getAllEvents(){
+  return this.http.get(this.baseUrl + '/eventss' , this.getRequestOptions())
+}
+
 
 //create 
 createUser(userData:any){
@@ -71,6 +81,24 @@ createEmployee(emp:any){
   return this.http.post(this.baseUrl +'/addEmployee' , emp , this.getRequestOptions())
 }
 
+createTimeSheet(data:any){
+return this.http.post(this.baseUrl +'/addTimeSheet' , data , this.getRequestOptions())
+}
+
+
+
+//updates
+
+updateStatus(status:any){
+  return this.http.put(this.baseUrl +'/updateEmpleave',status, this.getRequestOptions())
+}
+
+
+
+
+
+
+
 
 
 
@@ -78,7 +106,9 @@ getEmployeejobinfo(){
   return this.http.get(this.baseUrl+'/employeejobinfo', this.getRequestOptions())
 
 }
-
+getAllemployee(){
+  return this.http.get(this.baseUrl +'/employee' , this.getRequestOptions())
+}
 
 
 }

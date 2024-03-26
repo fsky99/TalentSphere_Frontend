@@ -1,4 +1,5 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component, EventEmitter, Output, ViewChild } from '@angular/core';
+import { StatuspopupComponent } from '../statuspopup/statuspopup.component';
 
 @Component({
   selector: 'app-navbar',
@@ -7,8 +8,9 @@ import { Component, EventEmitter, Output } from '@angular/core';
 })
 export class NavbarComponent {
   isSidebarOpen = false;
-  @Output() sidebarState = new EventEmitter<boolean>();
   isButtonActive = false;
+  @Output() sidebarState = new EventEmitter<boolean>();
+  @ViewChild(StatuspopupComponent) statusPopup!: StatuspopupComponent;
 
   toggleSidebar() {
     this.isSidebarOpen = !this.isSidebarOpen;
@@ -17,5 +19,9 @@ export class NavbarComponent {
 
   toggleColor() {
     this.isButtonActive = !this.isButtonActive;
+  }
+
+  toggleStatusPopup() {
+    this.statusPopup.togglePopup();
   }
 }

@@ -1,214 +1,144 @@
-<div class="flex flex-wrap justify-center gap-12">
-  <!-- Card 1: Annual Leave -->
-  <div class="w-2/5 p-4 bg-white border border-gray-200 rounded-lg shadow sm:p-8 dark:bg-gray-800 dark:border-gray-700">
-    <div class="flex items-center justify-between mb-4">
-      <h5 class="text-xl font-bold leading-none text-gray-900 dark:text-white">Annual Leave: 2 Days</h5>
-    </div>
-  </div>
-
-  <!-- Card 2: Events -->
-  <div class="w-2/5 p-4 text-center bg-white border border-gray-200 rounded-lg shadow sm:p-8 dark:bg-gray-800 dark:border-gray-700">
-    <div class="flex items-center justify-between mb-4">
-      <h5 class="text-xl font-bold leading-none text-gray-900 dark:text-white">Upcoming Events</h5>
-    </div>
-  </div>
-<!-- pspspspspsps -->
-<div class="w-2/5 p-4 bg-white border border-gray-200 rounded-lg shadow sm:p-8 dark:bg-gray-800 dark:border-gray-700">
-<div class="flex items-center justify-between mb-4">
-    <h5 class="text-xl font-bold leading-none text-gray-900 dark:text-white">Requests</h5>
-    <a href="#" class="text-sm font-medium text-blue-600 hover:underline dark:text-blue-500">View all</a>
-</div>
-<div class="flow-root">
-    <ul role="list" class="divide-y divide-gray-200 dark:divide-gray-700">
-        <li class="py-3 sm:py-4">
-            <div class="flex items-center">
-                <div class="flex-shrink-0">
-                    <img class="w-8 h-8 rounded-full" src="/docs/images/people/profile-picture-1.jpg" alt="Neil image">
-                </div>
-                <div class="flex-1 min-w-0 ms-4">
-                    <p class="text-sm font-medium text-gray-900 truncate dark:text-white">Ahmed Ahmed</p>
-                    <p class="text-sm text-gray-500 truncate dark:text-gray-400">Project Name</p>
-                </div>
-                <td class="px-6 py-4">
-                  <div class="flex items-center">
-                      <div class="h-2.5 w-2.5 rounded-full bg-red-500 me-2"></div> Closed
-                  </div>
-              </td>
-            </div>
-        </li>
-        <!-- pspspspspsp -->
-                <li class="py-3 sm:py-4">
-                  <div class="flex items-center">
-                      <div class="flex-shrink-0">
-                          <img class="w-8 h-8 rounded-full" src="/docs/images/people/profile-picture-1.jpg" alt="Neil image">
-                      </div>
-                      <div class="flex-1 min-w-0 ms-4">
-                          <p class="text-sm font-medium text-gray-900 truncate dark:text-white">Ahmed Ahmed</p>
-                          <p class="text-sm text-gray-500 truncate dark:text-gray-400">Project Name</p>
-                      </div>
-                      <td class="px-6 py-4">
-                        <div class="flex items-center">
-                            <div class="h-2.5 w-2.5 rounded-full bg-yellow-500 me-2"></div> Ongoing
-                        </div>
-                    </td>
-    
-                  </div>
-              </li>
-    </ul>
-</div>
-</div>
-
-<!-- pspspspspsps -->
-
-<div class="w-2/5 p-4 bg-white border border-gray-200 rounded-lg shadow sm:p-8 dark:bg-gray-800 dark:border-gray-700">
-<div class="flex items-center justify-between mb-4">
-    <h5 class="text-xl font-bold leading-none text-gray-900 dark:text-white">Activities</h5>
-    <a href="#" class="text-sm font-medium text-blue-600 hover:underline dark:text-blue-500">View all</a>
-</div>
-<div class="flow-root">
-    <ul role="list" class="divide-y divide-gray-200 dark:divide-gray-700">
-        <li class="py-3 sm:py-4">
-            <div class="flex items-center">
-                <div class="flex-shrink-0">
-                    <img class="w-8 h-8 rounded-full" src="/docs/images/people/profile-picture-1.jpg" alt="Neil image">
-                </div>
-                <div class="flex-1 min-w-0 ms-4">
-                    <p class="text-sm font-medium text-gray-900 truncate dark:text-white">Neil Sims</p>
-                    <p class="text-sm text-gray-500 truncate dark:text-gray-400">Project Name</p>
-                </div>
-                <td class="px-6 py-4">
-                  <div class="flex items-center">
-                      <div class="h-2.5 w-2.5 rounded-full bg-gray-500 me-2"></div> Pending
-                  </div>
-              </td>
-            </div>
-        </li>
+<div class="grid grid-cols-1 gap-6">
+    <!-- Events Table -->
+    <div class="w-full text-center bg-white border border-gray-200 rounded-lg shadow sm:p-8 dark:bg-gray-800 dark:border-gray-700">
         
-        <!-- pspspspspsp -->
-
-        <li class="py-3 sm:py-4">
-          <div class="flex items-center">
-              <div class="flex-shrink-0">
-                  <img class="w-8 h-8 rounded-full" src="/docs/images/people/profile-picture-1.jpg" alt="Neil image">
-              </div>
-              <div class="flex-1 min-w-0 ms-4">
-                  <p class="text-sm font-medium text-gray-900 truncate dark:text-white">Neil Sims</p>
-                  <p class="text-sm text-gray-500 truncate dark:text-gray-400">Project Name</p>
-              </div>
+        <div  class="flex items-center justify-between mb-4 py-3">
+          <h5 class="text-xl font-bold leading-none text-gray-900 dark:text-white">Events</h5>
+          <!-- <a href="#" class="text-sm font-medium text-blue-600 hover:underline dark:text-blue-500">View all</a> -->
+        </div>
+  
+        <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
+  
+          <tbody>
+            <tr *ngFor="let data of events" class="odd:bg-white odd:dark:bg-gray-900 even:bg-gray-50 even:dark:bg-gray-800 border-b dark:border-gray-700">
+              <td class="px-6 py-6">
+                <img class="rounded w-14 h-14" src={{data.picture}} alt="Event image">
+              </td>
+              <th scope="row" class="px-6 py-6 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                {{data.eventName}}
+              </th>
               <td class="px-6 py-4">
-                <div class="flex items-center">
-                    <div class="h-2.5 w-2.5 rounded-full bg-green-500 me-2"></div> Open
+                {{formatDate(data.eventDate)}}
+              </td>
+              <td class="px-6 py-4">
+                {{formatTime(data.eventDate)}}       
+       </td>
+            </tr>
+            <!-- Additional rows -->
+          </tbody>
+        </table>
+      </div>
+  
+  
+    <!-- Requests and Activities -->
+    <div class="grid grid-cols-2 gap-6">
+      <!-- Requests -->
+      <div class="w-full p-4 bg-white border border-gray-200 rounded-lg shadow sm:p-8 dark:bg-gray-800 dark:border-gray-700">
+        <div class="flex items-center justify-between mb-4">
+          <h5 class="text-xl font-bold leading-none text-gray-900 dark:text-white">Requests</h5>
+          <a href="#" class="text-sm font-medium text-blue-600 hover:underline dark:text-blue-500">View all</a>
+        </div>
+        <div class="flow-root">
+          <ul role="list" class="divide-y divide-gray-200 dark:divide-gray-700">
+            <li class="py-3 sm:py-4" *ngFor="let leaveData of combinedData">
+              <div class="flex items-center">
+                <div class="flex-shrink-0">
+                  <img class="w-8 h-8 rounded-full" src="https://via.placeholder.com/150" alt="Profile image">
                 </div>
-            </td>
-
-          </div>
-      </li>
-                <!-- pspspspspsp -->
-                <li class="py-3 sm:py-4">
+                <div class="flex-1 min-w-0 ms-4">
+                  <p class="text-sm font-medium text-gray-900 truncate dark:text-white">{{ leaveData.fname }} {{ leaveData.lname }}</p>
+                  <p class="text-sm text-gray-500 truncate dark:text-gray-400">Leave Request</p>
+                </div>
+                <div class="px-6 py-4">
                   <div class="flex items-center">
-                      <div class="flex-shrink-0">
-                          <img class="w-8 h-8 rounded-full" src="/docs/images/people/profile-picture-1.jpg" alt="Neil image">
-                      </div>
-                      <div class="flex-1 min-w-0 ms-4">
-                          <p class="text-sm font-medium text-gray-900 truncate dark:text-white">Neil Sims</p>
-                          <p class="text-sm text-gray-500 truncate dark:text-gray-400">Project Name</p>
-                      </div>
-                      <td class="px-6 py-4">
-                        <div class="flex items-center">
-                            <div class="h-2.5 w-2.5 rounded-full bg-yellow-500 me-2"></div> Ongoing
-                        </div>
-                    </td>
-    
+                    <div *ngIf="leaveData.leaves[0]?.status === 'A'" class="h-2.5 w-2.5 rounded-full bg-red-500 me-2"></div>
+                    <div *ngIf="leaveData.leaves[0]?.status !== 'A'" class="h-2.5 w-2.5 rounded-full bg-green-500 me-2"></div>
+                    <span>{{ leaveData.leaves[0]?.status === 'A' ? 'Closed' : 'Open' }}</span>
                   </div>
-              </li>
-    </ul>
-</div>
-</div>
-
-
-                <div class="w-5/6 p-4 text-center bg-white border border-gray-200 rounded-lg shadow sm:p-8 dark:bg-gray-800 dark:border-gray-700">
-                  <div class="relative overflow-x-auto">
-                    <div class="flex items-center justify-between mb-4">
-                      <h5 class="text-xl font-bold leading-none text-gray-900 dark:text-white">Upcoming Days Off</h5>
-                      <a href="#" class="text-sm font-medium text-blue-600 hover:underline dark:text-blue-500">View all</a>
-                  </div>
-                  <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
-                      <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
-                          <tr>
-                              <th scope="col" class="px-6 py-3">
-                                  Name
-                              </th>
-                              <th scope="col" class="px-6 py-3">
-                                  Role
-                              </th>
-                              <th scope="col" class="px-6 py-3">
-                                  Date
-                              </th>
-                          </tr>
-                      </thead>
-                      <tbody>
-                          <tr class="odd:bg-white odd:dark:bg-gray-900 even:bg-gray-50 even:dark:bg-gray-800 border-b dark:border-gray-700">
-                              <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                  Shaikha Al Sahra
-                              </th>
-                              <td class="px-6 py-4">
-                                  One
-                              </td>
-                              <td class="px-6 py-4">
-                                22/03/2024
-                              </td>
-                          </tr>
-                          <tr class="odd:bg-white odd:dark:bg-gray-900 even:bg-gray-50 even:dark:bg-gray-800 border-b dark:border-gray-700">
-                              <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                  Ahmed Ahmed
-                              </th>
-                              <td class="px-6 py-4">
-                                  Two
-                              </td>
-                              <td class="px-6 py-4">
-                                22/03/2024
-                              </td>
-
-                          </tr>
-                          <tr class="odd:bg-white odd:dark:bg-gray-900 even:bg-gray-50 even:dark:bg-gray-800 border-b dark:border-gray-700">
-                              <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                  Fatima Foad
-                              </th>
-                              <td class="px-6 py-4">
-                                  Three
-                              </td>
-                              <td class="px-6 py-4">
-                                22/03/2024
-                              </td>
-                          </tr>
-                          <tr class="odd:bg-white odd:dark:bg-gray-900 even:bg-gray-50 even:dark:bg-gray-800 border-b dark:border-gray-700">
-                              <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                  Shaikha Shai
-                              </th>
-                              <td class="px-6 py-4">
-                                  Four
-                              </td>
-                              <td class="px-6 py-4">
-                                22/03/2024
-                              </td>
-                          </tr>
-                          <tr>
-                              <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                  Ahmed Again
-                              </th>
-                              <td class="px-6 py-4">
-                                  Five
-                              </td>
-                              <td class="px-6 py-4">
-                                  22/03/2024
-                              </td>
-
-                          </tr>
-                      </tbody>
-                  </table>
-              </div>
                 </div>
-</div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+      
+      <!-- Activities -->
+      <div class="w-full p-4 bg-white border border-gray-200 rounded-lg shadow sm:p-8 dark:bg-gray-800 dark:border-gray-700">
+        <div class="flex items-center justify-between mb-4">
+          <h5 class="text-xl font-bold leading-none text-gray-900 dark:text-white">Activities</h5>
+          <!-- <a href="#" class="text-sm font-medium text-blue-600 hover:underline dark:text-blue-500">View all</a> -->
+        </div>
+        <div class="flow-root">
+          <ul role="list" class="divide-y divide-gray-200 dark:divide-gray-700"> 
+    
+              <li *ngFor="let data of combinedData" class="py-3 sm:py-4">
+                <div *ngFor="let act of data.activity
+                " class="flex items-center">
+                    <div class="flex-shrink-0">
+                        <img class="w-8 h-8 rounded-full" src={{data.picture}} alt="image">
+                    </div>
+                    <div class="flex-1 min-w-0 ms-4">
+                        <p class="text-sm font-medium text-gray-900 truncate dark:text-white">{{data.fname}} {{data.lname}}</p>
+                        <p class="text-sm text-gray-500 truncate dark:text-gray-400">{{act.projectName}}</p>
+                    </div>
+                    <td class="px-6 py-4">
+                      <div class="flex items-center">
+                        <div *ngIf="act.status === 'N'" class="h-2.5 w-2.5 rounded-full bg-green-500 me-2"></div> 
+                        <div *ngIf="act.status === 'C'" class="h-2.5 w-2.5 rounded-full bg-red-500 me-2"></div> 
+                        <span *ngIf="act.status === 'N'">Open</span>
+                        <span *ngIf="act.status === 'C'">Closed</span>
+                    
+                         </div>
+                  </td>
+    
+                </div>
+            </li>
+                      
+                  
+               
+          </ul>
+      </div>
+    </div>
+  </div>
 
-
-<!-- pspspspspsps -->
+  <!-- Upcoming Days Off Table -->
+  <div class="w-full text-center bg-white border border-gray-200 rounded-lg shadow sm:p-8 dark:bg-gray-800 dark:border-gray-700">
+    <div class="flex items-center justify-between mb-4">
+      <h5 class="text-xl font-bold leading-none text-gray-900 dark:text-white">Upcoming Days Off</h5>
+      <a href="#" class="text-sm font-medium text-blue-600 hover:underline dark:text-blue-500">View all</a>
+    </div>
+    <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
+      <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+        <tr>
+          <th scope="col" class="px-6 py-3">
+            Name
+          </th>
+          <th scope="col" class="px-6 py-3">
+            Role
+          </th>
+          <th scope="col" class="px-6 py-3">
+            Date
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <ng-container *ngFor="let data of combinedData; let i = index">
+          <tr *ngIf="i < 5" class="odd:bg-white odd:dark:bg-gray-900 even:bg-gray-50 even:dark:bg-gray-800 border-b dark:border-gray-700">
+            <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+              {{data.fname}} {{data.lname}}
+            </th>
+            <td class="px-6 py-4">
+              {{data.emplJIfo.jobName}}
+            </td>
+            <td class="px-6 py-4">
+              <div *ngFor="let leav of data.leaves">
+                {{formatDate(leav.date)}}
+              </div>
+            </td>
+          </tr>
+        </ng-container>
+        <!-- Additional rows -->
+      </tbody>
+    </table>
+  </div>
+</div>  

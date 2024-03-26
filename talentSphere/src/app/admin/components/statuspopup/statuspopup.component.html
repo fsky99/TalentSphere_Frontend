@@ -1,0 +1,44 @@
+<div *ngIf="isVisible" class="popup-overlay">
+  <div class="popup-content">
+    <h2 class="popup-title">Status Update</h2>
+    <div class="status-section">
+      <h3>Timing</h3>
+      <div class="grid grid-cols-3 gap-4">
+        <div>
+          <label for="date">Date:</label>
+          <input type="date" disabled id="date" value="{{ today | date: 'yyyy-MM-dd' }}" >
+        </div>
+        <div>
+          <label for="checkIn">Check-In Time:</label>
+          <input type="time" id="checkIn" [(ngModel)]="timeShe.checkinTime" >
+        </div>
+     
+      </div>
+    </div>
+    <div class="status-section">
+      <h3>Tasks</h3>
+      <div class="grid grid-cols-2 gap-4">
+        <div>
+          <label for="planned">Project Name:</label>
+          <input type="text" id="planned"  [(ngModel)]="timeShe.projectName">
+        </div>
+        <div>
+          <label for="achieved">Tasks Name:</label>
+          <input type="text" id="achieved"  [(ngModel)]="timeShe.taskName">
+        </div>
+      </div>
+      <ul class="task-list">
+        <!-- <ng-container *ngFor="let task of tasks; let i = index">
+          <li *ngIf="i < 4" class="task-item">
+            <input type="checkbox" class="task-checkbox" [checked]="task.completed" (change)="toggleTaskCompletion(task.id)">
+            <input type="text" class="task-input" [(ngModel)]="task.name">
+          </li>
+        </ng-container> -->
+      </ul>
+    </div>
+    <div class="popup-actions">
+      <button (click)="submitStatus()" class="popup-button submit-button">Submit</button>
+      <button (click)="closePopup()" class="popup-button close-button">Close</button>
+    </div>
+  </div>
+</div>

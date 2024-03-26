@@ -30,14 +30,19 @@
           </svg>
         </button>
       </div>
-      <div *ngFor="let res of combinedData" class="flex flex-col items-center pb-10">
+      <div *ngFor="let res of combinedData">
+      <div  class="flex flex-col items-center pb-10">
         <img class="w-24 h-24 mb-3 rounded-full shadow-lg" src={{res.picture}} alt="Employee Image">
         <h5 class="mb-1 text-xl font-medium text-gray-900">{{res.fname}} {{res.lname}}</h5>
-        <span class="text-sm text-gray-500">{{ res.jobInformation.jobName}}</span>
+        <span class="text-sm text-gray-500">{{ res.jobInformation?.jobName}}</span>
+        <span class="text-sm text-gray-500" >{{ res.emp?.emprank}}</span>
+        <span class="text-sm text-gray-500" >{{ res.emp?.
+          department}}</span>
         <div class="flex mt-4 space-x-3">
           <button class="px-4 py-2 text-sm font-medium text-white bg-blue-600 rounded-lg">View Profile</button>
           <button class="px-4 py-2 text-sm font-medium text-gray-900 bg-gray-200 rounded-lg">Message</button>
         </div>
+      </div>
       </div>
     </div>
 

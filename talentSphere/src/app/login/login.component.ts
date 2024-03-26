@@ -38,7 +38,7 @@ export class LoginComponent implements AfterViewInit {
         if (localStorage.getItem('type') === 'H') {
           this.router.navigate(['/admin-dashboard']);
         } else if (localStorage.getItem('type') === 'E') {
-          this.router.navigate(['/employee-home']);
+          this.router.navigate(['/employee-dashboard']);
         }
       }
     });

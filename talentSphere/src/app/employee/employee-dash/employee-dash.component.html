@@ -12,68 +12,19 @@
 </div>
 <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
   <tbody>
-      <tr class="odd:bg-white odd:dark:bg-gray-900 even:bg-gray-50 even:dark:bg-gray-800 border-b dark:border-gray-700">
-        <img class="rounded w-14 h-14" src="https://images.unsplash.com/photo-1560523160-754a9e25c68f?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NDJ8fGV2ZW50fGVufDB8fDB8fHww" alt="Extra large avatar">
+      <tr *ngFor="let event of events" class="odd:bg-white odd:dark:bg-gray-900 even:bg-gray-50 even:dark:bg-gray-800 border-b dark:border-gray-700">
+        <img class="rounded w-14 h-14" src="{{event.picture}}" alt="Extra large avatar">
           <th scope="row" class="px-6 py-6 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-            GA Exhibition April24
+            {{event.eventName}}
           </th>
           <td class="px-6 py-4">
-              One
-          </td>
+            {{ formatTime(event.eventDate) }}
+        </td>
           <td class="px-6 py-4">
-            22/03/2024
-          </td>
+            {{ formatDate(event.eventDate) }}
+        </td>
       </tr>
-      <tr class="odd:bg-white odd:dark:bg-gray-900 even:bg-gray-50 even:dark:bg-gray-800 border-b dark:border-gray-700">
-        <img class="rounded w-14 h-14" src="https://images.unsplash.com/photo-1560523160-754a9e25c68f?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NDJ8fGV2ZW50fGVufDB8fDB8fHww" alt="Extra large avatar">
-          <th scope="row" class="px-6 py-6 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-              Ahmed Al Ahmed's Intervention
-          </th>
-          <td class="px-6 py-4">
-              Two
-          </td>
-          <td class="px-6 py-4">
-            22/03/2024
-          </td>
-
-      </tr>
-      <tr class="odd:bg-white odd:dark:bg-gray-900 even:bg-gray-50 even:dark:bg-gray-800 border-b dark:border-gray-700">
-        <img class="rounded w-14 h-14" src="https://images.unsplash.com/photo-1560523160-754a9e25c68f?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NDJ8fGV2ZW50fGVufDB8fDB8fHww" alt="Extra large avatar">
-          <th scope="row" class="px-6 py-6 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-            General Assembly Ghabga 2024
-          </th>
-          <td class="px-6 py-4">
-              Three
-          </td>
-          <td class="px-6 py-4">
-            22/03/2024
-          </td>
-      </tr>
-      <tr class="odd:bg-white odd:dark:bg-gray-900 even:bg-gray-50 even:dark:bg-gray-800 border-b dark:border-gray-700">
-        <img class="rounded w-14 h-14" src="https://images.unsplash.com/photo-1560523160-754a9e25c68f?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NDJ8fGV2ZW50fGVufDB8fDB8fHww" alt="Extra large avatar">
-          <th scope="row" class="px-6 py-6 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-            GA Exhibition April24
-          </th>
-          <td class="px-6 py-4">
-              Four
-          </td>
-          <td class="px-6 py-4">
-            22/03/2024
-          </td>
-      </tr>
-      <tr>
-        <img class="rounded w-14 h-14" src="https://images.unsplash.com/photo-1560523160-754a9e25c68f?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NDJ8fGV2ZW50fGVufDB8fDB8fHww" alt="Extra large avatar">
-          <th scope="row" class="px-6 py-6 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-              Ahmed's Intervention Part 2
-          </th>
-          <td class="px-6 py-4">
-              Five
-          </td>
-          <td class="px-6 py-4">
-              22/03/2024
-          </td>
-
-      </tr>
+     
   </tbody>
 </table>
 </div>
@@ -81,22 +32,20 @@
 
 
 
-<div class="w-2/5 p-4 bg-white border border-gray-200 rounded-lg shadow sm:p-8 dark:bg-gray-800 dark:border-gray-700">
+<!-- <div class="w-2/5 p-4 bg-white border border-gray-200 rounded-lg shadow sm:p-8 dark:bg-gray-800 dark:border-gray-700">
   <div class="flex items-center justify-between mb-4">
       <h5 class="text-xl font-bold leading-none text-gray-900 dark:text-white">My Activity</h5>
-      <a href="#" class="text-sm font-medium text-blue-600 hover:underline dark:text-blue-500">View all</a>
+  
   </div>
   <div class="flow-root">
       <ul role="list" class="divide-y divide-gray-200 dark:divide-gray-700">
-          <li class="py-3 sm:py-4">
+          <li *ngFor="let data of myActivities" class="py-3 sm:py-4">
               <div class="flex items-center">
-                  <div class="flex-shrink-0">
-                      <img class="w-8 h-8 rounded-full" src="/docs/images/people/profile-picture-1.jpg" alt="Neil image">
-                  </div>
+                 
                   <div class="flex-1 min-w-0 ms-4">
-                      <p class="text-sm font-medium text-gray-900 truncate dark:text-white">Ahmed Ahmed</p>
-                      <p class="text-sm text-gray-500 truncate dark:text-gray-400">Project Name</p>
-                  </div>
+                      <!-- <p class="text-sm font-medium text-gray-900 truncate dark:text-white">{{data.projectName}}</p> -->
+                      <!-- <p class="text-sm text-gray-500 truncate dark:text-gray-400">{{data.taskName}}</p> -->
+                  <!-- </div>
                   <td class="px-6 py-4">
                     <div class="flex items-center">
                         <div class="h-2.5 w-2.5 rounded-full bg-red-500 me-2"></div> Closed
@@ -104,90 +53,45 @@
                 </td>
               </div>
           </li>
-          <!-- pspspspspsp -->
-                  <li class="py-3 sm:py-4">
-                    <div class="flex items-center">
-                        <div class="flex-shrink-0">
-                            <img class="w-8 h-8 rounded-full" src="/docs/images/people/profile-picture-1.jpg" alt="Neil image">
-                        </div>
-                        <div class="flex-1 min-w-0 ms-4">
-                            <p class="text-sm font-medium text-gray-900 truncate dark:text-white">Ahmed Ahmed</p>
-                            <p class="text-sm text-gray-500 truncate dark:text-gray-400">Project Name</p>
-                        </div>
-                        <td class="px-6 py-4">
-                          <div class="flex items-center">
-                              <div class="h-2.5 w-2.5 rounded-full bg-yellow-500 me-2"></div> Ongoing
-                          </div>
-                      </td>
-      
-                    </div>
-                </li>
+               
       </ul>
   </div>
-</div>
+</div>  -->
 
 
 <div class="w-2/5 p-4 bg-white border border-gray-200 rounded-lg shadow sm:p-8 dark:bg-gray-800 dark:border-gray-700">
   <div class="flex items-center justify-between mb-4">
       <h5 class="text-xl font-bold leading-none text-gray-900 dark:text-white">Activities</h5>
-      <a href="#" class="text-sm font-medium text-blue-600 hover:underline dark:text-blue-500">View all</a>
+     
   </div>
   <div class="flow-root">
-      <ul role="list" class="divide-y divide-gray-200 dark:divide-gray-700">
-          <li class="py-3 sm:py-4">
-              <div class="flex items-center">
-                  <div class="flex-shrink-0">
-                      <img class="w-8 h-8 rounded-full" src="/docs/images/people/profile-picture-1.jpg" alt="Neil image">
-                  </div>
-                  <div class="flex-1 min-w-0 ms-4">
-                      <p class="text-sm font-medium text-gray-900 truncate dark:text-white">Neil Sims</p>
-                      <p class="text-sm text-gray-500 truncate dark:text-gray-400">Project Name</p>
-                  </div>
-                  <td class="px-6 py-4">
-                    <div class="flex items-center">
-                        <div class="h-2.5 w-2.5 rounded-full bg-gray-500 me-2"></div> Pending
-                    </div>
-                </td>
-              </div>
-          </li>
-          
-          
+      <ul role="list" class="divide-y divide-gray-200 dark:divide-gray-700"> 
 
-          <li class="py-3 sm:py-4">
-            <div class="flex items-center">
+          <li *ngFor="let data of combinedData" class="py-3 sm:py-4">
+            <div *ngFor="let act of data.activity
+            " class="flex items-center">
                 <div class="flex-shrink-0">
-                    <img class="w-8 h-8 rounded-full" src="/docs/images/people/profile-picture-1.jpg" alt="Neil image">
+                    <img class="w-8 h-8 rounded-full" src={{data.picture}} alt="image">
                 </div>
                 <div class="flex-1 min-w-0 ms-4">
-                    <p class="text-sm font-medium text-gray-900 truncate dark:text-white">Neil Sims</p>
-                    <p class="text-sm text-gray-500 truncate dark:text-gray-400">Project Name</p>
+                    <p class="text-sm font-medium text-gray-900 truncate dark:text-white">{{data.fname}} {{data.lname}}</p>
+                    <p class="text-sm text-gray-500 truncate dark:text-gray-400">{{act.projectName}}</p>
                 </div>
                 <td class="px-6 py-4">
                   <div class="flex items-center">
-                      <div class="h-2.5 w-2.5 rounded-full bg-green-500 me-2"></div> Open
-                  </div>
+                    <div *ngIf="act.status === 'N'" class="h-2.5 w-2.5 rounded-full bg-green-500 me-2"></div> 
+                    <div *ngIf="act.status === 'C'" class="h-2.5 w-2.5 rounded-full bg-red-500 me-2"></div> 
+                    <span *ngIf="act.status === 'N'">Open</span>
+                    <span *ngIf="act.status === 'C'">Closed</span>
+                
+                     </div>
               </td>
 
             </div>
         </li>
                   
-                  <li class="py-3 sm:py-4">
-                    <div class="flex items-center">
-                        <div class="flex-shrink-0">
-                            <img class="w-8 h-8 rounded-full" src="/docs/images/people/profile-picture-1.jpg" alt="Neil image">
-                        </div>
-                        <div class="flex-1 min-w-0 ms-4">
-                            <p class="text-sm font-medium text-gray-900 truncate dark:text-white">Neil Sims</p>
-                            <p class="text-sm text-gray-500 truncate dark:text-gray-400">Project Name</p>
-                        </div>
-                        <td class="px-6 py-4">
-                          <div class="flex items-center">
-                              <div class="h-2.5 w-2.5 rounded-full bg-yellow-500 me-2"></div> Ongoing
-                          </div>
-                      </td>
-      
-                    </div>
-                </li>
+              
+           
       </ul>
   </div>
 </div>
@@ -199,7 +103,7 @@
                     <div class="relative overflow-x-auto">
                <div class="flex items-center justify-between mb-4">
                         <h5 class="text-xl font-bold leading-none text-gray-900 dark:text-white py-4">Upcoming Days</h5>
-                        <a href="#" class="text-sm font-medium text-blue-600 hover:underline dark:text-blue-500">View all</a>
+                        
                     </div>
                     <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
                         <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
@@ -215,64 +119,26 @@
                                 </th>
                             </tr>
                         </thead>
-                        <tbody>
-                            <tr class="odd:bg-white odd:dark:bg-gray-900 even:bg-gray-50 even:dark:bg-gray-800 border-b dark:border-gray-700">
-                                <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                    Shaikha Al Sahra
-                                </th>
-                                <td class="px-6 py-4">
-                                    One
-                                </td>
-                                <td class="px-6 py-4">
-                                  22/03/2024
-                                </td>
-                            </tr>
-                            <tr class="odd:bg-white odd:dark:bg-gray-900 even:bg-gray-50 even:dark:bg-gray-800 border-b dark:border-gray-700">
-                                <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                    Ahmed Ahmed
-                                </th>
-                                <td class="px-6 py-4">
-                                    Two
-                                </td>
-                                <td class="px-6 py-4">
-                                  22/03/2024
-                                </td>
+                        <tbody >
 
-                            </tr>
-                            <tr class="odd:bg-white odd:dark:bg-gray-900 even:bg-gray-50 even:dark:bg-gray-800 border-b dark:border-gray-700">
-                                <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                    Fatima Foad
-                                </th>
-                                <td class="px-6 py-4">
-                                    Three
-                                </td>
-                                <td class="px-6 py-4">
-                                  22/03/2024
-                                </td>
-                            </tr>
-                            <tr class="odd:bg-white odd:dark:bg-gray-900 even:bg-gray-50 even:dark:bg-gray-800 border-b dark:border-gray-700">
-                                <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                    Shaikha Shai
-                                </th>
-                                <td class="px-6 py-4">
-                                    Four
-                                </td>
-                                <td class="px-6 py-4">
-                                  22/03/2024
-                                </td>
-                            </tr>
-                            <tr>
-                                <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                    Ahmed Again
-                                </th>
-                                <td class="px-6 py-4">
-                                    Five
-                                </td>
-                                <td class="px-6 py-4">
-                                    22/03/2024
-                                </td>
-
-                            </tr>
+                            <ng-container *ngFor="let data of combinedData; let i = index">
+                                <tr *ngIf="i < 5" class="odd:bg-white odd:dark:bg-gray-900 even:bg-gray-50 even:dark:bg-gray-800 border-b dark:border-gray-700">
+                                  <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                    {{data.fname}} {{data.lname}}
+                                  </th>
+                                  <td class="px-6 py-4">
+                                    {{data.emplJIfo.jobName}}
+                                  </td>
+                                  <td class="px-6 py-4">
+                                    <div *ngFor="let leav of data.leaves">
+                                      {{formatDate(leav.date)}}
+                                    </div>
+                                  </td>
+                                </tr>
+                              </ng-container>
+                          
+                         
+                          
                         </tbody>
                     </table>
                 </div>
