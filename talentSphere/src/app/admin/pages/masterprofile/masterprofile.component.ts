@@ -1,11 +1,13 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { TalentService } from '../../../talent.service';
 
 @Component({
   selector: 'app-masterprofile',
   templateUrl: './masterprofile.component.html',
   styleUrls: ['./masterprofile.component.css']
 })
-export class MasterProfileComponent {
+export class MasterProfileComponent implements OnInit {
+ 
   employee = {
     first_name: 'Jane',
     last_name: 'Doe',
@@ -29,9 +31,20 @@ export class MasterProfileComponent {
     login_id: 'jane.doe',
     password: 'password'
   };
+  userData:any = []
+  constructor(private talent : TalentService) { }
+  ngOnInit():void{
+    this.profile()
+  }
 
-  constructor() { }
-
+  profile(){
+    this.talent.getUser(localStorage.getItem('id')).subscribe((res:any)=>{
+      this.userData = [res.data];
+        console.log(this.userData);
+      })
+      
+      
+  }
   updateProfile() {
     // Implement your update logic here
   }

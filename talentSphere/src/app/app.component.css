@@ -1,10 +1,10 @@
 .content-wrapper.sidebar-open .main-content {
-  margin-left: 250px; /* Adjust based on the open sidebar width */
+  margin-left: 250px;
 }
 
 .main-content {
   transition: margin-left 0.3s ease;
-  margin-left: 60px; /* Adjust based on the closed sidebar width */
+  margin-left: 60px;
   transition: margin-left 0.3s ease;
   padding: 4%;
 }
