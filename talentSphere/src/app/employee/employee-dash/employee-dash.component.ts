@@ -21,14 +21,29 @@ constructor(private talent : TalentService){
  combinedData: any = [];
  ngOnInit(): void {
   const userId = localStorage.getItem('id');
+  console.log('outside',userId)
   if (userId) {
     this.userId = userId;
+    console.log(userId)
     this.getData();
+    // this.getUserActivity(userId)
+
+
+
   } else {
     console.error('User ID not found in localStorage');
   
   }
 }
+// getUserActivity(id:any){
+//   this.talent.getUserActivity(id).subscribe((dat:any)=>{
+//     this.myActivities = dat.data
+//     console.log('activities for me',this.myActivities)
+
+//   })
+
+  
+// }
  async getData(){
     console.log('localStorage:', localStorage);
 
@@ -44,12 +59,14 @@ constructor(private talent : TalentService){
   })
   this.talent.getAllActivities().subscribe((res:any)=>{
     this.activities = res.data
-    this.combineData()
+//   this.myActivities = this.activities.find((res: any) => res.userID === localStorage.getItem('id'));
+// console.log(this.myActivities)
+  // this.myActivities = this.activities.find((resl:any)=>resl.userID === this.userId)
+  // console.log(this.myActivities)
 
-  })
-  this.myActivities = this.activities.find((res: any) => res.userID === this.userId);
+  this.combineData()
 
-  this.myActivities = this.activities.find((res:any)=>res.userID === localStorage.getItem('id'))
+})
  this.talent.getAllEvents().subscribe((res:any)=>{
   this.events = res.data
  })
@@ -58,14 +75,7 @@ constructor(private talent : TalentService){
   this.combineData()
 
  })
- this.talent.getUserActivity(localStorage.getItem('id')).subscribe((res:any)=>{
-  this.myActivities = [res.data]
-  console.log('my activity' + this.myActivities)
- })
- this.talent.getUserActivity(this.userId).subscribe((res: any) => {
-  this.myActivities = [res.data];
-  console.log('My activity:', this.myActivities);
-});
+
   }
   
   formatDate(dateString: string): string {
