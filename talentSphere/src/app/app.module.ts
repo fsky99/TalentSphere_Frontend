@@ -22,6 +22,7 @@ import { AdminmessagesComponent } from './admin/pages/adminmessages/adminmessage
 import { AdminactivitiesComponent } from './admin/pages/adminactivities/adminactivities.component';
 import { AdminAddEmployeeComponent } from './admin/pages/adminaddemployee/adminaddemployee.component';
 import { MasterProfileComponent } from './admin/pages/masterprofile/masterprofile.component';
+import { StatuspopupComponent } from './admin/components/statuspopup/statuspopup.component';
 import { EmployeedirectoryComponent } from './employeedirectory/employeedirectory.component';
 import { AdminaddeventComponent } from './adminaddevent/adminaddevent.component';
 
@@ -44,6 +45,7 @@ import { AdminaddeventComponent } from './adminaddevent/adminaddevent.component'
     AdminactivitiesComponent,
     AdminAddEmployeeComponent,
     MasterProfileComponent,
+    StatuspopupComponent,
     EmployeedirectoryComponent,
     AdminaddeventComponent
   ],

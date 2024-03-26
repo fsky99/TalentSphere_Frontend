@@ -89,6 +89,17 @@
 .sidebar.open .profile-info .profile-details {
   display: block;
 }
+
+.name {
+  font-weight: bolder;
+}
+
+.nav-divider {
+  border-bottom: 2px solid #fff;
+  margin: 0 1rem;
+  margin-bottom: 5%;
+}
+
 .status-button {
   display: none;
   padding: 0.5rem 1rem;
@@ -107,14 +118,4 @@
 
 .sidebar.open .status-button {
   display: block;
-}
-
-.name {
-  font-weight: bolder;
-}
-
-.nav-divider {
-  border-bottom: 2px solid #fff;
-  margin: 0 1rem;
-  margin-bottom: 5%;
 }
