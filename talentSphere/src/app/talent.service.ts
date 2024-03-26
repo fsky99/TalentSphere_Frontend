@@ -86,6 +86,22 @@ return this.http.post(this.baseUrl +'/addTimeSheet' , data , this.getRequestOpti
 }
 
 
+
+//updates
+
+updateStatus(status:any){
+  return this.http.put(this.baseUrl +'/updateEmpleave',status, this.getRequestOptions())
+}
+
+
+
+
+
+
+
+
+
+
 getEmployeejobinfo(){
   return this.http.get(this.baseUrl+'/employeejobinfo', this.getRequestOptions())
 
