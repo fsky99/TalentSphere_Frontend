@@ -10,25 +10,11 @@
   overflow: hidden;
   display: flex;
   flex-direction: column;
+  justify-content: space-between; /* Added to space out elements */
 }
 
 .sidebar.open {
   width: 250px;
-}
-
-.header-content {
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  width: 50px;
-  margin: 10%;
-}
-
-.header-text {
-  margin-left: 10%;
-  font-weight: bolder;
-  text-overflow: ellipsis;
-  overflow: hidden;
 }
 
 .sidebar-nav {
@@ -54,26 +40,11 @@
   transition: color 0.3s ease;
 }
 
-.nav-item::after {
-  content: '';
-  position: absolute;
-  right: 0.5rem;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 0;
-  height: 0;
-}
-
 .nav-text {
   flex: 1;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-}
-
-.toggle-icon {
-  width: 10%;
-  height: auto;
 }
 
 .sidebar.open .nav-text {
@@ -90,56 +61,36 @@
   margin-right: 15%;
 }
 
-.navbar {
-  display: flex;
-  align-items: center;
-}
-
-.toggle-button {
-  padding: 0.5rem 1rem;
-  cursor: pointer;
-}
-
-.toggle-button.active {
-  background-color: black;
-}
-
-.icon {
-  margin-left: 10px;
-}
-
-.text {
-  margin-left: 10px;
-}
-
 .profile-info {
   display: flex;
+  flex-direction: column;
   align-items: center;
   gap: 1rem;
-  margin: 1rem 0;
+  margin-top: 1rem;
+  margin-bottom: 5%;
+}
+
+.sidebar.open .profile-info {
+  flex-direction: row;
+  justify-content: start;
+  margin-left: 1rem;
 }
 
 .profile-info img {
   width: 2.5rem;
   height: 2.5rem;
   border-radius: 50%;
-  margin-left: 10px;
 }
 
-.profile-info .name,
-.profile-info .join-date {
+.profile-info .profile-details {
   display: none;
-  color: white;
 }
 
-.sidebar.open .profile-info .name,
-.sidebar.open .profile-info .join-date {
+.sidebar.open .profile-info .profile-details {
   display: block;
 }
-
 .status-button {
   display: none;
-  margin: 1rem auto;
   padding: 0.5rem 1rem;
   font-weight: bold;
   color: white;
@@ -148,7 +99,6 @@
   border-radius: 0.5rem;
   cursor: pointer;
   transition: background-color 0.3s ease;
-  margin-left: 30%;
 }
 
 .status-button:hover {
@@ -161,4 +111,10 @@
 
 .name {
   font-weight: bolder;
+}
+
+.nav-divider {
+  border-bottom: 2px solid #fff;
+  margin: 0 1rem;
+  margin-bottom: 5%;
 }
