@@ -81,7 +81,9 @@ createEmployee(emp:any){
   return this.http.post(this.baseUrl +'/addEmployee' , emp , this.getRequestOptions())
 }
 
-
+createTimeSheet(data:any){
+return this.http.post(this.baseUrl +'/addTimeSheet' , data , this.getRequestOptions())
+}
 
 
 getEmployeejobinfo(){

@@ -6,37 +6,34 @@
       <div class="grid grid-cols-3 gap-4">
         <div>
           <label for="date">Date:</label>
-          <input type="date" id="date" [(ngModel)]="currentDate">
+          <input type="date" disabled id="date" value="{{ today | date: 'yyyy-MM-dd' }}" >
         </div>
         <div>
           <label for="checkIn">Check-In Time:</label>
-          <input type="time" id="checkIn" [(ngModel)]="checkInTime">
+          <input type="time" id="checkIn" [(ngModel)]="timeShe.checkinTime" >
         </div>
-        <div>
-          <label for="checkOut">Check-Out Time:</label>
-          <input type="time" id="checkOut" [(ngModel)]="checkOutTime">
-        </div>
+     
       </div>
     </div>
     <div class="status-section">
       <h3>Tasks</h3>
       <div class="grid grid-cols-2 gap-4">
         <div>
-          <label for="planned">Tasks Planned:</label>
-          <input type="number" id="planned" [(ngModel)]="tasksPlanned">
+          <label for="planned">Project Name:</label>
+          <input type="text" id="planned"  [(ngModel)]="timeShe.projectName">
         </div>
         <div>
-          <label for="achieved">Tasks Achieved:</label>
-          <input type="number" id="achieved" [(ngModel)]="tasksAchieved">
+          <label for="achieved">Tasks Name:</label>
+          <input type="text" id="achieved"  [(ngModel)]="timeShe.taskName">
         </div>
       </div>
       <ul class="task-list">
-        <ng-container *ngFor="let task of tasks; let i = index">
+        <!-- <ng-container *ngFor="let task of tasks; let i = index">
           <li *ngIf="i < 4" class="task-item">
             <input type="checkbox" class="task-checkbox" [checked]="task.completed" (change)="toggleTaskCompletion(task.id)">
             <input type="text" class="task-input" [(ngModel)]="task.name">
           </li>
-        </ng-container>
+        </ng-container> -->
       </ul>
     </div>
     <div class="popup-actions">
