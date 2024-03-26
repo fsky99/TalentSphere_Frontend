@@ -22,6 +22,9 @@ import { AdminmessagesComponent } from './admin/pages/adminmessages/adminmessage
 import { AdminactivitiesComponent } from './admin/pages/adminactivities/adminactivities.component';
 import { AdminAddEmployeeComponent } from './admin/pages/adminaddemployee/adminaddemployee.component';
 import { MasterProfileComponent } from './admin/pages/masterprofile/masterprofile.component';
+import { EmployeeEventsComponent } from './employee/employee-events/employee-events.component';
+import { EmployeeRemunerationComponent } from './employee/employee-remuneration/employee-remuneration.component';
+import { EmployeeDirectoryComponent } from './employee/employee-directory/employee-directory.component';
 
 @NgModule({
   declarations: [
@@ -41,7 +44,10 @@ import { MasterProfileComponent } from './admin/pages/masterprofile/masterprofil
     AdminmessagesComponent,
     AdminactivitiesComponent,
     AdminAddEmployeeComponent,
-    MasterProfileComponent
+    MasterProfileComponent,
+    EmployeeEventsComponent,
+    EmployeeRemunerationComponent,
+    EmployeeDirectoryComponent
   ],
   imports: [
     BrowserModule,
