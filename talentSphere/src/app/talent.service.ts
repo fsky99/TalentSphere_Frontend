@@ -84,7 +84,9 @@ getEmployeejobinfo(){
   return this.http.get(this.baseUrl+'/employeejobinfo', this.getRequestOptions())
 
 }
-
+getAllemployee(){
+  return this.http.get(this.baseUrl +'/employee' , this.getRequestOptions())
+}
 
 
 }

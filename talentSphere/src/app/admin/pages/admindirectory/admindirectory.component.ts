@@ -26,7 +26,7 @@ jobInfo:any = []
 empleave:any=[]
 bonuses: any =[]
 combinedData: any = [];
-
+employeeInfo:any=[]
 async getUsers() {
 
   this.talent.getAllUsers().subscribe((res:any) => {
@@ -38,7 +38,14 @@ async getUsers() {
     this.jobInfo = results.data
     this.combineData()
   })
-
+  
+  this.talent.getAllemployee().subscribe((resul:any)=>{
+    this.employeeInfo = resul.data
+   console.log(this.employeeInfo);
+   
+    this.combineData()
+    
+  })
 }
 
 combineData() {
@@ -50,10 +57,11 @@ combineData() {
      
       const jobInformation = this.jobInfo.find((job:any)=>job.userID === user.id)
       
-      
+      const emp = this.employeeInfo.find((em:any)=>em.userID===user.id)
+       
    
      
-        this.combinedData.push({ ...user,jobInformation });
+        this.combinedData.push({ ...user,jobInformation , emp});
       
     });
 
