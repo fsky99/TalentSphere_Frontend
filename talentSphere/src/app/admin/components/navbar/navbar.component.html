@@ -1,18 +1,13 @@
 <div class="sidebar" [class.open]="isSidebarOpen">
-  <div class="sidebar-header">
-    <div class="header-content">
-      <img src="assets/Untitled design.svg" alt="TalentSphere Logo" (click)="toggleSidebar()">
-      <button class="status-button">Status</button>
-    </div>
-  </div>
   <div class="profile-info">
-    <img src="assets/Untitled design.svg" alt="Profile Picture">
-    <div>
+    <img src="assets/Untitled design.svg" alt="Profile Picture" (click)="toggleSidebar()">
+    <div class="profile-details">
       <div class="name">Jese Leos</div>
       <div class="role">Software Engineer</div>
       <div class="current-status">Active</div>
     </div>
   </div>
+  <div class="nav-divider"></div> <!-- Added a divider -->
   <ul class="sidebar-nav">
     <li>
       <a routerLink="/admin-dashboard" class="nav-item">
@@ -86,6 +81,8 @@
                 <span class="nav-text">Log Out</span>
               </a>
     </li>
+
   </ul>
+  <button class="status-button">Status</button>
 
 </div>
