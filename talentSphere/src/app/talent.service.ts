@@ -45,7 +45,10 @@ getUser(id:any){
   return this.http.get(`${this.baseUrl}/users/${id}`, this.getRequestOptions())
 }
 
+getEmployeejobinfo(){
+  return this.http.get(this.baseUrl+'/employeejobinfo', this.getRequestOptions())
 
+}
 
 
 
