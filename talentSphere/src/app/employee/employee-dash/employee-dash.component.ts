@@ -17,13 +17,19 @@ constructor(private talent : TalentService){
  leaves:any=[]
  activities:any =[]
  myActivities:any =[]
+ employeeJobInfo:any=[]
+ combinedData: any = [];
 
   getData(){
   this.talent.getAllUsers().subscribe((res:any)=>{
     this.usersData = res.data
+    this.combineData()
+
   })
   this.talent.getEmployeeLeaves().subscribe((res:any)=>{
     this.leaves = res.data
+    this.combineData()
+
   })
   this.talent.getAllActivities().subscribe((res:any)=>{
     this.activities = res.data
@@ -31,6 +37,11 @@ constructor(private talent : TalentService){
   this.myActivities = this.activities.find((res:any)=>res.userID === localStorage.getItem('id'))
  this.talent.getAllEvents().subscribe((res:any)=>{
   this.events = res.data
+ })
+ this.talent.getEmployeejobinfo().subscribe((res:any)=>{
+  this.employeeJobInfo = res.data
+  this.combineData()
+
  })
 
   }
@@ -43,7 +54,23 @@ constructor(private talent : TalentService){
     const date = new Date(dateString);
     return date.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
   }
+  combineData() {
+    
+    if (this.usersData.length > 0 && this.leaves.length > 0 && this.employeeJobInfo.length > 0) {
+  
+      this.combinedData = [];
+      // const empLea : any =[]
+      this.usersData.forEach((user: any) => {
+       
+        const emplJIfo = this.employeeJobInfo.find((job: any) => job.userID === user.id);
+        const leaves = this.leaves.filter((leave:any)=>leave.userID === user.id)
+          this.combinedData.push({ ...user, emplJIfo ,leaves });
+        
+      });
 
+      console.log(this.combinedData);
+    }
+  }
 
 
 }
