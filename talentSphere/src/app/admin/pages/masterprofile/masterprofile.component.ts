@@ -32,6 +32,7 @@ export class MasterProfileComponent implements OnInit {
     password: 'password'
   };
   userData:any = []
+  employeeData:any =[]
   constructor(private talent : TalentService) { }
   ngOnInit():void{
     this.profile()
@@ -43,7 +44,15 @@ export class MasterProfileComponent implements OnInit {
         console.log(this.userData);
       })
       
+
       
+  }
+  employeeinfo(){
+    this.talent.getEmployeejobinfo().subscribe((resp:any)=>{
+      this.employeeData=resp.data;
+      console.log(this.employeeData);
+      
+    })
   }
   updateProfile() {
     // Implement your update logic here

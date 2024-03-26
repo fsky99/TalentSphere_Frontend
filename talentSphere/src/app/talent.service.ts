@@ -74,7 +74,10 @@ createEmployee(emp:any){
 
 
 
+getEmployeejobinfo(){
+  return this.http.get(this.baseUrl+'/employeejobinfo', this.getRequestOptions())
 
+}
 
 
 
