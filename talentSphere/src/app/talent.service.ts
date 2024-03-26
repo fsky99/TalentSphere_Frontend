@@ -60,6 +60,7 @@ getAllEvents(){
   return this.http.get(this.baseUrl + '/eventss' , this.getRequestOptions())
 }
 
+
 //create 
 createUser(userData:any){
   return this.http.post(this.baseUrl + '/addUser', userData ,this.getRequestOptions())

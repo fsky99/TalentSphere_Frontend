@@ -64,8 +64,9 @@ constructor(private talent : TalentService){
        
         const emplJIfo = this.employeeJobInfo.find((job: any) => job.userID === user.id);
         const leaves = this.leaves.filter((leave:any)=>leave.userID === user.id)
+        if(leaves && leaves.length >0){
           this.combinedData.push({ ...user, emplJIfo ,leaves });
-        
+        }
       });
 
       console.log(this.combinedData);
