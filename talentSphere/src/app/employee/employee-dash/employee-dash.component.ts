@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { TalentService } from '../../talent.service';
 
 @Component({
@@ -6,11 +6,11 @@ import { TalentService } from '../../talent.service';
   templateUrl: './employee-dash.component.html',
   styleUrl: './employee-dash.component.css'
 })
-export class EmployeeDashComponent {
+export class EmployeeDashComponent implements OnInit {
 constructor(private talent : TalentService){
-  this.getData()
 }
 
+ userId :any 
 
  usersData:any =[]
  events:any=[]
@@ -19,8 +19,34 @@ constructor(private talent : TalentService){
  myActivities:any =[]
  employeeJobInfo:any=[]
  combinedData: any = [];
+ ngOnInit(): void {
+  const userId = localStorage.getItem('id');
+  console.log('outside',userId)
+  if (userId) {
+    this.userId = userId;
+    console.log(userId)
+    this.getData();
+    // this.getUserActivity(userId)
 
-  getData(){
+
+
+  } else {
+    console.error('User ID not found in localStorage');
+  
+  }
+}
+// getUserActivity(id:any){
+//   this.talent.getUserActivity(id).subscribe((dat:any)=>{
+//     this.myActivities = dat.data
+//     console.log('activities for me',this.myActivities)
+
+//   })
+
+  
+// }
+ async getData(){
+    console.log('localStorage:', localStorage);
+
   this.talent.getAllUsers().subscribe((res:any)=>{
     this.usersData = res.data
     this.combineData()
@@ -33,8 +59,14 @@ constructor(private talent : TalentService){
   })
   this.talent.getAllActivities().subscribe((res:any)=>{
     this.activities = res.data
-  })
-  this.myActivities = this.activities.find((res:any)=>res.userID === localStorage.getItem('id'))
+//   this.myActivities = this.activities.find((res: any) => res.userID === localStorage.getItem('id'));
+// console.log(this.myActivities)
+  // this.myActivities = this.activities.find((resl:any)=>resl.userID === this.userId)
+  // console.log(this.myActivities)
+
+  this.combineData()
+
+})
  this.talent.getAllEvents().subscribe((res:any)=>{
   this.events = res.data
  })
@@ -45,6 +77,7 @@ constructor(private talent : TalentService){
  })
 
   }
+  
   formatDate(dateString: string): string {
     const date = new Date(dateString);
     return date.toLocaleDateString(undefined, { year: 'numeric', month: 'short', day: 'numeric' });
@@ -64,8 +97,10 @@ constructor(private talent : TalentService){
        
         const emplJIfo = this.employeeJobInfo.find((job: any) => job.userID === user.id);
         const leaves = this.leaves.filter((leave:any)=>leave.userID === user.id)
-          this.combinedData.push({ ...user, emplJIfo ,leaves });
-        
+        const activity = this.activities.filter((act:any)=>act.userID === user.id)
+        if(leaves && leaves.length >0){
+          this.combinedData.push({ ...user, emplJIfo ,activity,leaves });
+        }
       });
 
       console.log(this.combinedData);

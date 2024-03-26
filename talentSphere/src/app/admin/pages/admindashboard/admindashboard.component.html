@@ -2,27 +2,27 @@
     <!-- Events Table -->
     <div class="w-full text-center bg-white border border-gray-200 rounded-lg shadow sm:p-8 dark:bg-gray-800 dark:border-gray-700">
         
-        <div class="flex items-center justify-between mb-4 py-3">
+        <div  class="flex items-center justify-between mb-4 py-3">
           <h5 class="text-xl font-bold leading-none text-gray-900 dark:text-white">Events</h5>
-          <a href="#" class="text-sm font-medium text-blue-600 hover:underline dark:text-blue-500">View all</a>
+          <!-- <a href="#" class="text-sm font-medium text-blue-600 hover:underline dark:text-blue-500">View all</a> -->
         </div>
   
         <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
   
           <tbody>
-            <tr class="odd:bg-white odd:dark:bg-gray-900 even:bg-gray-50 even:dark:bg-gray-800 border-b dark:border-gray-700">
+            <tr *ngFor="let data of events" class="odd:bg-white odd:dark:bg-gray-900 even:bg-gray-50 even:dark:bg-gray-800 border-b dark:border-gray-700">
               <td class="px-6 py-6">
-                <img class="rounded w-14 h-14" src="https://via.placeholder.com/150" alt="Event image">
+                <img class="rounded w-14 h-14" src={{data.picture}} alt="Event image">
               </td>
               <th scope="row" class="px-6 py-6 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                GA Exhibition April 24
+                {{data.eventName}}
               </th>
               <td class="px-6 py-4">
-                Conference
+                {{formatDate(data.eventDate)}}
               </td>
               <td class="px-6 py-4">
-                22/03/2024
-              </td>
+                {{formatTime(data.eventDate)}}       
+       </td>
             </tr>
             <!-- Additional rows -->
           </tbody>
@@ -40,52 +40,63 @@
         </div>
         <div class="flow-root">
           <ul role="list" class="divide-y divide-gray-200 dark:divide-gray-700">
-            <li class="py-3 sm:py-4">
+            <li class="py-3 sm:py-4" *ngFor="let leaveData of combinedData">
               <div class="flex items-center">
                 <div class="flex-shrink-0">
                   <img class="w-8 h-8 rounded-full" src="https://via.placeholder.com/150" alt="Profile image">
                 </div>
                 <div class="flex-1 min-w-0 ms-4">
-                  <p class="text-sm font-medium text-gray-900 truncate dark:text-white">Ahmed Ahmed</p>
+                  <p class="text-sm font-medium text-gray-900 truncate dark:text-white">{{ leaveData.fname }} {{ leaveData.lname }}</p>
                   <p class="text-sm text-gray-500 truncate dark:text-gray-400">Leave Request</p>
                 </div>
-                <td class="px-6 py-4">
+                <div class="px-6 py-4">
                   <div class="flex items-center">
-                    <div class="h-2.5 w-2.5 rounded-full bg-red-500 me-2"></div> Closed
+                    <div *ngIf="leaveData.leaves[0]?.status === 'A'" class="h-2.5 w-2.5 rounded-full bg-red-500 me-2"></div>
+                    <div *ngIf="leaveData.leaves[0]?.status !== 'A'" class="h-2.5 w-2.5 rounded-full bg-green-500 me-2"></div>
+                    <span>{{ leaveData.leaves[0]?.status === 'A' ? 'Closed' : 'Open' }}</span>
                   </div>
-                </td>
+                </div>
               </div>
             </li>
-            <!-- Additional items -->
           </ul>
         </div>
       </div>
+      
       <!-- Activities -->
       <div class="w-full p-4 bg-white border border-gray-200 rounded-lg shadow sm:p-8 dark:bg-gray-800 dark:border-gray-700">
         <div class="flex items-center justify-between mb-4">
           <h5 class="text-xl font-bold leading-none text-gray-900 dark:text-white">Activities</h5>
-          <a href="#" class="text-sm font-medium text-blue-600 hover:underline dark:text-blue-500">View all</a>
+          <!-- <a href="#" class="text-sm font-medium text-blue-600 hover:underline dark:text-blue-500">View all</a> -->
         </div>
         <div class="flow-root">
-          <ul role="list" class="divide-y divide-gray-200 dark:divide-gray-700">
-            <li class="py-3 sm:py-4">
-              <div class="flex items-center">
-                <div class="flex-shrink-0">
-                  <img class="w-8 h-8 rounded-full" src="https://via.placeholder.com/150" alt="Profile image">
+          <ul role="list" class="divide-y divide-gray-200 dark:divide-gray-700"> 
+    
+              <li *ngFor="let data of combinedData" class="py-3 sm:py-4">
+                <div *ngFor="let act of data.activity
+                " class="flex items-center">
+                    <div class="flex-shrink-0">
+                        <img class="w-8 h-8 rounded-full" src={{data.picture}} alt="image">
+                    </div>
+                    <div class="flex-1 min-w-0 ms-4">
+                        <p class="text-sm font-medium text-gray-900 truncate dark:text-white">{{data.fname}} {{data.lname}}</p>
+                        <p class="text-sm text-gray-500 truncate dark:text-gray-400">{{act.projectName}}</p>
+                    </div>
+                    <td class="px-6 py-4">
+                      <div class="flex items-center">
+                        <div *ngIf="act.status === 'N'" class="h-2.5 w-2.5 rounded-full bg-green-500 me-2"></div> 
+                        <div *ngIf="act.status === 'C'" class="h-2.5 w-2.5 rounded-full bg-red-500 me-2"></div> 
+                        <span *ngIf="act.status === 'N'">Open</span>
+                        <span *ngIf="act.status === 'C'">Closed</span>
+                    
+                         </div>
+                  </td>
+    
                 </div>
-                <div class="flex-1 min-w-0 ms-4">
-                  <p class="text-sm font-medium text-gray-900 truncate dark:text-white">Neil Sims</p>
-                  <p class="text-sm text-gray-500 truncate dark:text-gray-400">Completed Training</p>
-                </div>
-                <td class="px-6 py-4">
-                  <div class="flex items-center">
-                    <div class="h-2.5 w-2.5 rounded-full bg-green-500 me-2"></div> Completed
-                </div>
-              </td>
-            </div>
-          </li>
-          <!-- Additional items -->
-        </ul>
+            </li>
+                      
+                  
+               
+          </ul>
       </div>
     </div>
   </div>
@@ -111,17 +122,21 @@
         </tr>
       </thead>
       <tbody>
-        <tr class="odd:bg-white odd:dark:bg-gray-900 even:bg-gray-50 even:dark:bg-gray-800 border-b dark:border-gray-700">
-          <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-            Shaikha Al Sahra
-          </th>
-          <td class="px-6 py-4">
-            HR Manager
-          </td>
-          <td class="px-6 py-4">
-            22/03/2024
-          </td>
-        </tr>
+        <ng-container *ngFor="let data of combinedData; let i = index">
+          <tr *ngIf="i < 5" class="odd:bg-white odd:dark:bg-gray-900 even:bg-gray-50 even:dark:bg-gray-800 border-b dark:border-gray-700">
+            <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+              {{data.fname}} {{data.lname}}
+            </th>
+            <td class="px-6 py-4">
+              {{data.emplJIfo.jobName}}
+            </td>
+            <td class="px-6 py-4">
+              <div *ngFor="let leav of data.leaves">
+                {{formatDate(leav.date)}}
+              </div>
+            </td>
+          </tr>
+        </ng-container>
         <!-- Additional rows -->
       </tbody>
     </table>
