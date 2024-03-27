@@ -9,38 +9,29 @@
 
   <ul class="my-1 space-y-5">
     <li>
-      <a href="#" class="flex items-center p-3 text-base font-bold text-gray-700 rounded-lg bg-gray-50 dark:text-white">
+      <a href="#" class="flex items-center p-3 text-base font-bold text-gray-700 rounded-lg bg-gray-50 dark:text-white" *ngFor="let sal of loggedInUserSalary">
         <span class="flex-1 ms-3 whitespace-nowrap font-medium text-[#179fab] mr-2">Base Salary:</span>
-        <p class="font-normal">BD 1000</p>
+          
+        <p class="font-normal" *ngIf="sal.userID == getUserId()">BD {{sal.salary}}</p>
       </a>
     </li>
-    <li>
-      <a href="#" class="flex items-center p-3 text-base font-bold text-gray-700 rounded-lg bg-gray-50 dark:text-white">
+    <li *ngFor="let bonus of userBonuses">
+      <a href="#" class="flex items-center p-3 text-base font-bold text-gray-700 rounded-lg bg-gray-50 dark:text-white" 
+      *ngIf="bonus.userID == getUserId()">
         <div class="flex flex-col gap-4 ms-3">
           <div class="flex-1 flex items-center">
             <span class="whitespace-nowrap font-medium text-gray-800 mr-2">Bonus:</span>
-            <p class="font-normal">BD 20</p>
+            <p class="font-normal">{{bonus.bonus}}</p>
           </div>
           <div class="flex-1 flex items-center">
             <span class="whitespace-nowrap font-medium text-gray-800 mr-2">Date:</span>
-            <p class="font-normal">22/07/2024</p>
+            <p class="font-normal">{{formatDate(bonus.bonusDate)}}</p>
           </div>
         </div>
       </a>
     </li>
     <li>
-      <a href="#" class="flex items-center p-3 text-base font-bold text-gray-700 rounded-lg bg-gray-50 dark:text-white">
-        <div class="flex flex-col gap-4 ms-3">
-          <div class="flex-1 flex items-center">
-            <span class="whitespace-nowrap font-medium text-gray-800 mr-2">Bonus:</span>
-            <p class="font-normal">BD 50</p>
-          </div>
-          <div class="flex-1 flex items-center">
-            <span class="whitespace-nowrap font-medium text-gray-800 mr-2">Date:</span>
-            <p class="font-normal">02/04/2024</p>
-          </div>
-        </div>
-      </a>
+   
     </li>
   </ul>
 </a>
@@ -50,8 +41,8 @@
 <div class="w-3/5 p-4 text-center bg-white border border-gray-200 rounded-lg shadow sm:p-8 dark:bg-gray-800 dark:border-gray-700">
   <div class="relative overflow-x-auto">
 <div class="flex items-center justify-between mb-4">
-      <h5 class="text-xl font-bold leading-none dark:text-white py-4 text-[#0f3d61]">Request Days</h5>
-      <button class="bg-[#ea5c39] hover:bg-[#d04928] text-white font-bold py-2 px-4 rounded">Request Leave</button>
+      <h5 class="text-xl font-bold leading-none dark:text-white py-4 text-[#0f3d61]"  >Request Days</h5>
+      <button class="bg-[#ea5c39] hover:bg-[#d04928] text-white font-bold py-2 px-4 rounded" routerLink="/employee-requestleave">Request Leave</button>
   </div>
   <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
       <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
@@ -63,83 +54,38 @@
                   Date
               </th>
               <th scope="col" class="px-6 py-3">
-                  Role
+                  status
               </th>
           </tr>
       </thead>
       <tbody>
-          <tr class="odd:bg-white odd:dark:bg-gray-900 even:bg-gray-50 even:dark:bg-gray-800 border-b dark:border-gray-700">
-              <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                  Shaikha Al Sahra
-              </th>
-              <td class="px-6 py-4">
-                22/03/2024
-              </td>
-              <td class="px-6 py-4">
-                <span class="inline-flex items-center bg-green-100 text-green-800 text-xs font-medium px-2.5 py-0.5 rounded-full dark:bg-green-900 dark:text-green-300">
-                  <span class="w-2 h-2 me-1 bg-green-500 rounded-full"></span>
-                  Accepted
+        <tr class="odd:bg-white odd:dark:bg-gray-900 even:bg-gray-50 even:dark:bg-gray-800 border-b dark:border-gray-700" *ngFor="let data of userLeaves"> 
+          <ng-container *ngIf="data.userID == getUserId()">
+            <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                {{fname +' '}} {{lname}}
+            </th>
+            <td class="px-6 py-4">
+              {{formatDate(data.date)}}
+            </td>
+            <td class="px-6 py-4">
+              <span [ngClass]="{
+                'bg-green-100 text-green-800': data.status === 'A',
+                'bg-gray-100 text-gray-800': data.status === 'P',
+                'bg-red-100 text-red-800': data.status === 'N'
+              }" 
+              class="inline-flex items-center text-xs font-medium px-2.5 py-0.5 rounded-full dark:text-white dark:bg-gray-900">
+                <span class="w-2 h-2 me-1 rounded-full" [ngClass]="{
+                  'bg-green-500': data.status === 'A',
+                  'bg-gray-500': data.status === 'P',
+                  'bg-red-500': data.status === 'N'
+                }"></span>
+                {{data.status === 'A' ? 'Accepted' : (data.status === 'P' ? 'Pending' : 'Not Accepted')}}
               </span>
             </td>
-          </tr>
-          <tr class="odd:bg-white odd:dark:bg-gray-900 even:bg-gray-50 even:dark:bg-gray-800 border-b dark:border-gray-700">
-              <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                  Ahmed Ahmed
-              </th>
-              <td class="px-6 py-4">
-                22/03/2024
-              </td>
-              <td class="px-6 py-4">
-                <span class="inline-flex items-center bg-red-100 text-red-800 text-xs font-medium px-2.5 py-0.5 rounded-full dark:bg-red-900 dark:text-red-300">
-                  <span class="w-2 h-2 me-1 bg-red-500 rounded-full"></span>
-                  Rejected
-              </span>
-            </td>
-          </tr>
-          <tr class="odd:bg-white odd:dark:bg-gray-900 even:bg-gray-50 even:dark:bg-gray-800 border-b dark:border-gray-700">
-              <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                  Fatima Foad
-              </th>
-              <td class="px-6 py-4">
-                22/03/2024
-              </td>
-              <td class="px-6 py-4">
-                <span class="inline-flex items-center bg-green-100 text-green-800 text-xs font-medium px-2.5 py-0.5 rounded-full dark:bg-green-900 dark:text-green-300">
-                  <span class="w-2 h-2 me-1 bg-green-500 rounded-full"></span>
-                  Accepted
-              </span>
-            </td>
-          </tr>
-          <tr class="odd:bg-white odd:dark:bg-gray-900 even:bg-gray-50 even:dark:bg-gray-800 border-b dark:border-gray-700">
-              <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                  Shaikha Shai
-              </th>
-              <td class="px-6 py-4">
-                22/03/2024
-              </td>
-              <td class="px-6 py-4">
-                <span class="inline-flex items-center bg-red-100 text-red-800 text-xs font-medium px-2.5 py-0.5 rounded-full dark:bg-red-900 dark:text-red-300">
-                  <span class="w-2 h-2 me-1 bg-red-500 rounded-full"></span>
-                  Rejected
-              </span>
-              </td>
-          </tr>
-          <tr>
-              <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                  Ahmed Again
-              </th>
-              <td class="px-6 py-4">
-                  22/03/2024
-              </td>
-              <td class="px-6 py-4">
-                <span class="inline-flex items-center bg-red-100 text-red-800 text-xs font-medium px-2.5 py-0.5 rounded-full dark:bg-red-900 dark:text-red-300">
-                  <span class="w-2 h-2 me-1 bg-red-500 rounded-full"></span>
-                  Rejected
-              </span>
-              </td>
-
-          </tr>
+          </ng-container>
+        </tr>
       </tbody>
+      
   </table>
 </div>
 </div>
