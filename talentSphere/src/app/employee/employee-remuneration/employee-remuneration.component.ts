@@ -9,10 +9,21 @@ import { TalentService } from '../../talent.service';
 export class EmployeeRemunerationComponent implements OnInit{
   constructor(private talent : TalentService) { }
 
+  userId:any
+ fname:any
+ lname:any
   ngOnInit(): void {
+    this.userId = localStorage.getItem('id')
+    this.fname = localStorage.getItem('fname')
+    this.lname = localStorage.getItem('lname')
     this.getRemunerations()
+    this.getUserDataLoggedIn()
+    this.getUserLeaves()
+    this.getBonuses()
   }
-  
+  getUserId(){
+    return localStorage.getItem('id')
+  }
   userData: any = [];
   AllSalaries: any = [];
   jobInfo:any = []
@@ -24,6 +35,30 @@ export class EmployeeRemunerationComponent implements OnInit{
     const leaveDaysCurrentYear = empLea.filter(leave => new Date(leave.date).getFullYear() === currentYear);
     return 30 - leaveDaysCurrentYear.length;
   }
+loggedInUserSalary:any =[]
+getUserDataLoggedIn(){
+  this.talent.getUserSalary(this.userId).subscribe((res:any)=>{
+  this.loggedInUserSalary = res.data
+  })
+  console.log(this.loggedInUserSalary)
+  
+}
+userLeaves:any =[]
+getUserLeaves(){
+  this.talent.getEmployeeLeaves().subscribe((res:any)=>{
+this.userLeaves = res.data
+console.log(res.data)
+  })
+  console.log(this.userLeaves)
+}
+userBonuses:any =[]
+getBonuses(){
+this.talent.getAllBonuses().subscribe((res:any)=>{
+  this.userBonuses = res.data
+})
+console.log(this.userBonuses)
+}
+
 
   async getRemunerations() {
     this.talent.getAllSalaries().subscribe((resp:any) => {
@@ -59,8 +94,8 @@ export class EmployeeRemunerationComponent implements OnInit{
       // const empLea : any =[]
       this.userData.forEach((user: any) => {
        
-        const salaryInfo = this.AllSalaries.find((salary: any) => salary.userID === user.id);
-        const jobInformation = this.jobInfo.find((job:any)=>job.userID === user.id)
+        const salaryInfo = this.AllSalaries.find((salary: any) => salary.userID === localStorage.getItem('id'));
+        const jobInformation = this.jobInfo.find((job:any)=>job.userID === localStorage.getItem('id'))
         // for(let i=0;i<this.empleave.length;i++){
         //   if(this.empleave[i] && this.empleave[i].userID === user.id){
         //     empLea.push(this.empleave[i])
@@ -77,5 +112,9 @@ export class EmployeeRemunerationComponent implements OnInit{
 
       console.log(this.combinedData);
     }
+  }
+  formatDate(dateString: string): string {
+    const date = new Date(dateString);
+    return date.toLocaleDateString(undefined, { year: 'numeric', month: 'short', day: 'numeric' });
   }
 }

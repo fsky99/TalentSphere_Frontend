@@ -92,7 +92,9 @@ craeteEvent(event:any){
   return this.http.post(this.baseUrl +'/addEvent',event ,this.getRequestOptions())
 }
 
-
+createEmployeeLeave(data:any){
+  return this.http.post(this.baseUrl +'/addEmployeeLeave' ,data, this.getRequestOptions())
+}
 //updates
 
 updateStatus(status:any){
@@ -117,6 +119,8 @@ getEmployeejobinfo(){
 getAllemployee(){
   return this.http.get(this.baseUrl +'/employee' , this.getRequestOptions())
 }
-
+getUserSalary(userID:any){
+return this.http.get(`${this.baseUrl}/salary/${userID}`,this.getRequestOptions())
+}
 
 }
