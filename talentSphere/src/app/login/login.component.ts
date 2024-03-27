@@ -33,6 +33,8 @@ export class LoginComponent implements AfterViewInit {
         localStorage.setItem('id', response.id);
         localStorage.setItem('token', response.token);
         localStorage.setItem('type', response.type);
+         localStorage.setItem('fname',response.fname)
+         localStorage.setItem('lname',response.lname)
 
         console.log(response);
         if (localStorage.getItem('type') === 'H') {

@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Output, ViewChild } from '@angular/core';
 import { StatuspopupComponent } from '../statuspopup/statuspopup.component';
+import { TalentService } from '../../../talent.service';
 
 @Component({
   selector: 'app-navbar',
@@ -7,9 +8,20 @@ import { StatuspopupComponent } from '../statuspopup/statuspopup.component';
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent {
+ fname:any
+ lname : any
+ email:any
+  ngOnInit(){
+    this.fname = localStorage.getItem('fname')
+    this.lname = localStorage.getItem('lname')  
+    this.email = localStorage.getItem('email')
+  }
+  // fname = localStorage.getItem('fname')
+  // lname = localStorage.getItem('lname')  
+  // email = localStorage.getItem('email')
   isSidebarOpen = false;
   isButtonActive = false;
-  userType: string | null = localStorage.getItem('type'); // Add this line
+  userType: string | null = localStorage.getItem('type'); 
   @Output() sidebarState = new EventEmitter<boolean>();
   @ViewChild(StatuspopupComponent) statusPopup!: StatuspopupComponent;
 
