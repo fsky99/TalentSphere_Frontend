@@ -26,6 +26,29 @@ export class AdminremunerationsComponent implements OnInit {
   empleave:any=[]
   bonuses: any =[]
   combinedData: any = [];
+
+  bonusAddData ={
+    id:null ,
+    userID :'',
+    salaryID:'',
+    bonus:'',
+    bonusDate:''
+
+  }
+  addBonus(salaryID: any, userID: any) {
+    const bonusData = this.combinedData.find((data: any) => data.salaryInfo.id === salaryID && data.id === userID);
+    if (bonusData) {
+      this.talent.addBonusToEmployee({
+        id: null,
+        userID: bonusData.id,
+        salaryID: salaryID,
+        bonus: bonusData.bonus,
+        bonusDate: bonusData.bonusDate
+      }).subscribe((res: any) => {
+        alert("Bonus added");
+        window.location.reload();
+      });
+    }}
   getDaysAvailable(empLea: any[]): number {
     const currentYear = new Date().getFullYear();
     const leaveDaysCurrentYear = empLea.filter(leave => new Date(leave.date).getFullYear() === currentYear);
