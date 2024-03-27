@@ -32,8 +32,13 @@ import { EmployeeDirectoryComponent } from './employee/employee-directory/employ
 
 import { StatuspopupComponent } from './admin/components/statuspopup/statuspopup.component';
 import { EmployeedirectoryComponent } from './employeedirectory/employeedirectory.component';
+import { ViewprofileComponent } from './viewprofile/viewprofile.component';
 import { AdminaddeventComponent } from './admin/components/adminaddevent/adminaddevent.component';
+
 import { RemunerationpopupComponent } from './employee/remunerationpopup/remunerationpopup.component';
+
+import { AdminActivityComponent } from './admin/pages/admin-activity/admin-activity.component';
+
 
 
 @NgModule({
@@ -47,7 +52,6 @@ import { RemunerationpopupComponent } from './employee/remunerationpopup/remuner
     AdmindashboardComponent,
     AdmindirectoryComponent,
     AdminremunerationsComponent,
-
     AdmineventsComponent,
     EmployeeDashComponent,
     AdminrequestsComponent,
@@ -55,25 +59,24 @@ import { RemunerationpopupComponent } from './employee/remunerationpopup/remuner
     AdminactivitiesComponent,
     AdminAddEmployeeComponent,
     MasterProfileComponent,
-
     EmployeeEventsComponent,
     EmployeeRemunerationComponent,
     EmployeeDirectoryComponent,
-
     StatuspopupComponent,
     EmployeedirectoryComponent,
-
+    ViewprofileComponent,
     AdminaddeventComponent,
-
-
-
     EmployeeEventsComponent,
     EmployeeRemunerationComponent,
     EmployeeDirectoryComponent,
-
     StatuspopupComponent,
     EmployeedirectoryComponent,
+
     RemunerationpopupComponent,
+
+    AdminActivityComponent,
+
+
 
 
   ],

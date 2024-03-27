@@ -44,6 +44,7 @@ getAllSalaries(){
 getUser(id:any){
   return this.http.get(`${this.baseUrl}/users/${id}`, this.getRequestOptions())
 }
+
 getUserActivity(id:any){
   return this.http.get(`${this.baseUrl}/timeSheet/${id}`, this.getRequestOptions())
 }
@@ -87,7 +88,9 @@ createEmployee(emp:any){
 createTimeSheet(data:any){
 return this.http.post(this.baseUrl +'/addTimeSheet' , data , this.getRequestOptions())
 }
-
+craeteEvent(event:any){
+  return this.http.post(this.baseUrl +'/addEvent',event ,this.getRequestOptions())
+}
 
 
 //updates
@@ -98,7 +101,9 @@ updateStatus(status:any){
 
 
 
-
+updateStatusForChcekout(id:any, time:any){
+return this.http.put(`${this.baseUrl}/updateStatusofTS/${id}/${time}`, this.getRequestOptions())
+}
 
 
 

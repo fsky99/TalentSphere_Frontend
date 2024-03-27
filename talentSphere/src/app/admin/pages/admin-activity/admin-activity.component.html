@@ -1,0 +1,42 @@
+<div class="relative overflow-x-auto shadow-md sm:rounded-lg">
+  <div class="flex items-center justify-between flex-column flex-wrap md:flex-row space-y-4 md:space-y-0 pb-4 bg-white dark:bg-gray-900">
+    <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
+      <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+        <tr>
+          <th scope="col" class="px-6 py-3">Name</th>
+          <th scope="col" class="px-6 py-3">Project Name</th>
+          <th scope="col" class="px-6 py-3">Task Name</th>
+          <th scope="col" class="px-6 py-3">Checkin time</th>
+          <th scope="col" class="px-6 py-3">Check out</th>
+        </tr>
+      </thead>
+      <tbody>
+        <ng-container *ngFor="let data of userData">
+          <ng-container *ngFor="let act of userActivity">
+            <tr>
+              <td class="w-4 p-4">
+                <div class="flex items-center">{{data.fname}} {{data.lname}}</div>
+              </td>
+              <td scope="row" class="flex items-center px-6 py-4 text-gray-900 whitespace-nowrap dark:text-white">
+                <div class="ps-3">
+                  <div class="text-base font-semibold">{{act.projectName}}</div>
+                  <div class="font-normal text-gray-500"></div>
+                </div>
+              </td>
+              <td class="px-6 py-4">{{act.taskName}}</td>
+              <td class="px-6 py-4">{{act.checkinTime}}</td>
+              <td class="px-6 py-4">
+                <ng-container *ngIf="act.status === 'N'">
+                  <button class="bg-green-500 hover:bg-green-600 text-white font-bold py-1 px-2 rounded" (click)="checkout(act.id)">Check out</button>
+                </ng-container>
+                <ng-container *ngIf="act.status !== 'N'">
+                  {{act.checkoutTime}}
+                </ng-container>
+              </td>
+            </tr>
+          </ng-container>
+        </ng-container>
+      </tbody>
+    </table>
+  </div>
+</div>
