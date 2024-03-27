@@ -11,12 +11,11 @@ import { AdminmessagesComponent } from './admin/pages/adminmessages/adminmessage
 import { AdminrequestsComponent } from './admin/pages/adminrequests/adminrequests.component';
 import { AdminAddEmployeeComponent } from './admin/pages/adminaddemployee/adminaddemployee.component';
 import { MasterProfileComponent } from './admin/pages/masterprofile/masterprofile.component';
-
+import { EmployeedirectoryComponent } from './employeedirectory/employeedirectory.component';
+import { ViewprofileComponent } from './viewprofile/viewprofile.component';
 import { EmployeeDashComponent } from './employee/employee-dash/employee-dash.component';
-import { EmployeeDirectoryComponent } from './employee/employee-directory/employee-directory.component';
 import { EmployeeEventsComponent } from './employee/employee-events/employee-events.component';
 import { EmployeeRemunerationComponent } from './employee/employee-remuneration/employee-remuneration.component';
-
 import { AdminaddeventComponent } from './admin/components/adminaddevent/adminaddevent.component';
 
 const routes: Routes = [
@@ -32,11 +31,14 @@ const routes: Routes = [
   { path: 'admin-messages', component: AdminmessagesComponent },
   { path: 'admin-requests', component: AdminrequestsComponent },
   { path: 'master-profile', component: MasterProfileComponent },
+
+  { path: 'employee-directory', component: EmployeedirectoryComponent },
+  { path: 'view-profile', component: ViewprofileComponent },
   { path: 'employee-dashboard', component: EmployeeDashComponent },
-  { path: 'employee-directory', component: EmployeeDirectoryComponent },
   { path: 'employee-events', component: EmployeeEventsComponent },
   { path: 'employee-remuneration', component: EmployeeRemunerationComponent },
   { path: 'admin-add-event', component: AdminaddeventComponent }
+
 ];
 
 
