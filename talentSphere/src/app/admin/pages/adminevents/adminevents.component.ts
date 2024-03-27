@@ -39,4 +39,11 @@ export class AdmineventsComponent implements OnInit {
     this.isAddEventPopupVisible = !this.isAddEventPopupVisible;
 
   }
+  deleteEvent(eventID:any){
+    this.talent.deleteEvent(eventID).subscribe((res:any)=>{
+      alert("Event Deleted")
+      window.location.reload()
+    })
+ 
+  }
 }
