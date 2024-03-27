@@ -16,6 +16,7 @@ import { EmployeeDashComponent } from './employee/employee-dash/employee-dash.co
 import { EmployeeDirectoryComponent } from './employee/employee-directory/employee-directory.component';
 import { EmployeeEventsComponent } from './employee/employee-events/employee-events.component';
 import { EmployeeRemunerationComponent } from './employee/employee-remuneration/employee-remuneration.component';
+import { RemunerationpopupComponent } from './employee/remunerationpopup/remunerationpopup.component';
 
 import { EmployeedirectoryComponent } from './employeedirectory/employeedirectory.component';
 import { AdminaddeventComponent } from './admin/components/adminaddevent/adminaddevent.component';
@@ -29,15 +30,16 @@ const routes: Routes = [
   { path: 'admin-events', component: AdmineventsComponent },
   { path: 'admin-directory', component: AdmindirectoryComponent },
   { path: 'admin-remuneration', component: AdminremunerationsComponent },
-  {path: 'admin-activities', component: AdminactivitiesComponent},
-  {path: 'admin-messages', component: AdminmessagesComponent},
-  {path:'admin-requests', component:AdminrequestsComponent},
+  { path: 'admin-activities', component: AdminactivitiesComponent},
+  { path: 'admin-messages', component: AdminmessagesComponent},
+  { path:'admin-requests', component:AdminrequestsComponent},
   { path: 'master-profile', component: MasterProfileComponent },
 
   { path: 'employee-dashboard', component: EmployeeDashComponent},
-  {path: 'employee-directory', component: EmployeeDirectoryComponent},
-  {path: 'employee-events', component: EmployeeEventsComponent},
-  {path: 'employee-remuneration', component: EmployeeRemunerationComponent},
+  { path: 'employee-directory', component: EmployeeDirectoryComponent},
+  { path: 'employee-events', component: EmployeeEventsComponent},
+  { path: 'employee-remuneration', component: EmployeeRemunerationComponent},
+  { path: 'employee-requestleave', component: RemunerationpopupComponent},
   { path: 'employee-directory', component: EmployeedirectoryComponent },
   { path: 'admin-add-event', component: AdminaddeventComponent },
 
