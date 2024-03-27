@@ -25,7 +25,7 @@
   margin-bottom: 20px;
   font-size: 24px;
   font-weight: bold;
-  color: #333;
+  color: #0f3d61;
 }
 
 .status-section {
@@ -49,9 +49,10 @@
 }
 
 .submit-button {
-  background-color: #4caf50;
+  background-color: #d04928;
   color: white;
   padding: 10px 20px;
+  margin-right: 20px;
   border: none;
   border-radius: 5px;
   cursor: pointer;
@@ -66,7 +67,7 @@
 }
 
 .close-button {
-  background-color: #f44336;
+  background-color:gray;
   color: white;
   padding: 10px 20px;
   border: none;

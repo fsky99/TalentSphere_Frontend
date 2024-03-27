@@ -5,32 +5,26 @@
   </div>
 
   <form (ngSubmit)="submitForm()">
-      <!-- Personal Details Section -->
       <div class="mb-6">
           <h2 class="text-xl font-semibold mb-2">Section 1: Personal Details</h2>
           <hr>
           <div class="grid gap-6 mb-6 md:grid-cols-2">
-              <!-- First Name -->
               <div>
                   <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">First Name</label>
                   <input type="text" id="fname" name="fname" [(ngModel)]="employee.fname" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="John" required />
               </div>
-              <!-- Last Name -->
               <div>
                   <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Last Name</label>
                   <input type="text" id="lname" name="lname" [(ngModel)]="employee.lname" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Doe" required />
               </div>
-              <!-- Email -->
               <div>
                   <label for="email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Email</label>
                   <input type="email" id="email" name="email" [(ngModel)]="employee.email" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="john.doe@example.com" required />
               </div>
-              <!-- Date of Birth -->
               <div>
                   <label  class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Date of Birth</label>
                   <input type="date" id="dob" name="dob" [(ngModel)]="employee.dob" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required />
               </div>
-              <!-- Gender -->
               <div>
                   <label  class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Gender</label>
                   <select   name="gender" [(ngModel)]="employee.gender" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required >
@@ -38,22 +32,18 @@
                     <option value="M">Male</option>
                     </select>
               </div>
-                <!-- Country -->
                 <div>
                   <label  class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Country</label>
                   <input type="text" id="country" name="country" [(ngModel)]="employee.country" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="USA" required />
               </div>
-              <!-- Phone Number -->
               <div>
                   <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Phone Number</label>
                   <input type="tel" id="phoneno" name="phoneno" [(ngModel)]="employee.phoneno" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="+1-555-555-5555" required />
               </div>
-              <!-- Address -->
               <div>
                   <label  class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Address</label>
                   <input type="text" id="address" name="address" [(ngModel)]="employee.address" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="123 Main St" required />
               </div>
-              <!-- Picture -->
               <div>
                   <label  class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Picture</label>
                   <input type="file" id="picture" name="picture" [(ngModel)]="employee.picture" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required />
@@ -66,12 +56,10 @@
                     </select>
             </div>
            
-              <!-- UserName ID -->
               <div>
                 <label  class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"> User Name</label>
                 <input type="text" id="username" name="username" [(ngModel)]="employee.username" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="john.doe" required />
             </div>
-             <!-- Password -->
              <div>
                 <label  class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Password</label>
                 <input type="password" id="password" name="password" [(ngModel)]="employee.password" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="••••••••" required />
@@ -82,33 +70,26 @@
           <button type="submit" class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded" (click)="AddUser()">Add User</button>
           <hr>
       </div>
-
-      <!-- Documents Section -->
       <div class="mb-6">
           <h2 class="text-xl font-semibold mb-2">Section 2: Documents</h2>
           <hr>
           <div class="grid gap-6 mb-6 md:grid-cols-2">
-              <!-- CV -->
               <div>
                   <label for="cv" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">CV</label>
                   <input type="file" id="cv" name="cv" [(ngModel)]="employee.cv" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required />
               </div>
-              <!-- Passport -->
               <div>
                   <label for="passport" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Passport</label>
                   <input type="file" id="passport" name="passport" [(ngModel)]="employee.passport" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required />
               </div>
-              <!-- Contract -->
               <div>
                 <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Contract</label>
                 <input type="file" id="jobContract" name="jobContract" [(ngModel)]="employee.jobContract" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required />
             </div>
-            <!-- Visa -->
             <div>
                 <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Visa</label>
                 <input type="file" id="visa" name="visa" [(ngModel)]="employee.visa" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required />
             </div>
-              <!-- Health Check -->
               <div>
                 <label  class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Health Check</label>
                 <input type="file" id="healthCheck" name="healthCheck" [(ngModel)]="employee.healthCheck" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required />
@@ -116,13 +97,10 @@
           </div>
           <hr>
       </div>
-
-      <!-- Professional Information Section -->
       <div class="mb-6">
           <h2 class="text-xl font-semibold mb-2">Section 3: Professional Information</h2>
           <hr>
           <div class="grid gap-6 mb-6 md:grid-cols-2">
-              <!-- Job Title -->
               <div>
                   <label  class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Job Title</label>
                   <input type="text" id="jobName" name="jobName" [(ngModel)]="employee.jobName" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Software Engineer" required />
@@ -139,7 +117,6 @@
                 <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Department</label>
                 <input type="text" id="department" name="department" [(ngModel)]="employee.department" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="IT" required />
             </div>
-              <!-- Reports To -->
               <div>
                 <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Report To</label>
                 <select id="reportsTo" name="reportsTo" [(ngModel)]="employee.reportsTo" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="C-10" required >
@@ -149,13 +126,10 @@
           </div>
           <hr>
       </div>
-
-      <!-- Confidential Information Section -->
       <div class="mb-6">
           <h2 class="text-xl font-semibold mb-2">Section 4: Confidential Information</h2>
           <hr>
           <div class="grid gap-6 mb-6 md:grid-cols-2">
-              <!-- Salary -->
               <div>
                   <label  class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Salary</label>
                   <input type="number" id="salary" name="salary" [(ngModel)]="employee.salary" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="50000" required />
@@ -165,13 +139,8 @@
                 <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Account Number</label>
                 <input type="text" id="account_no" name="account_no" [(ngModel)]="employee.account_no" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="IT" required />
             </div>
-          
-           
           </div>
-          <hr>
       </div>
-
-      <!-- Submit Button -->
       <button type="submit" class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded">Submit</button>
   </form>
 </div>
