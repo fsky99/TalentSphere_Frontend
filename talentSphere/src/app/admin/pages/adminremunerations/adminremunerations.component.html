@@ -71,7 +71,8 @@
         </div>  
       </th>
       
-      <td  class="px-6 py-4">{{ res.jobInformation.jobName}}</td>
+      <td  class="px-6 py-4">{{ res.jobInformation?.jobName }}</td>
+
       <td class="px-6 py-4">{{ res.salaryInfo.salary }}</td>
       <td class="px-6 py-4">{{ res.bonusesData.length ? res.bonusesData.length : 'no bonuses' }}</td>
       <td  class="px-6 py-4">{{  res.empLea.length ? res.empLea.length : 'no days'}}</td>
