@@ -87,7 +87,9 @@ createEmployee(emp:any){
 createTimeSheet(data:any){
 return this.http.post(this.baseUrl +'/addTimeSheet' , data , this.getRequestOptions())
 }
-
+craeteEvent(event:any){
+  return this.http.post(this.baseUrl +'/addEvent',event ,this.getRequestOptions())
+}
 
 
 //updates
