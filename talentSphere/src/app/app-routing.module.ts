@@ -17,7 +17,7 @@ import { EmployeeDashComponent } from './employee/employee-dash/employee-dash.co
 import { EmployeeEventsComponent } from './employee/employee-events/employee-events.component';
 import { EmployeeRemunerationComponent } from './employee/employee-remuneration/employee-remuneration.component';
 import { AdminaddeventComponent } from './admin/components/adminaddevent/adminaddevent.component';
-
+import { AdminActivityComponent } from './admin/pages/admin-activity/admin-activity.component';
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: 'login' },
   { path: 'login', component: LoginComponent },
@@ -31,6 +31,7 @@ const routes: Routes = [
   { path: 'admin-messages', component: AdminmessagesComponent },
   { path: 'admin-requests', component: AdminrequestsComponent },
   { path: 'master-profile', component: MasterProfileComponent },
+  {path: 'admin-activity' , component: AdminActivityComponent},
 
   { path: 'employee-directory', component: EmployeedirectoryComponent },
   { path: 'view-profile', component: ViewprofileComponent },
