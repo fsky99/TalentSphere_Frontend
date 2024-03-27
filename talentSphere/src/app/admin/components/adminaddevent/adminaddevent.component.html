@@ -1,0 +1,23 @@
+<div *ngIf="isVisible" class="popup-overlay">
+  <div class="popup-content">
+    <h2 class="popup-title">Add Event</h2>
+    <div class="status-section">
+      <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Event Photo</label>
+      <input type="file" class="block w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 cursor-pointer dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400">
+
+      <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Event Name:</label>
+      <input type="text" class="block w-full p-2.5 text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white">
+
+      <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Date:</label>
+      <input type="date" class="block w-full p-2.5 text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white">
+
+      <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Time:</label>
+      <input type="time" class="block w-full p-2.5 text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white">
+    </div>
+    <div class="popup-actions">
+      <button class="submit-button">Create Event</button>
+      <button (click)="close()" class="close-button">Close</button>
+    </div>
+  </div>
+</div>
+

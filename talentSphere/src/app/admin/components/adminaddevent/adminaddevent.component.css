@@ -1,4 +1,4 @@
-/* .popup-overlay {
+.popup-overlay {
   position: fixed;
   top: 0;
   left: 0;
@@ -80,4 +80,4 @@
 .close-button:hover {
   opacity: 0.9;
   transform: scale(1.05);
-} */
+}
