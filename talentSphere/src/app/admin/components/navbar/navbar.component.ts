@@ -9,6 +9,7 @@ import { StatuspopupComponent } from '../statuspopup/statuspopup.component';
 export class NavbarComponent {
   isSidebarOpen = false;
   isButtonActive = false;
+  userType: string | null = localStorage.getItem('type'); // Add this line
   @Output() sidebarState = new EventEmitter<boolean>();
   @ViewChild(StatuspopupComponent) statusPopup!: StatuspopupComponent;
 
