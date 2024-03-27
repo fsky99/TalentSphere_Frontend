@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { TalentService } from '../talent.service';
+import { MatDialog } from '@angular/material/dialog';
+import { ProfileDialogComponent } from '../admin/components/profile-dialog/profile-dialog.component';
 
 @Component({
   selector: 'app-employeedirectory',
@@ -7,7 +9,9 @@ import { TalentService } from '../talent.service';
   styleUrl: './employeedirectory.component.css'
 })
 export class EmployeedirectoryComponent implements OnInit{
-  constructor(private talent : TalentService){}
+  dialog: any;
+  constructor(private talent : TalentService,dialog: MatDialog ){}
+  
   ngOnInit() {
     this.getUsers()
   }
@@ -66,7 +70,14 @@ export class EmployeedirectoryComponent implements OnInit{
       console.log(this.combinedData);
     }
   }
-  
+
+  openProfileDialog(user: any) {
+    const dialogRef = this.dialog.open(ProfileDialogComponent, {
+      width: '50%',
+      data: { user },
+      position: { bottom: '10%', left: '10%' }
+    });
+  }
   
   
   

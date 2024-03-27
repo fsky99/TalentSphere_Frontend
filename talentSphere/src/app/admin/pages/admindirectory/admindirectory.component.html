@@ -25,7 +25,7 @@
     <!-- Loop through each employee -->
     <div *ngFor="let res of combinedData" class="card">
       <div class="flex flex-col items-center pb-10">
-        <img class="w-24 h-24 mb-3 rounded-full shadow-lg" src="{{ res.picture }}" alt="Employee Image"/>
+        <img class="w-24 h-24 mb-3 rounded-full shadow-lg" src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" alt="Employee Image"/>
         <h5 class="mb-1 text-xl font-medium text-gray-900">{{ res.fname }} {{ res.lname }}</h5>
         <span class="text-sm text-gray-500">{{ res.jobInformation?.jobTitle }}</span>
         <span class="text-sm text-gray-500">{{ res.email }}</span>
