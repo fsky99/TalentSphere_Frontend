@@ -6,7 +6,7 @@
 
 h1,
 h2 {
-  color: #333;
+  color: #0f3d61;
 }
 
 hr {
@@ -38,7 +38,7 @@ input[type='file'] {
 
 input[type='submit'],
 button {
-  background-color: #4caf50;
+  background-color: #ea5c39;
   color: white;
   padding: 10px 20px;
   border: none;
@@ -48,7 +48,7 @@ button {
 
 input[type='submit']:hover,
 button:hover {
-  background-color: #45a049;
+  background-color: #ea5c39;
 }
 
 .grid {
