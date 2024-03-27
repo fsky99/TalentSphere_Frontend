@@ -18,6 +18,7 @@ import { EmployeeEventsComponent } from './employee/employee-events/employee-eve
 import { EmployeeRemunerationComponent } from './employee/employee-remuneration/employee-remuneration.component';
 
 import { EmployeedirectoryComponent } from './employeedirectory/employeedirectory.component';
+import { AdminaddeventComponent } from './admin/components/adminaddevent/adminaddevent.component';
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: 'login' },

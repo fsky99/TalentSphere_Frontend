@@ -62,7 +62,7 @@ import { AdminaddeventComponent } from './admin/components/adminaddevent/adminad
     StatuspopupComponent,
     EmployeedirectoryComponent,
 
-    AdminaddeventComponent
+    AdminaddeventComponent,
 
 
 
