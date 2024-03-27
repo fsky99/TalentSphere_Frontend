@@ -44,6 +44,12 @@ getAllSalaries(){
 getUser(id:any){
   return this.http.get(`${this.baseUrl}/users/${id}`, this.getRequestOptions())
 }
+getUserActivity(id:any){
+  return this.http.get(`${this.baseUrl}/timeSheet/${id}`, this.getRequestOptions())
+}
+getUserDataFromEmail(email:any){
+  return this.http.get(`${this.baseUrl}/users/${email}`, this.getRequestOptions())
+}
 getEmployeesHobInfo(){
   return this.http.get(this.baseUrl +'/employeejobinfo', this.getRequestOptions())
 }
@@ -60,13 +66,14 @@ getAllEvents(){
   return this.http.get(this.baseUrl + '/eventss' , this.getRequestOptions())
 }
 
+
 //create 
 createUser(userData:any){
   return this.http.post(this.baseUrl + '/addUser', userData ,this.getRequestOptions())
 }
 
 createJobInfo(jobInfo:any){
-  return this.http.post(this.baseUrl + '/addEmployeeJobInfo' , jobInfo . this.getRequestOptions())
+  return this.http.post(this.baseUrl + '/addEmployeeJobInfo' , jobInfo , this.getRequestOptions())
 }
 
 createSalary(empSalary:any){
@@ -76,6 +83,24 @@ createSalary(empSalary:any){
 createEmployee(emp:any){
   return this.http.post(this.baseUrl +'/addEmployee' , emp , this.getRequestOptions())
 }
+
+createTimeSheet(data:any){
+return this.http.post(this.baseUrl +'/addTimeSheet' , data , this.getRequestOptions())
+}
+
+
+
+//updates
+
+updateStatus(status:any){
+  return this.http.put(this.baseUrl +'/updateEmpleave',status, this.getRequestOptions())
+}
+
+
+
+
+
+
 
 
 
