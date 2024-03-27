@@ -32,6 +32,7 @@ import { EmployeeDirectoryComponent } from './employee/employee-directory/employ
 
 import { StatuspopupComponent } from './admin/components/statuspopup/statuspopup.component';
 import { EmployeedirectoryComponent } from './employeedirectory/employeedirectory.component';
+import { ViewprofileComponent } from './viewprofile/viewprofile.component';
 import { AdminaddeventComponent } from './admin/components/adminaddevent/adminaddevent.component';
 import { AdminActivityComponent } from './admin/pages/admin-activity/admin-activity.component';
 
@@ -47,7 +48,6 @@ import { AdminActivityComponent } from './admin/pages/admin-activity/admin-activ
     AdmindashboardComponent,
     AdmindirectoryComponent,
     AdminremunerationsComponent,
-
     AdmineventsComponent,
     EmployeeDashComponent,
     AdminrequestsComponent,
@@ -55,25 +55,20 @@ import { AdminActivityComponent } from './admin/pages/admin-activity/admin-activ
     AdminactivitiesComponent,
     AdminAddEmployeeComponent,
     MasterProfileComponent,
-
     EmployeeEventsComponent,
     EmployeeRemunerationComponent,
     EmployeeDirectoryComponent,
-
     StatuspopupComponent,
     EmployeedirectoryComponent,
-
+    ViewprofileComponent,
     AdminaddeventComponent,
-
-
-
     EmployeeEventsComponent,
     EmployeeRemunerationComponent,
     EmployeeDirectoryComponent,
-
     StatuspopupComponent,
     EmployeedirectoryComponent,
     AdminActivityComponent,
+
 
 
   ],
