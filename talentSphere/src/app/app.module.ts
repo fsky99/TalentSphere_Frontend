@@ -39,8 +39,8 @@ import { RemunerationpopupComponent } from './employee/remunerationpopup/remuner
 
 import { AdminActivityComponent } from './admin/pages/admin-activity/admin-activity.component';
 
-
-
+import { MatDialogModule } from '@angular/material/dialog';
+import { ProfileDialogComponent } from './admin/components/profile-dialog/profile-dialog.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -75,6 +75,7 @@ import { AdminActivityComponent } from './admin/pages/admin-activity/admin-activ
     RemunerationpopupComponent,
 
     AdminActivityComponent,
+     ProfileDialogComponent,
 
 
 
@@ -86,6 +87,7 @@ import { AdminActivityComponent } from './admin/pages/admin-activity/admin-activ
 
     FormsModule, 
     HttpClientModule,
+    MatDialogModule,
 
   ],
   providers: [

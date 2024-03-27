@@ -1,12 +1,10 @@
-<div class="flex justify-between py-12">
-  <div >
+<div class="flex justify-between py-12 profile-info">
+  <div>
+    <img src="{{ user.picture }}" alt="Profile Picture">
     <h1><b>First Name : </b>{{ user.fname }}</h1>
-    <br />
-    <h2><b>Last Name : </b> {{ user.lname }}</h2>
-    <br />
-    <h2><b>Email : </b> {{ user.email }}</h2>
-    <br />
-    <h2><b>Date Of Birth : </b>{{ formatDate(user.dob) }}</h2><br/>
+    <h2><b>Last Name : </b>{{ user.lname }}</h2>
+    <h2><b>Email : </b>{{ user.email }}</h2>
+    <h2><b>Date Of Birth : </b>{{ formatDate(user.dob) }}</h2>
     <h2><b>Phone no :</b>{{ user.phoneno }}</h2>
   </div>
 </div>
