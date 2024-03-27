@@ -22,9 +22,15 @@ import { AdminmessagesComponent } from './admin/pages/adminmessages/adminmessage
 import { AdminactivitiesComponent } from './admin/pages/adminactivities/adminactivities.component';
 import { AdminAddEmployeeComponent } from './admin/pages/adminaddemployee/adminaddemployee.component';
 import { MasterProfileComponent } from './admin/pages/masterprofile/masterprofile.component';
+<<<<<<< HEAD
 import { EmployeeEventsComponent } from './employee/employee-events/employee-events.component';
 import { EmployeeRemunerationComponent } from './employee/employee-remuneration/employee-remuneration.component';
 import { EmployeeDirectoryComponent } from './employee/employee-directory/employee-directory.component';
+=======
+import { StatuspopupComponent } from './admin/components/statuspopup/statuspopup.component';
+import { EmployeedirectoryComponent } from './employeedirectory/employeedirectory.component';
+import { AdminaddeventComponent } from './adminaddevent/adminaddevent.component';
+>>>>>>> a9094bc5790e4f39f662fadd2b13ec1e0619067c
 
 @NgModule({
   declarations: [
@@ -45,9 +51,15 @@ import { EmployeeDirectoryComponent } from './employee/employee-directory/employ
     AdminactivitiesComponent,
     AdminAddEmployeeComponent,
     MasterProfileComponent,
+<<<<<<< HEAD
     EmployeeEventsComponent,
     EmployeeRemunerationComponent,
     EmployeeDirectoryComponent
+=======
+    StatuspopupComponent,
+    EmployeedirectoryComponent,
+    AdminaddeventComponent
+>>>>>>> a9094bc5790e4f39f662fadd2b13ec1e0619067c
   ],
   imports: [
     BrowserModule,

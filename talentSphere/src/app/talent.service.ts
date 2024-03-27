@@ -53,6 +53,12 @@ getEmployeeLeaves(){
 getAllBonuses(){
   return this.http.get(this.baseUrl+ '/bonus', this.getRequestOptions())
 }
+getAllActivities(){
+  return this.http.get(this.baseUrl + '/timeSheet', this.getRequestOptions())
+}
+getAllEvents(){
+  return this.http.get(this.baseUrl + '/eventss' , this.getRequestOptions())
+}
 
 //create 
 createUser(userData:any){
@@ -78,7 +84,9 @@ getEmployeejobinfo(){
   return this.http.get(this.baseUrl+'/employeejobinfo', this.getRequestOptions())
 
 }
-
+getAllemployee(){
+  return this.http.get(this.baseUrl +'/employee' , this.getRequestOptions())
+}
 
 
 }

@@ -9,7 +9,7 @@ import { filter } from 'rxjs/operators';
 })
 export class AppComponent {
   isSidebarOpen = false;
-  private currentRoute: string = '';  // Initialize with an empty string
+  private currentRoute: string = '';  
 
   constructor(private router: Router) {
     this.router.events.pipe(

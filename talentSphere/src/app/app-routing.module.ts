@@ -16,6 +16,8 @@ import { EmployeeDirectoryComponent } from './employee/employee-directory/employ
 import { EmployeeEventsComponent } from './employee/employee-events/employee-events.component';
 import { EmployeeRemunerationComponent } from './employee/employee-remuneration/employee-remuneration.component';
 
+import { EmployeedirectoryComponent } from './employeedirectory/employeedirectory.component';
+import { AdminaddeventComponent } from './adminaddevent/adminaddevent.component';
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: 'login' },
   { path: 'login', component: LoginComponent },
@@ -32,7 +34,9 @@ const routes: Routes = [
   { path: 'employee-dashboard', component: EmployeeDashComponent},
   {path: 'employee-directory', component: EmployeeDirectoryComponent},
   {path: 'employee-events', component: EmployeeEventsComponent},
-  {path: 'employee-remuneration', component: EmployeeRemunerationComponent}
+  {path: 'employee-remuneration', component: EmployeeRemunerationComponent},
+  { path: 'employee-directory', component: EmployeedirectoryComponent },
+  { path: 'admin-add-event', component: AdminaddeventComponent }
 ];
 
 @NgModule({
