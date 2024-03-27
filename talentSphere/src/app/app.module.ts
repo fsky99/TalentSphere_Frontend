@@ -23,6 +23,9 @@ import { AdminactivitiesComponent } from './admin/pages/adminactivities/adminact
 import { AdminAddEmployeeComponent } from './admin/pages/adminaddemployee/adminaddemployee.component';
 import { MasterProfileComponent } from './admin/pages/masterprofile/masterprofile.component';
 
+
+
+
 import { EmployeeEventsComponent } from './employee/employee-events/employee-events.component';
 import { EmployeeRemunerationComponent } from './employee/employee-remuneration/employee-remuneration.component';
 import { EmployeeDirectoryComponent } from './employee/employee-directory/employee-directory.component';
@@ -58,7 +61,18 @@ import { AdminaddeventComponent } from './admin/components/adminaddevent/adminad
 
     StatuspopupComponent,
     EmployeedirectoryComponent,
+
     AdminaddeventComponent
+
+
+
+    EmployeeEventsComponent,
+    EmployeeRemunerationComponent,
+    EmployeeDirectoryComponent,
+
+    StatuspopupComponent,
+    EmployeedirectoryComponent,
+
 
   ],
   imports: [

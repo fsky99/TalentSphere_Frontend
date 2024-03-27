@@ -37,6 +37,8 @@ const routes: Routes = [
   {path: 'employee-directory', component: EmployeeDirectoryComponent},
   {path: 'employee-events', component: EmployeeEventsComponent},
   {path: 'employee-remuneration', component: EmployeeRemunerationComponent},
+  { path: 'employee-directory', component: EmployeedirectoryComponent },
+  { path: 'admin-add-event', component: AdminaddeventComponent },
 
   { path: 'employee-directory', component: EmployeedirectoryComponent },
 
