@@ -14,6 +14,7 @@ import { AdminAddEmployeeComponent } from './admin/pages/adminaddemployee/admina
 import { MasterProfileComponent } from './admin/pages/masterprofile/masterprofile.component';
 import { EmployeedirectoryComponent } from './employeedirectory/employeedirectory.component';
 import { AdminaddeventComponent } from './adminaddevent/adminaddevent.component';
+import { ViewprofileComponent } from './viewprofile/viewprofile.component';
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: 'login' },
   { path: 'login', component: LoginComponent },
@@ -29,7 +30,8 @@ const routes: Routes = [
   {path:'admin-requests', component:AdminrequestsComponent},
   { path: 'master-profile', component: MasterProfileComponent },
   { path: 'employee-directory', component: EmployeedirectoryComponent },
-  { path: 'admin-add-event', component: AdminaddeventComponent }
+  { path: 'admin-add-event', component: AdminaddeventComponent },
+  { path: 'view-profile', component: ViewprofileComponent }
 ];
 
 @NgModule({

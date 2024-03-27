@@ -44,6 +44,7 @@ getAllSalaries(){
 getUser(id:any){
   return this.http.get(`${this.baseUrl}/users/${id}`, this.getRequestOptions())
 }
+
 getUserActivity(id:any){
   return this.http.get(`${this.baseUrl}/timeSheet/${id}`, this.getRequestOptions())
 }
