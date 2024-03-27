@@ -12,8 +12,8 @@
       </thead>
       <tbody>
         <ng-container *ngFor="let data of userData">
-          <ng-container *ngFor="let act of userActivity">
-            <tr>
+          <ng-container *ngFor="let act of userActivity ">
+            <tr  *ngIf="act.userID == getUserId()">
               <td class="w-4 p-4">
                 <div class="flex items-center">{{data.fname}} {{data.lname}}</div>
               </td>
