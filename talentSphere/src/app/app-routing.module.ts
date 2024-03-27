@@ -19,7 +19,7 @@ import { EmployeeRemunerationComponent } from './employee/employee-remuneration/
 
 import { EmployeedirectoryComponent } from './employeedirectory/employeedirectory.component';
 import { AdminaddeventComponent } from './admin/components/adminaddevent/adminaddevent.component';
-
+import { AdminActivityComponent } from './admin/pages/admin-activity/admin-activity.component';
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: 'login' },
   { path: 'login', component: LoginComponent },
@@ -33,6 +33,7 @@ const routes: Routes = [
   {path: 'admin-messages', component: AdminmessagesComponent},
   {path:'admin-requests', component:AdminrequestsComponent},
   { path: 'master-profile', component: MasterProfileComponent },
+  {path: 'admin-activity' , component: AdminActivityComponent},
 
   { path: 'employee-dashboard', component: EmployeeDashComponent},
   {path: 'employee-directory', component: EmployeeDirectoryComponent},

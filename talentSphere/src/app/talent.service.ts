@@ -100,7 +100,9 @@ updateStatus(status:any){
 
 
 
-
+updateStatusForChcekout(id:any){
+return this.http.put(`${this.baseUrl}/updateStatusofTS/${id}`, this.getRequestOptions())
+}
 
 
 

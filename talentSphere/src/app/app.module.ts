@@ -33,6 +33,7 @@ import { EmployeeDirectoryComponent } from './employee/employee-directory/employ
 import { StatuspopupComponent } from './admin/components/statuspopup/statuspopup.component';
 import { EmployeedirectoryComponent } from './employeedirectory/employeedirectory.component';
 import { AdminaddeventComponent } from './admin/components/adminaddevent/adminaddevent.component';
+import { AdminActivityComponent } from './admin/pages/admin-activity/admin-activity.component';
 
 
 @NgModule({
@@ -72,6 +73,7 @@ import { AdminaddeventComponent } from './admin/components/adminaddevent/adminad
 
     StatuspopupComponent,
     EmployeedirectoryComponent,
+    AdminActivityComponent,
 
 
   ],
