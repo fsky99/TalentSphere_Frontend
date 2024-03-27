@@ -27,9 +27,12 @@ export class AdminActivityComponent {
       this.filteredDataActivity(this.userActivity);
     });
   }
-
+  getUserId(){
+   return localStorage.getItem('id')
+  }
   filteredDataActivity(activity: any) {
     activity.filter((res: any) => res.userID === localStorage.getItem('id'));
+    console.log(activity)
     // Sort userActivity array based on status ('N' first, 'C' later)
     this.userActivity.sort((a: any, b: any) => {
       if (a.status === 'N' && b.status === 'C') {
