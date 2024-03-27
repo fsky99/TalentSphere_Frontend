@@ -47,6 +47,9 @@ getUser(id:any){
 getUserActivity(id:any){
   return this.http.get(`${this.baseUrl}/timeSheet/${id}`, this.getRequestOptions())
 }
+getUserDataFromEmail(email:any){
+  return this.http.get(`${this.baseUrl}/users/${email}`, this.getRequestOptions())
+}
 getEmployeesHobInfo(){
   return this.http.get(this.baseUrl +'/employeejobinfo', this.getRequestOptions())
 }
@@ -70,7 +73,7 @@ createUser(userData:any){
 }
 
 createJobInfo(jobInfo:any){
-  return this.http.post(this.baseUrl + '/addEmployeeJobInfo' , jobInfo . this.getRequestOptions())
+  return this.http.post(this.baseUrl + '/addEmployeeJobInfo' , jobInfo , this.getRequestOptions())
 }
 
 createSalary(empSalary:any){

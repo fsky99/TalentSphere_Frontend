@@ -65,16 +65,21 @@
                     <option value="E">Employee</option>
                     </select>
             </div>
-            <div>
-                <label  class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Joining Date</label>
-                <input type="date" id="joiningDate" name="joiningDate" [(ngModel)]="employee.joiningDate" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="22/2/2024" required />
+           
+              <!-- UserName ID -->
+              <div>
+                <label  class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"> User Name</label>
+                <input type="text" id="username" name="username" [(ngModel)]="employee.username" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="john.doe" required />
             </div>
-            <div>
-                <label  class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Rank</label>
-                <input type="text" id="emprank" name="emprank" [(ngModel)]="employee.emprank" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="C-10" required />
+             <!-- Password -->
+             <div>
+                <label  class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Password</label>
+                <input type="password" id="password" name="password" [(ngModel)]="employee.password" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="••••••••" required />
             </div>
+           
       
           </div>
+          <button type="submit" class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded" (click)="AddUser()">Add User</button>
           <hr>
       </div>
 
@@ -122,11 +127,23 @@
                   <label  class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Job Title</label>
                   <input type="text" id="jobName" name="jobName" [(ngModel)]="employee.jobName" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Software Engineer" required />
               </div>
+              <div>
+                <label  class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Joining Date</label>
+                <input type="date" id="joiningDate" name="joiningDate" [(ngModel)]="employee.joiningDate" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="22/2/2024" required />
+            </div>
+              <div>
+                <label  class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Rank</label>
+                <input type="text" id="emprank" name="emprank" [(ngModel)]="employee.emprank" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="C-10" required />
+            </div>
+            <div>
+                <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Department</label>
+                <input type="text" id="department" name="department" [(ngModel)]="employee.department" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="IT" required />
+            </div>
               <!-- Reports To -->
               <div>
                 <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Report To</label>
                 <select id="reportsTo" name="reportsTo" [(ngModel)]="employee.reportsTo" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="C-10" required >
-<option>make the option names of people in the db</option>
+<option vlaue="1">1</option>
                     </select>
             </div>
           </div>
@@ -143,25 +160,13 @@
                   <label  class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Salary</label>
                   <input type="number" id="salary" name="salary" [(ngModel)]="employee.salary" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="50000" required />
               </div>
-              <!-- Vacation Overall -->
-              <div>
-                <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Department</label>
-                <input type="text" id="department" name="department" [(ngModel)]="employee.department" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="IT" required />
-            </div>
+            
             <div>
                 <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Account Number</label>
                 <input type="text" id="account_no" name="account_no" [(ngModel)]="employee.account_no" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="IT" required />
             </div>
-            <!-- UserName ID -->
-            <div>
-                <label  class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"> User Name</label>
-                <input type="text" id="username" name="username" [(ngModel)]="employee.username" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="john.doe" required />
-            </div>
-            <!-- Password -->
-            <div>
-                <label  class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Password</label>
-                <input type="password" id="password" name="password" [(ngModel)]="employee.password" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="••••••••" required />
-            </div>
+          
+           
           </div>
           <hr>
       </div>
