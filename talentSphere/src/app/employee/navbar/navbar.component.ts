@@ -6,6 +6,14 @@ import { Component, EventEmitter, Output } from '@angular/core';
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent {
+  fname:any
+  lname : any
+  email:any
+   ngOnInit(){
+     this.fname = localStorage.getItem('fname')
+     this.lname = localStorage.getItem('lname')  
+     this.email = localStorage.getItem('email')
+   }
   isSidebarOpen = false;
   @Output() sidebarState = new EventEmitter<boolean>();
   isButtonActive = false;
