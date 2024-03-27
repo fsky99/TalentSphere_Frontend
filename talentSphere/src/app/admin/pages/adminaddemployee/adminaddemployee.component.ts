@@ -32,65 +32,117 @@ export class AdminAddEmployeeComponent {
     department: '',
     account_no: '',
     username: '',
-    password: ''
+    password: '',
+    job_id :''
   };
 
   constructor(private talent : TalentService) { }
 
 
-  userData : any ={
-    id: null,
-    fname :this.employee.fname ,lname : this.employee.lname ,
-    username : this.employee.username 
-,
-    email : this.employee.email,
-    password : this.employee.password
-,    type : this.employee.type ,
-
-    dob : this.employee.dob,  
-      phoneno : this.employee.phoneno ,
-    country : this.employee.country ,
-    address : this.employee.address ,
-
-    gender : this.employee.gender,
-    picture : this.employee.picture 
-  
-  }
+ 
 
 
 UserTableData : any =[]
 employeeTableData : any =[]
 salaryTableData : any =[]
 jobInfoTableData : any =[]
+userDataFromEmail:any=[]
+
+AddUser() {
+  const userData = {
+    id: null,
+    fname: this.employee.fname,
+    lname: this.employee.lname,
+    username: this.employee.username,
+    email: this.employee.email,
+    password: this.employee.password,
+    type: this.employee.type,
+    dob: this.employee.dob,  
+    phoneno: this.employee.phoneno,
+    country: this.employee.country,
+    address: this.employee.address,
+    gender: this.employee.gender,
+    picture: this.employee.picture 
+  };
+
+  console.log("User Data before adding", userData);
+
+  this.talent.createUser(userData).subscribe(
+    (resp: any) => {
+      this.UserTableData = resp;
+      alert('User Added');
+      console.log("user table data after it's added", this.UserTableData);
+      
+  
+      this.employee.id = resp.data.id;
+      console.log("User ID:", this.employee.id);
+      
+    
+      this.talent.getUserDataFromEmail(resp.data.email).subscribe(
+        (res: any) => {
+          this.userDataFromEmail = res.data;
+          console.log("User data from email:", this.userDataFromEmail);
+        },
+        (error) => {
+          console.error("Error fetching user data from email:", error);
+        }
+      );
+    },
+    (error) => {
+      console.error("Error adding user:", error);
+    }
+  );
+}
 
 
 
-
-  approve() {
-    // Implement your approve logic here
-    console.log('Approve clicked');
-    // Add your approve logic here
-  }
-
+ 
  async submitForm() {
 
-//all the create will happen here
+  const employeeJobInfo = {
+    id: null,
+    userID: this.employee.id,
+    cv: this.employee.cv,
+    passport: this.employee.passport,
+    visa: this.employee.visa,
+    healthCheck: this.employee.healthCheck,
+    jobContract: this.employee.jobContract,
+    jobName: this.employee.jobName,
+    joiningDate: this.employee.joiningDate,  
+    reportsTo: this.employee.reportsTo
+  };
 
 
-console.log( " employee " + this.employee)
 
-this.talent.createUser(this.userData).subscribe(async(resp:any=[])=>{
-  this.UserTableData = resp
-})
+  const salaryData ={
+    id: null,
+    userID: this.employee.id,
+    salary : this.employee.salary
+  }
 
-console.log("user table data" + this.UserTableData)
+  this.talent.createJobInfo(employeeJobInfo).subscribe((res:any)=>{
+    this.employee.job_id = res.data.id
+  })
+  const employeeData = {
+    id: null,
+    userID: this.employee.id,
+    emprank: this.employee.emprank,
+    reports_to: this.employee.reportsTo,
+    department: this.employee.department,
+    account_no : this.employee.account_no,
+    job_id : null
+  };
+  this.talent.createEmployee(employeeData).subscribe((res:any)=>{
+    console.log("emploee data" +res)
+  })
+  this.talent.createSalary(salaryData).subscribe((res:any)=>{
+    console.log("salaryAdded"+ res.data)
+  })
+
+console.log('added?')
+alert("user Data Added")
 
 
 
-
-
-    // Implement your form submission logic here
-    console.log('Form submitted', this.employee);
-    // Add your form submission logic here
   }
 }
