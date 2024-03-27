@@ -34,7 +34,7 @@ export class AdmineventsComponent implements OnInit {
   formatTime(dateString: string): string {
     const date = new Date(dateString);
     return date.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
-
+  }
   toggleStatusPopup() {
     this.isAddEventPopupVisible = !this.isAddEventPopupVisible;
 
