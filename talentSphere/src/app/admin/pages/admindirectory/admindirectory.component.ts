@@ -33,6 +33,8 @@ async getUsers() {
 
   this.talent.getEmployeesHobInfo().subscribe((results:any)=>{
     this.jobInfo = results.data
+    console.log(this.jobInfo);
+    
     this.combineData()
   })
   
