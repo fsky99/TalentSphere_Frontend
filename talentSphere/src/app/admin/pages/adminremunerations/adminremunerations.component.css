@@ -55,3 +55,15 @@
   background-color: #c82333;
   border-color: #c82333;
 }
+.submit-button {
+  background-color: #459827;
+  color: white;
+  padding: 10px 20px;
+  margin-right: 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition:
+    background-color 0.3s,
+    transform 0.2s;
+}
