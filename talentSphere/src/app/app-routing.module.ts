@@ -11,10 +11,7 @@ import { AdminmessagesComponent } from './admin/pages/adminmessages/adminmessage
 import { AdminrequestsComponent } from './admin/pages/adminrequests/adminrequests.component';
 import { AdminAddEmployeeComponent } from './admin/pages/adminaddemployee/adminaddemployee.component';
 import { MasterProfileComponent } from './admin/pages/masterprofile/masterprofile.component';
-<<<<<<< HEAD
-=======
 
->>>>>>> c88b05f6a9380b0faa51ee3ca300780e773db3da
 import { EmployeeDashComponent } from './employee/employee-dash/employee-dash.component';
 import { EmployeeDirectoryComponent } from './employee/employee-directory/employee-directory.component';
 import { EmployeeEventsComponent } from './employee/employee-events/employee-events.component';
@@ -22,10 +19,7 @@ import { EmployeeRemunerationComponent } from './employee/employee-remuneration/
 
 import { EmployeedirectoryComponent } from './employeedirectory/employeedirectory.component';
 import { AdminaddeventComponent } from './adminaddevent/adminaddevent.component';
-<<<<<<< HEAD
-=======
 
->>>>>>> c88b05f6a9380b0faa51ee3ca300780e773db3da
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: 'login' },
   { path: 'login', component: LoginComponent },
@@ -39,23 +33,17 @@ const routes: Routes = [
   {path: 'admin-messages', component: AdminmessagesComponent},
   {path:'admin-requests', component:AdminrequestsComponent},
   { path: 'master-profile', component: MasterProfileComponent },
-<<<<<<< HEAD
-=======
 
->>>>>>> c88b05f6a9380b0faa51ee3ca300780e773db3da
   { path: 'employee-dashboard', component: EmployeeDashComponent},
   {path: 'employee-directory', component: EmployeeDirectoryComponent},
   {path: 'employee-events', component: EmployeeEventsComponent},
   {path: 'employee-remuneration', component: EmployeeRemunerationComponent},
-<<<<<<< HEAD
   { path: 'employee-directory', component: EmployeedirectoryComponent },
-  { path: 'admin-add-event', component: AdminaddeventComponent }
-=======
+  { path: 'admin-add-event', component: AdminaddeventComponent },
 
   { path: 'employee-directory', component: EmployeedirectoryComponent },
   { path: 'admin-add-event', component: AdminaddeventComponent }
 
->>>>>>> c88b05f6a9380b0faa51ee3ca300780e773db3da
 ];
 
 @NgModule({
