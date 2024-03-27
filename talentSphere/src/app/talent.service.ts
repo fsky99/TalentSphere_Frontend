@@ -108,7 +108,9 @@ return this.http.put(`${this.baseUrl}/updateStatusofTS/${id}/${time}`, this.getR
 }
 
 
-
+deleteEvent(id:any){
+  return this.http.delete(`${this.baseUrl}/deleteEvent/${id}`,this.getRequestOptions())
+}
 
 
 
