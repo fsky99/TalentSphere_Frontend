@@ -22,17 +22,9 @@ import { AdminmessagesComponent } from './admin/pages/adminmessages/adminmessage
 import { AdminactivitiesComponent } from './admin/pages/adminactivities/adminactivities.component';
 import { AdminAddEmployeeComponent } from './admin/pages/adminaddemployee/adminaddemployee.component';
 import { MasterProfileComponent } from './admin/pages/masterprofile/masterprofile.component';
-<<<<<<< HEAD
-<<<<<<< HEAD
-import { EmployeeEventsComponent } from './employee/employee-events/employee-events.component';
-import { EmployeeRemunerationComponent } from './employee/employee-remuneration/employee-remuneration.component';
-import { EmployeeDirectoryComponent } from './employee/employee-directory/employee-directory.component';
-=======
-import { StatuspopupComponent } from './admin/components/statuspopup/statuspopup.component';
-import { EmployeedirectoryComponent } from './employeedirectory/employeedirectory.component';
-import { AdminaddeventComponent } from './adminaddevent/adminaddevent.component';
->>>>>>> a9094bc5790e4f39f662fadd2b13ec1e0619067c
-=======
+
+
+
 
 import { EmployeeEventsComponent } from './employee/employee-events/employee-events.component';
 import { EmployeeRemunerationComponent } from './employee/employee-remuneration/employee-remuneration.component';
@@ -42,7 +34,6 @@ import { StatuspopupComponent } from './admin/components/statuspopup/statuspopup
 import { EmployeedirectoryComponent } from './employeedirectory/employeedirectory.component';
 import { AdminaddeventComponent } from './adminaddevent/adminaddevent.component';
 
->>>>>>> c88b05f6a9380b0faa51ee3ca300780e773db3da
 
 @NgModule({
   declarations: [
@@ -63,17 +54,15 @@ import { AdminaddeventComponent } from './adminaddevent/adminaddevent.component'
     AdminactivitiesComponent,
     AdminAddEmployeeComponent,
     MasterProfileComponent,
-<<<<<<< HEAD
-<<<<<<< HEAD
+
     EmployeeEventsComponent,
     EmployeeRemunerationComponent,
-    EmployeeDirectoryComponent
-=======
+    EmployeeDirectoryComponent,
+
     StatuspopupComponent,
     EmployeedirectoryComponent,
-    AdminaddeventComponent
->>>>>>> a9094bc5790e4f39f662fadd2b13ec1e0619067c
-=======
+    AdminaddeventComponent,
+
 
     EmployeeEventsComponent,
     EmployeeRemunerationComponent,
@@ -82,7 +71,6 @@ import { AdminaddeventComponent } from './adminaddevent/adminaddevent.component'
     StatuspopupComponent,
     EmployeedirectoryComponent,
 
->>>>>>> c88b05f6a9380b0faa51ee3ca300780e773db3da
   ],
   imports: [
     BrowserModule,
