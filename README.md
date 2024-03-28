@@ -11,9 +11,9 @@
 - [Frontend](https://github.com/fsky99/project4_Frontend)
 - [Backend](https://github.com/fsky99/project4_Backend)
 
-## Live Version (UNDER DEVELOPMENT)
+## Live Version:
 
-Click the following link to be redirected to the live version of the code. [name of project](link of project)
+Click the following link to be redirected to the live version of the code. [Talent Sphere](link of project)
 
 ## About the Project
 
@@ -43,14 +43,16 @@ TalentSphere is a comprehensive HR Management System web application designed to
 - **Delete:** Remove employee accounts and events from the system
 
 ## Screenshots:
+## Login Page ![Login Page](login.png)
+## My Activity Page ![My ACtivity Page](myActivity.png)
+## Employee Remmuniration Page ![Emp Page](emplooyeeRemmuniration.png)
+## Add Employee  Page ![Add emp Page](addEmp.png)
 
 
 
-### Hierarchy Diagram:
-
-- [Link to Diagram] (https://lucid.app/lucidchart/3557353f-8d1e-4038-8495-074e3cc97969/edit?viewport_loc=-4688%2C-298%2C2528%2C1282%2C0_0&invitationId=inv_2abaf856-b787-402b-a848-e779cfb82900)
 
 ### wireframe:
+## Wireframe ![Home Page](Home.png)
 
 ### Real website:
 
@@ -59,7 +61,7 @@ TalentSphere is a comprehensive HR Management System web application designed to
 - [x] VSCode (Editor for Writing the Code)
 - [x] Node Js (Backend)
 - [x] Express (API Calls)
-- [x] postgresql (Databse)
+- [x] MySQL Workbench (Databse)
 - [x] Angular TS (Frontend)
 - [x] Trelllo (Managment for the work)
 - [x] lucidchart (ERD for the database)
@@ -71,14 +73,32 @@ TalentSphere is a comprehensive HR Management System web application designed to
 ### function
 
 ```
- Under Deveopment
+combineData() {
+   
+   if (this.usersData.length > 0 && this.leaves.length > 0 && this.employeeJobInfo.length > 0) {
+ 
+     this.combinedData = [];
+     this.usersData.forEach((user: any) => {
+      
+       const emplJIfo = this.employeeJobInfo.find((job: any) => job.userID === user.id);
+       const leaves = this.leaves.filter((leave:any)=>leave.userID === user.id)
+       const activity = this.activities.filter((act:any)=>act.userID === user.id)
+       if(leaves && leaves.length >0){
+         this.combinedData.push({ ...user, emplJIfo ,activity,leaves });
+       }
+     });
+
+     console.log(this.combinedData);
+   }
 ```
 
 ---
 
 ### Future plans:
 
-- [ Under Deveopment ]
+- [] Include a message system where users can message HR Admin both with their name and anonymously.
+- [] Introduce a mobile application.
+- [] Import a charts for the Admin HR to view. 
 
 ---
 
