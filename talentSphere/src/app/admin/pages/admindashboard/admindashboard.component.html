@@ -11,7 +11,7 @@
       <tbody>
         <tr *ngFor="let data of events" class="table-row">
           <td class="table-cell">
-            <img class="event-image" src={{data.picture}} alt="Event image">
+            <img class="event-image" src="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxleHBsb3JlLWZlZWR8NHx8fGVufDB8fHx8fA%3D%3D.jpg" alt="Event image">
           </td>
           <th scope="row" class="table-cell">
             {{data.eventName}}
@@ -40,7 +40,7 @@
         <li class="list-item" *ngFor="let leaveData of combinedData">
           <div class="item-content">
             <div class="item-image">
-              <img class="rounded-full w-8 h-8" src="https://via.placeholder.com/150" alt="Profile image">
+              <img class="rounded-full w-8 h-8" src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" alt="Profile image">
             </div>
             <div class="item-info">
               <p class="item-name">{{ leaveData.fname }} {{ leaveData.lname }}</p>
@@ -69,7 +69,7 @@
       <li *ngFor="let data of combinedData" class="list-item">
         <div class="item-content">
           <div class="item-image">
-            <img src={{data.picture}} alt="image">
+            <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" alt="image">
           </div>
           <div class="item-info">
             <p class="item-name">{{data.fname}} {{data.lname}}</p>
