@@ -13,9 +13,5 @@
       <p class="mb-2 text-sm text-gray-700 dark:text-gray-400">{{ formatDate(event.eventDate) }} at {{ event.eventTime }}</p>
       <button (click)="deleteEvent(event.id)" class="inline-block px-4 py-2 bg-red-600 text-white font-semibold rounded-lg hover:bg-red-700 focus:outline-none focus:bg-red-700 transition-colors duration-300">Delete</button>
     </div>
-    <div class="absolute inset-0 bg-black opacity-0 hover:opacity-50 transition-opacity duration-300"></div>
-    <div class="absolute inset-0 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity duration-300">
-      <button class="bg-white text-gray-800 font-semibold px-4 py-2 rounded-lg shadow-md hover:bg-gray-100">View Details</button>
-    </div>
   </div>
 </div>

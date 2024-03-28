@@ -1,90 +1,4 @@
-/* .popup-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background-color: rgba(0, 0, 0, 0.5);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 1000;
-}
-
-.popup-content {
-  background-color: white;
-  padding: 30px;
-  border-radius: 15px;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
-  width: 90%;
-  max-width: 600px;
-}
-
-.popup-title {
-  text-align: center;
-  margin-bottom: 20px;
-  font-size: 24px;
-  font-weight: bold;
-  color: #333;
-}
-
-.status-section {
-  margin-bottom: 20px;
-}
-
-.status-section label {
-  display: block;
-  margin-bottom: 5px;
-  font-weight: bold;
-  color: #333;
-}
-
-.status-section input {
-  width: 100%;
-  padding: 8px;
-  margin-bottom: 15px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  box-sizing: border-box;
-}
-
-.submit-button {
-  background-color: #4caf50;
-  color: white;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  transition:
-    background-color 0.3s,
-    transform 0.2s;
-}
-
-.submit-button:hover {
-  opacity: 0.9;
-  transform: scale(1.05);
-}
-
-.close-button {
-  background-color: #f44336;
-  color: white;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  transition:
-    background-color 0.3s,
-    transform 0.2s;
-}
-
-.close-button:hover {
-  opacity: 0.9;
-  transform: scale(1.05);
-} */
-
-/* CSS for the Events component */
-
-/* Container for the entire Events section */
+/* Container for events */
 .events-container {
   padding: 10px;
 }
@@ -116,7 +30,7 @@
   border-top-right-radius: 8px;
 }
 
-/* Event details */
+/* Event details section */
 .event-details {
   padding: 15px;
 }
