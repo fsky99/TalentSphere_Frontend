@@ -112,7 +112,9 @@ deleteEvent(id:any){
   return this.http.delete(`${this.baseUrl}/deleteEvent/${id}`,this.getRequestOptions())
 }
 
-
+addBonusToEmployee(data:any){
+return this.http.post(this.baseUrl +'/addBonus',data,this.getRequestOptions())
+}
 
 getEmployeejobinfo(){
   return this.http.get(this.baseUrl+'/employeejobinfo', this.getRequestOptions())
