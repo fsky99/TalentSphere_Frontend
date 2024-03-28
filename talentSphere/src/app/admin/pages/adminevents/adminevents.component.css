@@ -1,83 +1,65 @@
-/* .popup-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background-color: rgba(0, 0, 0, 0.5);
+/* Container for events */
+.events-container {
+  padding: 10px;
+}
+
+/* Title and Add Event button section */
+.events-header {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
-  z-index: 1000;
-}
-
-.popup-content {
-  background-color: white;
-  padding: 30px;
-  border-radius: 15px;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
-  width: 90%;
-  max-width: 600px;
-}
-
-.popup-title {
-  text-align: center;
-  margin-bottom: 20px;
-  font-size: 24px;
-  font-weight: bold;
-  color: #333;
-}
-
-.status-section {
   margin-bottom: 20px;
 }
 
-.status-section label {
-  display: block;
-  margin-bottom: 5px;
-  font-weight: bold;
-  color: #333;
+/* Individual event card */
+.event-card {
+  max-width: 300px;
+  background-color: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
 }
 
-.status-section input {
+/* Event image */
+.event-image {
   width: 100%;
-  padding: 8px;
-  margin-bottom: 15px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  box-sizing: border-box;
+  height: 200px;
+  object-fit: cover;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
 }
 
-.submit-button {
-  background-color: #4caf50;
-  color: white;
-  padding: 10px 20px;
-  border: none;
+/* Event details section */
+.event-details {
+  padding: 15px;
+}
+
+/* Event name */
+.event-name {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+/* Event date and time */
+.event-date-time {
+  font-size: 1rem;
+  color: #718096;
+  margin-bottom: 10px;
+}
+
+/* Delete button */
+.delete-button {
+  background-color: #ea5c39;
+  color: #ffffff;
+  font-weight: bold;
+  padding: 5px 10px;
   border-radius: 5px;
   cursor: pointer;
-  transition:
-    background-color 0.3s,
-    transform 0.2s;
+  transition: background-color 0.3s;
 }
 
-.submit-button:hover {
-  opacity: 0.9;
-  transform: scale(1.05);
+.delete-button:hover {
+  background-color: #d04928;
 }
-
-.close-button {
-  background-color: #f44336;
-  color: white;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  transition:
-    background-color 0.3s,
-    transform 0.2s;
-}
-
-.close-button:hover {
-  opacity: 0.9;
-  transform: scale(1.05);
-} */

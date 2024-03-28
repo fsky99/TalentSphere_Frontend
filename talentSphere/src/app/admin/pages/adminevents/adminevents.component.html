@@ -1,44 +1,17 @@
 <div class="flex justify-between py-10">
   <h1 class="mb-2 text-4xl font-medium tracking-tight text-gray-600 dark:text-white">Events</h1>
-
-  <button (click)="toggleStatusPopup()" class="bg-[#ea5c39] hover:bg-[#d04928] text-white font-bold py-2 px-4 rounded">Add Event</button>
+  <button (click)="toggleStatusPopup()" class="bg-[#0F3D61] hover:bg-[#179FAB] text-white font-bold py-2 px-4 rounded">Add Event</button>
 </div>
-
 
 <app-adminaddevent [isVisible]="isAddEventPopupVisible" (closePopup)="isAddEventPopupVisible = false"></app-adminaddevent>
 
-<div class="flex justify-between py-12" *ngFor="let event of Events">
-  <div class="flex flex-wrap gap-12">
-    <div
-      class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700"
-    >
-    
-        <img class="rounded-t-lg" src="{{ event.picture }}" alt="n" />
-     
-      <div class="p-5">
-        <a href="#">
-          <h5
-            class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white"
-          >
-            {{ event.eventName }}
-          </h5>
-        </a>
-        <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">
-          {{ formatDate(event.eventDate) }} at
-          {{ event.eventTime }}
-        </p>
-
-        <button
-         
-          class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-red-700 rounded-lg hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-800"
-        (click)="deleteEvent(event.id)">
-      Delete
-      </button>
-
-      </div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+  <div *ngFor="let event of Events" class="relative overflow-hidden bg-white shadow-md rounded-lg dark:bg-gray-800 dark:border dark:border-gray-700">
+    <img class="object-cover w-full h-40 transition-transform duration-300 transform-gpu hover:scale-105" src="{{ event.picture }}" alt="Event Image">
+    <div class="p-4">
+      <h5 class="mb-2 text-2xl font-bold text-gray-900 dark:text-white">{{ event.eventName }}</h5>
+      <p class="mb-2 text-sm text-gray-700 dark:text-gray-400">{{ formatDate(event.eventDate) }} at {{ event.eventTime }}</p>
+      <button (click)="deleteEvent(event.id)" class="inline-block px-4 py-2 bg-red-600 text-white font-semibold rounded-lg hover:bg-red-700 focus:outline-none focus:bg-red-700 transition-colors duration-300">Delete</button>
     </div>
-    <!-- pspspspspsps  -->
-
-    <!-- spspspspspspsp  -->
   </div>
 </div>

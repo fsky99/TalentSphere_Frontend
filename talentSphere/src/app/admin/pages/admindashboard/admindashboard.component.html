@@ -1,139 +1,118 @@
-<h1 class="mb-2 py-10 text-4xl font-medium tracking-tight text-gray-600 dark:text-white">Dashboard</h1>
+<!-- admindashboard.component.html -->
+<h1 class="dashboard-title">Dashboard</h1>
 
-
-<div class="grid grid-cols-1 gap-6">
-    <!-- Events Table -->
-    <div class="w-full text-center bg-white border border-gray-200 rounded-lg shadow sm:p-8 dark:bg-gray-800 dark:border-gray-700">
-        
-        <div  class="flex items-center justify-between mb-4 py-3">
-          <h5 class="text-xl font-bold leading-none text-[#0f3d61] dark:text-white">Events</h5>
-          <!-- <a href="#" class="text-sm font-medium text-blue-600 hover:underline dark:text-blue-500">View all</a> -->
-        </div>
-  
-        <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
-  
-          <tbody>
-            <tr *ngFor="let data of events" class="odd:bg-white odd:dark:bg-gray-900 even:bg-gray-50 even:dark:bg-gray-800 border-b dark:border-gray-700">
-              <td class="px-6 py-6">
-                <img class="rounded w-14 h-14" src={{data.picture}} alt="Event image">
-              </td>
-              <th scope="row" class="px-6 py-6 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                {{data.eventName}}
-              </th>
-              <td class="px-6 py-4">
-                {{formatDate(data.eventDate)}}
-              </td>
-              <td class="px-6 py-4">
-                {{formatTime(data.eventDate)}}       
-       </td>
-            </tr>
-            <!-- Additional rows -->
-          </tbody>
-        </table>
-      </div>
-  
-  
-    <!-- Requests and Activities -->
-    <div class="grid grid-cols-2 gap-6">
-      <!-- Requests -->
-      <div class="w-full p-4 bg-white border border-gray-200 rounded-lg shadow sm:p-8 dark:bg-gray-800 dark:border-gray-700">
-        <div class="flex items-center justify-between mb-4">
-          <h5 class="text-xl font-bold leading-none text-[#0f3d61] dark:text-white">Requests</h5>
-          <!-- <a href="#" class="text-sm font-medium text-blue-600 hover:underline dark:text-blue-500">View all</a> -->
-        </div>
-        <div class="flow-root">
-          <ul role="list" class="divide-y divide-gray-200 dark:divide-gray-700">
-            <li class="py-3 sm:py-4" *ngFor="let leaveData of combinedData">
-              <div class="flex items-center">
-                <div class="flex-shrink-0">
-                  <img class="w-8 h-8 rounded-full" src="https://via.placeholder.com/150" alt="Profile image">
-                </div>
-                <div class="flex-1 min-w-0 ms-4">
-                  <p class="text-sm font-medium text-gray-900 truncate dark:text-white">{{ leaveData.fname }} {{ leaveData.lname }}</p>
-                  <p class="text-sm text-gray-500 truncate dark:text-gray-400">Leave Request</p>
-                </div>
-                <div class="px-6 py-4">
-                  <div class="flex items-center">
-                    <div *ngIf="leaveData.leaves[0]?.status === 'A'" class="h-2.5 w-2.5 rounded-full bg-red-500 me-2"></div>
-                    <div *ngIf="leaveData.leaves[0]?.status !== 'A'" class="h-2.5 w-2.5 rounded-full bg-green-500 me-2"></div>
-                    <span>{{ leaveData.leaves[0]?.status === 'A' ? 'Closed' : 'Open' }}</span>
-                  </div>
-                </div>
-              </div>
-            </li>
-          </ul>
-        </div>
-      </div>
-      
-      <!-- Activities -->
-      <div class="w-full p-4 bg-white border border-gray-200 rounded-lg shadow sm:p-8 dark:bg-gray-800 dark:border-gray-700">
-        <div class="flex items-center justify-between mb-4">
-          <h5 class="text-xl font-bold leading-none text-[#0f3d61] dark:text-white">Activities</h5>
-          <!-- <a href="#" class="text-sm font-medium text-blue-600 hover:underline dark:text-blue-500">View all</a> -->
-        </div>
-        <div class="flow-root">
-          <ul role="list" class="divide-y divide-gray-200 dark:divide-gray-700"> 
-    
-              <li *ngFor="let data of combinedData" class="py-3 sm:py-4">
-                <div *ngFor="let act of data.activity
-                " class="flex items-center">
-                    <div class="flex-shrink-0">
-                        <img class="w-8 h-8 rounded-full" src={{data.picture}} alt="image">
-                    </div>
-                    <div class="flex-1 min-w-0 ms-4">
-                        <p class="text-sm font-medium text-gray-900 truncate dark:text-white">{{data.fname}} {{data.lname}}</p>
-                        <p class="text-sm text-gray-500 truncate dark:text-gray-400">{{act.projectName}}</p>
-                    </div>
-                    <td class="px-6 py-4">
-                      <div class="flex items-center">
-                        <div *ngIf="act.status === 'N'" class="h-2.5 w-2.5 rounded-full bg-green-500 me-2"></div> 
-                        <div *ngIf="act.status === 'C'" class="h-2.5 w-2.5 rounded-full bg-red-500 me-2"></div> 
-                        <span *ngIf="act.status === 'N'">Open</span>
-                        <span *ngIf="act.status === 'C'">Closed</span>
-                    
-                         </div>
-                  </td>
-    
-                </div>
-            </li>
-                      
-                  
-               
-          </ul>
-      </div>
+<div class="grid-container">
+  <!-- Events Table -->
+  <div class="card">
+    <div class="card-header">
+      <h5 class="card-title">Events</h5>
     </div>
+    <table class="table">
+      <tbody>
+        <tr *ngFor="let data of events" class="table-row">
+          <td class="table-cell">
+            <img class="event-image" src={{data.picture}} alt="Event image">
+          </td>
+          <th scope="row" class="table-cell">
+            {{data.eventName}}
+          </th>
+          <td class="table-cell">
+            {{formatDate(data.eventDate)}}
+          </td>
+          <td class="table-cell">
+            {{formatTime(data.eventDate)}}       
+          </td>
+        </tr>
+        <!-- Additional rows -->
+      </tbody>
+    </table>
   </div>
 
-  <!-- Upcoming Days Off Table -->
-  <div class="w-full text-center bg-white border border-gray-200 rounded-lg shadow sm:p-8 dark:bg-gray-800 dark:border-gray-700">
-    <div class="flex items-center justify-between mb-4">
-      <h5 class="text-xl font-bold leading-none text-[#0f3d61] dark:text-white">Upcoming Days Off</h5>
-      <a href="#" class="text-sm font-medium text-[#179fab]">View all</a>
+<!-- Requests and Activities -->
+<div class="grid-2-cols">
+  <!-- Requests -->
+  <div class="card">
+    <div class="card-header">
+      <h5 class="card-title">Requests</h5>
     </div>
-    <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
-      <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+    <div class="flow-root">
+      <ul role="list" class="list">
+        <li class="list-item" *ngFor="let leaveData of combinedData">
+          <div class="item-content">
+            <div class="item-image">
+              <img class="rounded-full w-8 h-8" src="https://via.placeholder.com/150" alt="Profile image">
+            </div>
+            <div class="item-info">
+              <p class="item-name">{{ leaveData.fname }} {{ leaveData.lname }}</p>
+              <p class="item-subtext">Leave Request</p>
+            </div>
+            <div class="status-indicator">
+              <div class="status-dot" [class.bg-red-500]="leaveData.leaves[0]?.status === 'A'"
+                                    [class.bg-green-500]="leaveData.leaves[0]?.status !== 'A'">
+              </div>
+              <span>{{ leaveData.leaves[0]?.status === 'A' ? 'Closed' : 'Open' }}</span>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+  
+  <!-- Activities -->
+ <!-- Activities -->
+<div class="card">
+  <div class="card-header">
+    <h5 class="card-title">Activities</h5>
+  </div>
+  <div class="flow-root">
+    <ul role="list" class="activities-list">
+      <li *ngFor="let data of combinedData" class="list-item">
+        <div class="item-content">
+          <div class="item-image">
+            <img src={{data.picture}} alt="image">
+          </div>
+          <div class="item-info">
+            <p class="item-name">{{data.fname}} {{data.lname}}</p>
+            <p class="item-subtext">{{data.activity[0]?.projectName}}</p>
+          </div>
+          <div class="status-indicator">
+            <div class="status-dot" [class.bg-green-500]="data.activity[0]?.status === 'N'"
+                                  [class.bg-red-500]="data.activity[0]?.status === 'C'">
+            </div>
+            <span>{{ data.activity[0]?.status === 'N' ? 'Open' : 'Closed' }}</span>
+          </div>
+        </div>
+      </li>       
+    </ul>
+  </div>
+</div>
+
+
+
+  <!-- Upcoming Days Off Table -->
+  <div class="card">
+    <div class="card-header">
+      <h5 class="card-title">Upcoming Days Off</h5>
+      <a href="#" class="view-all-link">View all</a>
+    </div>
+    <table class="table">
+      <thead>
         <tr>
-          <th scope="col" class="px-6 py-3">
-            Name
-          </th>
-          <th scope="col" class="px-6 py-3">
-            Role
-          </th>
-          <th scope="col" class="px-6 py-3">
-            Date
-          </th>
+          <th scope="col" class="table-header">Name</th>
+          <th scope="col" class="table-header">Role</th>
+          <th scope="col" class="table-header">Date</th>
         </tr>
       </thead>
       <tbody>
         <ng-container *ngFor="let data of combinedData; let i = index">
-          <tr *ngIf="i < 5" class="odd:bg-white odd:dark:bg-gray-900 even:bg-gray-50 even:dark:bg-gray-800 border-b dark:border-gray-700">
-            <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+          <tr *ngIf="i < 5" class="table-row">
+            <th scope="row" class="table-cell">
               {{data.fname}} {{data.lname}}
             </th>
-            <td class="px-6 py-4">
+            <td class="table-cell">
               {{data.emplJIfo.jobName}}
             </td>
-            <td class="px-6 py-4">
+            <td class="table-cell">
               <div *ngFor="let leav of data.leaves">
                 {{formatDate(leav.date)}}
               </div>
@@ -144,4 +123,4 @@
       </tbody>
     </table>
   </div>
-</div>  
+</div>
