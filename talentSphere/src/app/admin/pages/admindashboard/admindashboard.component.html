@@ -1,8 +1,7 @@
-<!-- admindashboard.component.html -->
 <h1 class="dashboard-title">Dashboard</h1>
 
+<div class="flex flex-wrap gap-12">
 <div class="grid-container">
-  <!-- Events Table -->
   <div class="card">
     <div class="card-header">
       <h5 class="card-title">Events</h5>
@@ -23,14 +22,11 @@
             {{formatTime(data.eventDate)}}       
           </td>
         </tr>
-        <!-- Additional rows -->
       </tbody>
     </table>
   </div>
 
-<!-- Requests and Activities -->
 <div class="grid-2-cols">
-  <!-- Requests -->
   <div class="card">
     <div class="card-header">
       <h5 class="card-title">Requests</h5>
@@ -58,8 +54,6 @@
     </div>
   </div>
   
-  <!-- Activities -->
- <!-- Activities -->
 <div class="card">
   <div class="card-header">
     <h5 class="card-title">Activities</h5>
@@ -123,4 +117,6 @@
       </tbody>
     </table>
   </div>
+</div>
+</div>
 </div>
