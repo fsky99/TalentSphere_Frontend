@@ -11,9 +11,7 @@
 - [Frontend](https://github.com/fsky99/project4_Frontend)
 - [Backend](https://github.com/fsky99/project4_Backend)
 
-## Live Version:
 
-Click the following link to be redirected to the live version of the code. [Talent Sphere](link of project)
 
 ## About the Project
 
